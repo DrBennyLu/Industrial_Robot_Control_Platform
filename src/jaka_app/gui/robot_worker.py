@@ -153,8 +153,8 @@ class RobotWorker(QObject):
         self.teach_list_changed.emit()
         self.log_line.emit("Recorded teach point %r" % name)
 
-    @pyqtSlot("PyQt_PyObject")
-    def slot_delete_teach(self, name: Any) -> None:
+    @pyqtSlot(str)
+    def slot_delete_teach(self, name: str) -> None:
         n = str(name)
         self._ctx.teach.delete(n)
         self._ctx.teach.save(self._ctx.teach_points_path)

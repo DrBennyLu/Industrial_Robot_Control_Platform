@@ -21,7 +21,7 @@ import vision_flow
 # 维护区（现场常改）
 # =========================
 ROBOT_IP = "192.168.1.100"
-ENABLE_REAL_MOTION = True  # 调试空跑时可改为 False
+ENABLE_REAL_MOTION = False  # 调试空跑时可改为 False
 SNAPSHOT_DIR = Path("logs/snapshots")
 STATS_FILE = Path("logs/production_stats.json")
 
