@@ -1,0 +1,9 @@
+[project]
+name = "jaka-app"
+version = "0.1.0"
+description = "JAKA robot control, teach points, PyQt5 HMI"
+requires-python = ">=3.10,<3.11"
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
