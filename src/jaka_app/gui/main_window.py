@@ -12,6 +12,7 @@ from PyQt5.QtWidgets import (
     QComboBox,
     QFileDialog,
     QFormLayout,
+    QFrame,
     QGridLayout,
     QGroupBox,
     QHBoxLayout,
@@ -70,8 +71,8 @@ class MainWindow(QWidget):
         self._worker_thread.start()
         self._build_ui()
         self._timer = QTimer(self)
-        self._timer.timeout.connect(self.req_status.emit)
-        self._timer.start(350)
+        self._timer.timeout.connect(self._on_ui_tick)
+        self._timer.start(500)
 
     def _wire_worker(self) -> None:
         w = self._worker
@@ -97,7 +98,6 @@ class MainWindow(QWidget):
         self.req_program_abort.connect(w.slot_program_abort, Qt.QueuedConnection)
         self.req_collision_recover.connect(w.slot_collision_recover, Qt.QueuedConnection)
         w.status_ready.connect(self._on_status)
-        w.production_ready.connect(self._on_production)
         w.log_line.connect(self._append_log)
         w.connect_result.connect(self._on_connect_result)
         w.teach_list_changed.connect(self._refresh_teach_table)
@@ -201,6 +201,9 @@ class MainWindow(QWidget):
         hb.addWidget(b_connect)
         hb.addWidget(b_disc)
         cf.addRow(hb)
+        self.lbl_connect_status = QLabel("未连接")
+        self.lbl_connect_status.setStyleSheet("color: #616161;")
+        cf.addRow("连接状态", self.lbl_connect_status)
         v.addWidget(conn)
 
         ops = QGroupBox("上电 / 使能 / 拖拽")
@@ -357,6 +360,14 @@ class MainWindow(QWidget):
         ag.addRow("最近错误", self.lbl_auto_error)
         v.addWidget(auto_box)
         v.addWidget(QLabel("主流程为 Python 文件，需包含 main()。"))
+        self.flow_banner = QFrame()
+        self.flow_banner.setMinimumHeight(40)
+        bl = QVBoxLayout(self.flow_banner)
+        bl.setContentsMargins(8, 8, 8, 8)
+        self.flow_banner_label = QLabel("空闲")
+        self.flow_banner_label.setWordWrap(True)
+        bl.addWidget(self.flow_banner_label)
+        v.addWidget(self.flow_banner)
         return p
 
     def _page_log(self) -> QWidget:
@@ -376,34 +387,13 @@ class MainWindow(QWidget):
     def _append_log(self, text: str) -> None:
         self.log.appendPlainText(text)
 
-    def _on_connect_clicked(self) -> None:
-        bundle = {
-            "ip": self.ed_ip.text().strip(),
-            "power_on": self.chk_power.isChecked(),
-            "enable": self.chk_enable.isChecked(),
-        }
-        self.req_connect.emit(bundle)
+    def _on_ui_tick(self) -> None:
+        self._sync_production_from_ctx()
+        self.req_status.emit()
 
-    def _on_connect_result(self, ok: bool, msg: str) -> None:
-        if not ok and msg != "disconnected":
-            QMessageBox.warning(self, "连接", msg)
+    def _sync_production_from_ctx(self) -> None:
+        p = self._ctx.get_production_snapshot()
 
-    def _on_status(self, snap: dict) -> None:
-        def fmt(v: object) -> str:
-            return "-" if v is None else str(v)
-
-        self.lbl_err.setText(fmt(snap.get("errcode")))
-        self.lbl_estop.setText(fmt(snap.get("emergency_stop", snap.get("estoped"))))
-        self.lbl_power.setText(fmt(snap.get("powered_on", snap.get("power_on_state"))))
-        self.lbl_enable.setText(fmt(snap.get("enabled", snap.get("servo_enabled"))))
-        self.lbl_rapid.setText(fmt(snap.get("rapidrate")))
-        self.lbl_inpos.setText(fmt(snap.get("inpos")))
-        self.lbl_prog.setText(fmt(snap.get("program_state")))
-        self.lbl_line.setText(fmt(snap.get("logic_line")))
-        self.lbl_file.setText(fmt(snap.get("loaded_file")))
-        self.lbl_step.setText(self._ctx.current_step or "-")
-
-    def _on_production(self, p: dict) -> None:
         def fmt(v: object) -> str:
             return "-" if v is None else str(v)
 
@@ -426,6 +416,70 @@ class MainWindow(QWidget):
         self.lbl_auto_total.setText(fmt(p.get("cycle_total")))
         self.lbl_auto_yield.setText(fmt(p.get("yield_rate")))
         self.lbl_auto_error.setText(fmt(p.get("last_error") or "-"))
+        self._update_flow_banner(p)
+
+    def _update_flow_banner(self, p: dict) -> None:
+        rs = str(p.get("run_state") or "IDLE")
+        err_detail = (str(p.get("last_error") or "").strip()) or (str(p.get("fail_reason") or "").strip())
+        titles = {
+            "IDLE": "空闲",
+            "MAIN_FLOW": "正在执行主流程（单次）",
+            "AUTO_RUNNING": "全自动循环运行中",
+            "MANUAL_FLOW": "手动脚本执行中",
+            "RUNNING": "循环作业中",
+        }
+        frame_base = "border-radius: 4px;"
+        if rs == "FAULT":
+            line = "故障"
+            if err_detail:
+                line += "：" + err_detail
+            self.flow_banner.setStyleSheet(frame_base + "background-color: #c62828;")
+            self.flow_banner_label.setStyleSheet("color: #ffffff; font-weight: bold;")
+            self.flow_banner_label.setText(line)
+        elif rs in ("MAIN_FLOW", "AUTO_RUNNING", "MANUAL_FLOW", "RUNNING"):
+            self.flow_banner.setStyleSheet(frame_base + "background-color: #2e7d32;")
+            self.flow_banner_label.setStyleSheet("color: #ffffff; font-weight: bold;")
+            self.flow_banner_label.setText(titles.get(rs, "运行中"))
+        else:
+            self.flow_banner.setStyleSheet(frame_base + "background-color: #f9a825;")
+            self.flow_banner_label.setStyleSheet("color: #1a1a1a; font-weight: bold;")
+            self.flow_banner_label.setText(titles.get(rs, "空闲"))
+
+    def _on_connect_clicked(self) -> None:
+        bundle = {
+            "ip": self.ed_ip.text().strip(),
+            "power_on": self.chk_power.isChecked(),
+            "enable": self.chk_enable.isChecked(),
+        }
+        self.req_connect.emit(bundle)
+
+    def _on_connect_result(self, ok: bool, msg: str) -> None:
+        if ok and msg == "ok":
+            self.lbl_connect_status.setText("已连接")
+            self.lbl_connect_status.setStyleSheet("color: #2e7d32; font-weight: bold;")
+            return
+        if not ok and msg == "disconnected":
+            self.lbl_connect_status.setText("已断开")
+            self.lbl_connect_status.setStyleSheet("color: #616161;")
+            return
+        self.lbl_connect_status.setText("连接失败：" + msg)
+        self.lbl_connect_status.setStyleSheet("color: #c62828; font-weight: bold;")
+        QMessageBox.warning(self, "连接", msg)
+
+    def _on_status(self, snap: dict) -> None:
+        def fmt(v: object) -> str:
+            return "-" if v is None else str(v)
+
+        self.lbl_err.setText(fmt(snap.get("errcode")))
+        self.lbl_estop.setText(fmt(snap.get("emergency_stop", snap.get("estoped"))))
+        self.lbl_power.setText(fmt(snap.get("powered_on", snap.get("power_on_state"))))
+        self.lbl_enable.setText(fmt(snap.get("enabled", snap.get("servo_enabled"))))
+        self.lbl_rapid.setText(fmt(snap.get("rapidrate")))
+        self.lbl_inpos.setText(fmt(snap.get("inpos")))
+        self.lbl_prog.setText(fmt(snap.get("program_state")))
+        self.lbl_line.setText(fmt(snap.get("logic_line")))
+        self.lbl_file.setText(fmt(snap.get("loaded_file")))
+        self.lbl_step.setText(self._ctx.current_step or "-")
 
     def _refresh_teach_table(self) -> None:
         rows = self._ctx.teach.list_points()
@@ -512,6 +566,7 @@ class MainWindow(QWidget):
 
     def _on_flow_finished(self, ok: bool, msg: str) -> None:
         self._append_log("flow finished ok=%s %s" % (ok, msg))
+        self._sync_production_from_ctx()
 
     def closeEvent(self, event) -> None:  # type: ignore[override]
         self._timer.stop()

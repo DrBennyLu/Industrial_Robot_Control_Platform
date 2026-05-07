@@ -17,7 +17,7 @@ def main() -> int:
     p.add_argument(
         "--config",
         type=Path,
-        default=ROOT / "config" / "application.example.yaml",
+        default=ROOT / "config" / "application.yaml",
         help="Path to application.yaml",
     )
     p.add_argument("--flow", type=Path, default=None, help="Default main flow .py path")

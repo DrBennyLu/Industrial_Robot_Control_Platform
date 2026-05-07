@@ -22,7 +22,6 @@ class RobotWorker(QObject):
 
     log_line = pyqtSignal(str)
     status_ready = pyqtSignal(dict)
-    production_ready = pyqtSignal(dict)
     connect_result = pyqtSignal(bool, str)
     teach_list_changed = pyqtSignal()
     flow_finished = pyqtSignal(bool, str)
@@ -41,7 +40,6 @@ class RobotWorker(QObject):
             self.status_ready.emit(asdict(r.snapshot_status()))
         else:
             self.status_ready.emit({})
-        self.production_ready.emit(self._ctx.get_production_snapshot())
 
     @pyqtSlot("PyQt_PyObject")
     def slot_connect(self, bundle: Any) -> None:
@@ -160,12 +158,15 @@ class RobotWorker(QObject):
     @pyqtSlot(str)
     def slot_run_flow(self, path: str) -> None:
         self._ctx.cancel_event.clear()
+        self._ctx.set_run_state("MAIN_FLOW")
         try:
             main_fn = self._load_callable(path, "main")
             main_fn()
+            self._ctx.set_run_state("IDLE")
             self.flow_finished.emit(True, "done")
         except Exception as e:
             logger.exception("flow")
+            self._ctx.set_run_state("FAULT")
             self.flow_finished.emit(False, str(e))
 
     def _load_callable(self, path: str, func_name: str):
@@ -186,12 +187,15 @@ class RobotWorker(QObject):
         path = str(bundle.get("path", "")).strip()
         func = str(bundle.get("function", "main")).strip() or "main"
         self._ctx.cancel_event.clear()
+        self._ctx.set_run_state("MANUAL_FLOW")
         try:
             fn = self._load_callable(path, func)
             fn()
+            self._ctx.set_run_state("IDLE")
             self.flow_finished.emit(True, f"manual function {func} done")
         except Exception as e:
             logger.exception("manual flow function")
+            self._ctx.set_run_state("FAULT")
             self.flow_finished.emit(False, str(e))
 
     @pyqtSlot("PyQt_PyObject")
