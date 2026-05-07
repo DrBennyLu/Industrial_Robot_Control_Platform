@@ -146,11 +146,6 @@ def build_application_context(cfg: dict[str, Any]) -> ApplicationContext:
 
 
 def make_robot_from_config(cfg: dict[str, Any]) -> JakaRobotController:
-    from jaka_app.config_loader import env_password
-
     robot_cfg = cfg.get("robot") or {}
     ip = str(robot_cfg.get("ip", "192.168.2.64"))
-    use_grpc = bool(robot_cfg.get("use_grpc", True))
-    user = str(robot_cfg.get("username", ""))
-    pwd = env_password(cfg)
-    return JakaRobotController(ip, use_grpc=use_grpc, username=user, password=pwd)
+    return JakaRobotController(ip)

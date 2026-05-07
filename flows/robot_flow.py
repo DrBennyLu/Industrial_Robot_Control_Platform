@@ -1,113 +1,52 @@
 from __future__ import annotations
 
-# 控制柜子程序名称（维护区）
-JOB_INIT = "INIT_ROBOT"
-JOB_PICK_A = "PICK_A"
-JOB_PLACE_A = "PLACE_A"
-JOB_PICK_B = "PICK_B"
-JOB_PLACE_B = "PLACE_B"
-JOB_HOME = "GO_HOME"
-JOB_SAFE_RETRACT = "SAFE_RETRACT"
-JOB_ALARM_POSE = "ALARM_POSE"
+from jaka_app.robot_controller import JakaRobotController
+
+# 控制柜程序名（与 test_sdk 一致，现场可改）
+PROG_HOME = "demohome"
+PROG_PICK = "demopick0430"
+PROG_LIFT = "demolift0506"
+PROG_AFTER_PLACE = "demoafterplace0506"
 
 
-def run_init(arm, enable_real_motion: bool) -> None:
-    """
-    执行机器人初始化子程序。
-
-    输入类型：
-    - arm: JakaRobotController，机器人控制器实例。
-    - enable_real_motion: bool，是否真实执行运动。
-
-    输出类型：
-    - None。
-    """
-    from flow_utils import run_job
-
-    run_job(arm, JOB_INIT, enable_real_motion)
-
-
-def run_pick_and_place(
-    arm,
-    path_name: str,
-    enable_real_motion: bool,
-    gripper=None,
+def pre_action_check(
+    arm: JakaRobotController,
+    *,
+    allow_program_busy: bool = False,
+    auto_enable: bool = False,
 ) -> None:
     """
-    根据路径类型执行抓取+放置子程序。
-
-    输入类型：
-    - arm: JakaRobotController，机器人控制器实例。
-    - path_name: str，路径名（通常为 "A" 或 "B"）。
-    - enable_real_motion: bool，是否真实执行运动。
-    - gripper: 可选，DHGripper.GripperController；提供时在抓取前后自动张开/闭合。
-
-    输出类型：
-    - None。
+    下发机器人指令前的安全检查；失败抛出 RuntimeError。
     """
-    from flow_utils import run_job
-
-    def gripper_open() -> None:
-        if gripper is None:
-            return
-        if not enable_real_motion:
-            print("[空跑] gripper open")
-            return
-        if not gripper.open():
-            raise RuntimeError("夹爪张开失败")
-
-    def gripper_close() -> None:
-        if gripper is None:
-            return
-        if not enable_real_motion:
-            print("[空跑] gripper close")
-            return
-        if not gripper.close():
-            raise RuntimeError("夹爪闭合失败")
-
-    if path_name == "A":
-        gripper_open()
-        run_job(arm, JOB_PICK_A, enable_real_motion)
-        gripper_close()
-        run_job(arm, JOB_PLACE_A, enable_real_motion)
-        gripper_open()
-    else:
-        gripper_open()
-        run_job(arm, JOB_PICK_B, enable_real_motion)
-        gripper_close()
-        run_job(arm, JOB_PLACE_B, enable_real_motion)
-        gripper_open()
+    ok, msg = arm.is_safe_to_move(auto_enable=auto_enable, allow_program_busy=allow_program_busy)
+    if not ok:
+        raise RuntimeError(msg)
 
 
-def run_home(arm, enable_real_motion: bool) -> None:
+def run_cabinet_program(
+    arm: JakaRobotController,
+    program_name: str,
+    *,
+    timeout_s: float = 1200.0,
+    poll_s: float = 0.1,
+) -> None:
     """
-    执行回零位/回原点子程序。
-
-    输入类型：
-    - arm: JakaRobotController，机器人控制器实例。
-    - enable_real_motion: bool，是否真实执行运动。
-
-    输出类型：
-    - None。
+    不含前置安全检查：请先调用 pre_action_check。
+    program_load → program_run → 启动确认 → 带监护的等待直到停止。
     """
-    from flow_utils import run_job
+    arm.program_load(program_name)
+    arm.program_run()
+    arm.confirm_cabinet_program_started()
+    arm.wait_cabinet_program_complete(timeout_s=timeout_s, poll_s=poll_s)
 
-    run_job(arm, JOB_HOME, enable_real_motion)
 
+def connect_gripper(port: str) -> GripperController:
+    """连接并初始化夹爪；失败抛 RuntimeError。"""
+    from DHGripper.DHController import GripperController
 
-def run_recovery(arm, enable_real_motion: bool) -> None:
-    """
-    执行异常回退子程序（安全收回 + 报警位）。
-
-    输入类型：
-    - arm: JakaRobotController，机器人控制器实例。
-    - enable_real_motion: bool，是否真实执行运动。
-
-    输出类型：
-    - None。
-    """
-    from flow_utils import run_job
-
-    run_job(arm, JOB_SAFE_RETRACT, enable_real_motion)
-    run_job(arm, JOB_ALARM_POSE, enable_real_motion)
-
+    g = GripperController(port=port)
+    if not g.connect():
+        raise RuntimeError(f"夹爪串口连接失败: {port}")
+    if not g.initialize():
+        raise RuntimeError("夹爪初始化超时或失败")
+    return g

@@ -1,17 +1,30 @@
 from __future__ import annotations
 
 import logging
+import os
+import sys
 import threading
 import time
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 from jaka_app.exceptions import JakaApiError, JakaNotInstalledError
 
 logger = logging.getLogger(__name__)
 
+_JAKA_SDK_DIR = Path(__file__).resolve().parent
+if str(_JAKA_SDK_DIR) not in sys.path:
+    sys.path.insert(0, str(_JAKA_SDK_DIR))
+if sys.platform == "win32":
+    try:
+        os.add_dll_directory(str(_JAKA_SDK_DIR))
+    except (AttributeError, OSError):
+        pass
+
+
 try:
-    import jkrc as _jkrc
+    import src.jaka_app.jkrc as _jkrc
 
     _JKRC = _jkrc
 except ImportError:  # pragma: no cover - dev machine without vendor SDK
@@ -71,12 +84,9 @@ class RobotStatusSnapshot:
 class JakaRobotController:
     """Thin wrapper over jkrc.RC with return-code checks and a motion lock."""
 
-    def __init__(self, ip: str, use_grpc: bool = True, username: str = "", password: str = ""):
+    def __init__(self, ip: str) -> None:
         _require_jkrc()
         self._ip = ip
-        self._use_grpc = 1 if use_grpc else 0
-        self._username = username or ""
-        self._password = password or ""
         self._rc: Any = None
         self.motion_lock = threading.RLock()
 
@@ -96,7 +106,7 @@ class JakaRobotController:
                 return
             self._rc = jk.RC(self._ip)
             try:
-                ret = self._rc.login(self._use_grpc, self._username, self._password)
+                ret = self._rc.login()
                 _check(ret, "login")
             except Exception:
                 self._rc = None
@@ -287,6 +297,69 @@ class JakaRobotController:
                 raise TimeoutError(f"program did not finish within {timeout_s:.1f}s")
             time.sleep(poll_s)
 
+    def confirm_cabinet_program_started(self, settle_s: float = 0.3, timeout_s: float = 5.0) -> None:
+        """After program_run(), wait until program state is running or paused (1 or 2)."""
+        time.sleep(settle_s)
+        deadline = time.time() + timeout_s
+        while time.time() < deadline:
+            with self.motion_lock:
+                ret = self._ensure_rc().get_program_state()
+            _check(ret, "get_program_state")
+            state = int(ret[1])
+            if state in (1, 2):
+                return
+            time.sleep(0.1)
+        raise RuntimeError("作业指令已发，但未进入运行/暂停状态")
+
+    def wait_cabinet_program_complete(
+        self,
+        timeout_s: float = 1200.0,
+        poll_s: float = 0.1,
+        cancel_event: threading.Event | None = None,
+    ) -> None:
+        """
+        Poll until cabinet program idle (state 0). During wait, re-check robot safety;
+        abort program on fault (same policy as run_remote_job_robust wait phase).
+        """
+        deadline = time.time() + timeout_s
+        while time.time() < deadline:
+            if cancel_event and cancel_event.is_set():
+                try:
+                    self.program_abort()
+                except Exception:
+                    pass
+                raise RuntimeError("Program wait cancelled by user.")
+
+            try:
+                with self.motion_lock:
+                    ret = self._ensure_rc().get_program_state()
+                _check(ret, "get_program_state")
+                state = int(ret[1])
+            except JakaApiError as e:
+                try:
+                    self.program_abort()
+                except Exception:
+                    pass
+                raise RuntimeError(f"轮询程序状态失败: {e}") from e
+
+            safe, msg = self.is_safe_to_move(auto_enable=False, allow_program_busy=True)
+            if not safe and "忙碌" not in msg:
+                try:
+                    self.program_abort()
+                except Exception:
+                    pass
+                raise RuntimeError(f"作业运行中断: {msg}")
+
+            if state == 0:
+                return
+            time.sleep(poll_s)
+
+        try:
+            self.program_abort()
+        except Exception:
+            pass
+        raise TimeoutError(f"cabinet program did not finish within {timeout_s:.1f}s")
+
     def run_remote_job(
         self,
         program_name: str,
@@ -385,16 +458,19 @@ class JakaRobotController:
         poll_s: float = 0.5,
         cancel_event: threading.Event | None = None,
         auto_enable: bool = False,
+        precheck: bool = True,
     ) -> bool:
         """
-        高鲁棒执行：前置检查 -> 下发作业 -> 启动确认 -> 运行监控。
+        高鲁棒执行：可选前置检查 -> 下发作业 -> 启动确认 -> 运行监控。
+        Set precheck=False when the caller already ran pre_action_check (e.g. main flow).
         """
         logger.info("准备执行作业: %s", program_name)
 
-        safe, msg = self.is_safe_to_move(auto_enable=auto_enable, allow_program_busy=False)
-        if not safe:
-            logger.error("拒绝执行作业，原因: %s", msg)
-            return False
+        if precheck:
+            safe, msg = self.is_safe_to_move(auto_enable=auto_enable, allow_program_busy=False)
+            if not safe:
+                logger.error("拒绝执行作业，原因: %s", msg)
+                return False
 
         try:
             self.program_load(program_name)
@@ -403,16 +479,8 @@ class JakaRobotController:
             logger.error("作业启动失败: %s", e)
             return False
 
-        # 启动确认：短延时后检查程序状态是否进入活动态。
-        time.sleep(0.3)
         try:
-            with self.motion_lock:
-                ret = self._ensure_rc().get_program_state()
-            _check(ret, "get_program_state")
-            state = int(ret[1])
-            if state not in (1, 2):
-                logger.error("作业指令已发，但未进入运行/暂停状态，state=%s", state)
-                return False
+            self.confirm_cabinet_program_started()
         except Exception as e:
             logger.error("作业状态确认失败: %s", e)
             return False
@@ -420,46 +488,19 @@ class JakaRobotController:
         if not wait_until_done:
             return True
 
-        start = time.time()
-        while time.time() - start < timeout_s:
-            if cancel_event and cancel_event.is_set():
-                logger.warning("检测到用户停止请求，尝试中止程序")
-                try:
-                    self.program_abort()
-                except Exception:
-                    pass
-                return False
-
-            try:
-                with self.motion_lock:
-                    ret = self._ensure_rc().get_program_state()
-                _check(ret, "get_program_state")
-                state = int(ret[1])
-            except Exception as e:
-                logger.error("轮询程序状态失败: %s", e)
-                return False
-
-            # 运行中仅允许 busy，本体安全错误应立即中断。
-            safe, msg = self.is_safe_to_move(auto_enable=False, allow_program_busy=True)
-            if not safe and "忙碌" not in msg:
-                logger.error("作业运行中断: %s", msg)
-                try:
-                    self.program_abort()
-                except Exception:
-                    pass
-                return False
-
-            if state == 0:
-                logger.info("作业 %s 执行完成", program_name)
-                return True
-            time.sleep(poll_s)
-
-        logger.error("作业 %s 执行超时(%.1fs)", program_name, timeout_s)
         try:
-            self.program_abort()
-        except Exception:
-            pass
-        return False
+            self.wait_cabinet_program_complete(
+                timeout_s=timeout_s, poll_s=poll_s, cancel_event=cancel_event
+            )
+        except TimeoutError:
+            logger.error("作业 %s 执行超时(%.1fs)", program_name, timeout_s)
+            return False
+        except RuntimeError as e:
+            logger.error("%s", e)
+            return False
+
+        logger.info("作业 %s 执行完成", program_name)
+        return True
 
 
 class JogStreamer:

@@ -1,10 +1,6 @@
 # Copy to application.yaml and adjust. Do not commit secrets — use env vars.
 robot:
-  ip: "192.168.2.64"
-  use_grpc: true
-  username: ""
-  # If set, password is read from this environment variable (controller >= V3.2.10)
-  password_env: "JAKA_SDK_PASSWORD"
+  ip: "169.254.5.10"
 
 paths:
   teach_points: "data/teach_points.json"

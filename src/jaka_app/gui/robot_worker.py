@@ -49,18 +49,14 @@ class RobotWorker(QObject):
             self.connect_result.emit(False, "internal: bad connect bundle")
             return
         ip = str(bundle.get("ip", ""))
-        use_grpc = bool(bundle.get("use_grpc", True))
-        user = str(bundle.get("username", ""))
-        password = str(bundle.get("password", ""))
         do_power = bool(bundle.get("power_on", False))
         do_enable = bool(bundle.get("enable", False))
         try:
-            ctrl = JakaRobotController(ip, use_grpc=use_grpc, username=user, password=password)
+            ctrl = JakaRobotController(ip)
             ctrl.connect(power_on=do_power, enable=do_enable)
             self._ctx.robot = ctrl
             self._ctx.config.setdefault("robot", {})
             self._ctx.config["robot"]["ip"] = ip
-            self._ctx.config["robot"]["use_grpc"] = use_grpc
             self.log_line.emit("Connected to robot.")
             self.connect_result.emit(True, "ok")
         except Exception as e:

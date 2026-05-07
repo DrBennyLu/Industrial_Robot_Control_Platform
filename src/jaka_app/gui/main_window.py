@@ -27,7 +27,7 @@ from PyQt5.QtWidgets import (
     QWidget,
 )
 
-from jaka_app.config_loader import env_password, load_application_config
+from jaka_app.config_loader import load_application_config
 from jaka_app.context import ApplicationContext, build_application_context
 from jaka_app.gui.robot_worker import RobotWorker
 
@@ -188,18 +188,9 @@ class MainWindow(QWidget):
         conn = QGroupBox("连接")
         cf = QFormLayout(conn)
         self.ed_ip = QLineEdit(str((self._ctx.config.get("robot") or {}).get("ip", "192.168.2.64")))
-        self.chk_grpc = QCheckBox("gRPC login")
-        self.chk_grpc.setChecked(bool((self._ctx.config.get("robot") or {}).get("use_grpc", True)))
-        self.ed_user = QLineEdit(str((self._ctx.config.get("robot") or {}).get("username", "")))
-        self.ed_pass = QLineEdit()
-        self.ed_pass.setEchoMode(QLineEdit.Password)
-        self.ed_pass.setPlaceholderText("or use password_env from YAML")
         self.chk_power = QCheckBox("power_on after login")
         self.chk_enable = QCheckBox("enable after login")
         cf.addRow("IP", self.ed_ip)
-        cf.addRow(self.chk_grpc)
-        cf.addRow("SDK user", self.ed_user)
-        cf.addRow("SDK password", self.ed_pass)
         cf.addRow(self.chk_power)
         cf.addRow(self.chk_enable)
         hb = QHBoxLayout()
@@ -386,12 +377,8 @@ class MainWindow(QWidget):
         self.log.appendPlainText(text)
 
     def _on_connect_clicked(self) -> None:
-        pwd = self.ed_pass.text() or env_password(self._ctx.config)
         bundle = {
             "ip": self.ed_ip.text().strip(),
-            "use_grpc": self.chk_grpc.isChecked(),
-            "username": self.ed_user.text().strip(),
-            "password": pwd,
             "power_on": self.chk_power.isChecked(),
             "enable": self.chk_enable.isChecked(),
         }
