@@ -5,6 +5,10 @@ robot:
 paths:
   teach_points: "data/teach_points.json"
   default_main_flow: "flows/main_flow.py"
+  # 产线运行统计（累计 OK/NG、平均/最佳 CT，GUI 与重启后保持）
+  production_stats: "data/production_stats.json"
+  # 每圈节拍 JSONL 行（可清空文件归档）；置为空字符串可关闭写入
+  cycle_history: "logs/cycle_history.jsonl"
   # 主流程关键状态快照目录（自动创建）
   snapshot_dir: "logs/snapshots"
 

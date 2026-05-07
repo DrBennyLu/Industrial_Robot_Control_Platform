@@ -24,7 +24,7 @@ if sys.platform == "win32":
 
 
 try:
-    import src.jaka_app.jkrc as _jkrc
+    import jkrc as _jkrc
 
     _JKRC = _jkrc
 except ImportError:  # pragma: no cover - dev machine without vendor SDK
@@ -297,18 +297,36 @@ class JakaRobotController:
                 raise TimeoutError(f"program did not finish within {timeout_s:.1f}s")
             time.sleep(poll_s)
 
-    def confirm_cabinet_program_started(self, settle_s: float = 0.3, timeout_s: float = 5.0) -> None:
-        """After program_run(), wait until program state is running or paused (1 or 2)."""
+    def confirm_cabinet_program_started(self, settle_s: float = 0.05, timeout_s: float = 5.0) -> None:
+        """
+        After program_run(), wait until program state is running (1) or paused (2).
+
+        SDK 与 is_safe_to_move 约定一致: 0=停止, 1=运行, 2=暂停。
+        若脚本极短（例如已在目标位），可能在首次可靠轮询前已回到 0；
+        此时若全程未见 1/2 且最终为 0，视为已瞬时执行完毕（由后续 wait_cabinet_program_complete 兜底）。
+        """
         time.sleep(settle_s)
         deadline = time.time() + timeout_s
+        saw_running_or_paused = False
         while time.time() < deadline:
             with self.motion_lock:
                 ret = self._ensure_rc().get_program_state()
             _check(ret, "get_program_state")
             state = int(ret[1])
             if state in (1, 2):
+                saw_running_or_paused = True
                 return
-            time.sleep(0.1)
+            time.sleep(0.05)
+        with self.motion_lock:
+            ret = self._ensure_rc().get_program_state()
+        _check(ret, "get_program_state")
+        state = int(ret[1])
+        if not saw_running_or_paused and state == 0:
+            logger.info(
+                "Cabinet program reported idle (0) before running/paused (1/2) could be observed; "
+                "assuming instant completion (short script or already at pose)."
+            )
+            return
         raise RuntimeError("作业指令已发，但未进入运行/暂停状态")
 
     def wait_cabinet_program_complete(

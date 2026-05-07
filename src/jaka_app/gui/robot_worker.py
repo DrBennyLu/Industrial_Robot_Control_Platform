@@ -155,13 +155,25 @@ class RobotWorker(QObject):
         self.teach_list_changed.emit()
         self.log_line.emit("Deleted teach point %r" % n)
 
+    def _run_flow_once_record_cycle(self, path: str, func_name: str = "main") -> None:
+        """Execute flow once; wall-clock time → append_cycle_record (OK/NG)."""
+        t0 = time.perf_counter()
+        try:
+            fn = self._load_callable(path, func_name)
+            fn()
+        except Exception as e:
+            elapsed = time.perf_counter() - t0
+            self._ctx.append_cycle_record(False, elapsed, str(e))
+            raise
+        elapsed = time.perf_counter() - t0
+        self._ctx.append_cycle_record(True, elapsed)
+
     @pyqtSlot(str)
     def slot_run_flow(self, path: str) -> None:
         self._ctx.cancel_event.clear()
         self._ctx.set_run_state("MAIN_FLOW")
         try:
-            main_fn = self._load_callable(path, "main")
-            main_fn()
+            self._run_flow_once_record_cycle(path, "main")
             self._ctx.set_run_state("IDLE")
             self.flow_finished.emit(True, "done")
         except Exception as e:
@@ -211,12 +223,12 @@ class RobotWorker(QObject):
         self._auto_stop.clear()
 
         def loop() -> None:
+            # 无限循环：每次调用脚本的 main() 一次，间隔 interval_s，直到「停止全自动循环」
             self._ctx.set_run_state("AUTO_RUNNING")
             self.log_line.emit("auto loop started")
             while not self._auto_stop.is_set():
                 try:
-                    main_fn = self._load_callable(path, "main")
-                    main_fn()
+                    self._run_flow_once_record_cycle(path, "main")
                     self.flow_finished.emit(True, "auto cycle done")
                 except Exception as e:
                     logger.exception("auto flow")
