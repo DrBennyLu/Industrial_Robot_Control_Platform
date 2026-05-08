@@ -2,6 +2,9 @@
 robot:
   ip: "169.254.5.10"
 
+gripper:
+  port: "COM7"
+  
 paths:
   teach_points: "data/teach_points.json"
   default_main_flow: "flows/main_flow.py"
