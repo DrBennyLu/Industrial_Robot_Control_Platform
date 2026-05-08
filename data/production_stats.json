@@ -1,0 +1,12 @@
+{
+  "cycle_total": 1,
+  "cycle_ok": 1,
+  "cycle_ng": 0,
+  "last_cycle_s": 57.515,
+  "avg_cycle_s": 57.515,
+  "best_cycle_s": 57.515,
+  "yield_rate": 100.0,
+  "fail_reason": "",
+  "last_error": "",
+  "last_update": "2026-05-08T10:11:00"
+}
