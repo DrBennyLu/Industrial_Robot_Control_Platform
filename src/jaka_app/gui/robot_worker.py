@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import importlib.util
 import logging
+import sys
 import threading
 import time
 from dataclasses import asdict
+from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
@@ -23,6 +25,7 @@ class RobotWorker(QObject):
     log_line = pyqtSignal(str)
     status_ready = pyqtSignal(dict)
     connect_result = pyqtSignal(bool, str)
+    gripper_connect_result = pyqtSignal(bool, str)
     teach_list_changed = pyqtSignal()
     flow_finished = pyqtSignal(bool, str)
 
@@ -157,10 +160,17 @@ class RobotWorker(QObject):
 
     def _run_flow_once_record_cycle(self, path: str, func_name: str = "main") -> None:
         """Execute flow once; wall-clock time → append_cycle_record (OK/NG)."""
+        import inspect
+
         t0 = time.perf_counter()
         try:
             fn = self._load_callable(path, func_name)
-            fn()
+            # 检查函数签名，如果接受 ctx 参数则传递
+            sig = inspect.signature(fn)
+            if "ctx" in sig.parameters:
+                fn(ctx=self._ctx)
+            else:
+                fn()
         except Exception as e:
             elapsed = time.perf_counter() - t0
             self._ctx.append_cycle_record(False, elapsed, str(e))
@@ -305,3 +315,90 @@ class RobotWorker(QObject):
             return
         r.collision_recover()
         self.log_line.emit("collision_recover")
+
+    def _ensure_flows_import_path(self) -> Path:
+        project_root = Path(__file__).resolve().parents[3]
+        flows_dir = project_root / "flows"
+        src_dir = project_root / "src"
+        for p in (flows_dir, src_dir):
+            s = str(p)
+            if s not in sys.path:
+                sys.path.insert(0, s)
+        return flows_dir
+
+    @pyqtSlot(str)
+    def slot_gripper_connect(self, port: str) -> None:
+        port = str(port).strip()
+        if not port:
+            self.gripper_connect_result.emit(False, "串口不能为空")
+            return
+        g = self._ctx.gripper
+        if g is not None and g.is_connected:
+            try:
+                g.disconnect()
+            except Exception:
+                pass
+            self._ctx.gripper = None
+        try:
+            self._ensure_flows_import_path()
+            import robot_flow
+
+            self._ctx.gripper = robot_flow.connect_gripper(port)
+            self._ctx.config.setdefault("gripper", {})
+            self._ctx.config["gripper"]["port"] = port
+            self.log_line.emit("Gripper connected on %r." % port)
+            self.gripper_connect_result.emit(True, "ok")
+        except Exception as e:
+            logger.exception("gripper connect")
+            self._ctx.gripper = None
+            self.gripper_connect_result.emit(False, str(e))
+
+    @pyqtSlot()
+    def slot_gripper_disconnect(self) -> None:
+        g = self._ctx.gripper
+        if g:
+            try:
+                g.disconnect()
+            except Exception:
+                pass
+        self._ctx.gripper = None
+        self.log_line.emit("Gripper disconnected.")
+        self.gripper_connect_result.emit(False, "disconnected")
+
+    @pyqtSlot()
+    def slot_gripper_open(self) -> None:
+        g = self._ctx.gripper
+        if not g or not g.is_initialized:
+            self.log_line.emit("Gripper not connected or not initialized.")
+            return
+        if not g.open():
+            self.log_line.emit("Gripper open failed.")
+            return
+        self.log_line.emit("Gripper open sent.")
+
+    @pyqtSlot()
+    def slot_gripper_close(self) -> None:
+        g = self._ctx.gripper
+        if not g or not g.is_initialized:
+            self.log_line.emit("Gripper not connected or not initialized.")
+            return
+        if not g.close():
+            self.log_line.emit("Gripper close failed.")
+            return
+        self.log_line.emit("Gripper close sent.")
+
+    @pyqtSlot()
+    def slot_run_home_flow(self) -> None:
+        self._ctx.cancel_event.clear()
+        self._ctx.set_run_state("HOME_FLOW")
+        try:
+            flows_dir = self._ensure_flows_import_path()
+            home_path = flows_dir / "home_flow.py"
+            fn = self._load_callable(str(home_path), "main")
+            fn()
+            self._ctx.set_run_state("IDLE")
+            self.flow_finished.emit(True, "home done")
+        except Exception as e:
+            logger.exception("home flow")
+            self._ctx.set_run_state("FAULT")
+            self.flow_finished.emit(False, str(e))

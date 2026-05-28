@@ -59,6 +59,11 @@ class MainWindow(QWidget):
     req_program_run = pyqtSignal()
     req_program_abort = pyqtSignal()
     req_collision_recover = pyqtSignal()
+    req_gripper_connect = pyqtSignal(str)
+    req_gripper_disconnect = pyqtSignal()
+    req_gripper_open = pyqtSignal()
+    req_gripper_close = pyqtSignal()
+    req_run_home_flow = pyqtSignal()
 
     def __init__(self, ctx: ApplicationContext, default_flow: str) -> None:
         super().__init__()
@@ -70,6 +75,9 @@ class MainWindow(QWidget):
         self._wire_worker()
         self._worker_thread.start()
         self._build_ui()
+        self._load_log_from_file()
+        self._log_file_path = Path("logs/gui_log.txt")
+        self._log_file_path.parent.mkdir(parents=True, exist_ok=True)
         self._timer = QTimer(self)
         self._timer.timeout.connect(self._on_ui_tick)
         self._timer.start(500)
@@ -97,9 +105,15 @@ class MainWindow(QWidget):
         self.req_program_run.connect(w.slot_program_run, Qt.QueuedConnection)
         self.req_program_abort.connect(w.slot_program_abort, Qt.QueuedConnection)
         self.req_collision_recover.connect(w.slot_collision_recover, Qt.QueuedConnection)
+        self.req_gripper_connect.connect(w.slot_gripper_connect, Qt.QueuedConnection)
+        self.req_gripper_disconnect.connect(w.slot_gripper_disconnect, Qt.QueuedConnection)
+        self.req_gripper_open.connect(w.slot_gripper_open, Qt.QueuedConnection)
+        self.req_gripper_close.connect(w.slot_gripper_close, Qt.QueuedConnection)
+        self.req_run_home_flow.connect(w.slot_run_home_flow, Qt.QueuedConnection)
         w.status_ready.connect(self._on_status)
         w.log_line.connect(self._append_log)
         w.connect_result.connect(self._on_connect_result)
+        w.gripper_connect_result.connect(self._on_gripper_connect_result)
         w.teach_list_changed.connect(self._refresh_teach_table)
         w.flow_finished.connect(self._on_flow_finished)
 
@@ -205,6 +219,34 @@ class MainWindow(QWidget):
         self.lbl_connect_status.setStyleSheet("color: #616161;")
         cf.addRow("连接状态", self.lbl_connect_status)
         v.addWidget(conn)
+
+        grip = QGroupBox("夹爪")
+        gf = QFormLayout(grip)
+        self.ed_gripper_port = QLineEdit(
+            str((self._ctx.config.get("gripper") or {}).get("port", "COM7"))
+        )
+        gf.addRow("串口", self.ed_gripper_port)
+        ghb = QHBoxLayout()
+        b_g_connect = QPushButton("连接夹爪")
+        b_g_connect.clicked.connect(self._on_gripper_connect_clicked)
+        b_g_disc = QPushButton("断开夹爪")
+        b_g_disc.clicked.connect(self.req_gripper_disconnect.emit)
+        ghb.addWidget(b_g_connect)
+        ghb.addWidget(b_g_disc)
+        gf.addRow(ghb)
+        self.lbl_gripper_status = QLabel("未连接")
+        self.lbl_gripper_status.setStyleSheet("color: #616161;")
+        gf.addRow("连接状态", self.lbl_gripper_status)
+        gob = QHBoxLayout()
+        self.btn_gripper_open = QPushButton("张开")
+        self.btn_gripper_close = QPushButton("闭合")
+        self.btn_gripper_open.clicked.connect(self.req_gripper_open.emit)
+        self.btn_gripper_close.clicked.connect(self.req_gripper_close.emit)
+        self._set_gripper_motion_enabled(False)
+        gob.addWidget(self.btn_gripper_open)
+        gob.addWidget(self.btn_gripper_close)
+        gf.addRow(gob)
+        v.addWidget(grip)
 
         ops = QGroupBox("上电 / 使能 / 拖拽")
         og = QGridLayout(ops)
@@ -328,10 +370,13 @@ class MainWindow(QWidget):
         b_auto_stop.clicked.connect(self.req_auto_stop.emit)
         b_can = QPushButton("请求停止当前流程")
         b_can.clicked.connect(self.req_cancel_flow.emit)
+        b_home = QPushButton("回原点")
+        b_home.clicked.connect(self._on_run_home_flow)
         hb.addWidget(b_run)
         hb.addWidget(b_auto)
         hb.addWidget(b_auto_stop)
         hb.addWidget(b_can)
+        hb.addWidget(b_home)
         v.addLayout(hb)
         row2 = QHBoxLayout()
         self.ed_auto_interval = QLineEdit("0.0")
@@ -386,6 +431,37 @@ class MainWindow(QWidget):
 
     def _append_log(self, text: str) -> None:
         self.log.appendPlainText(text)
+        # 同时写入文件
+        try:
+            with open(self._log_file_path, "a", encoding="utf-8") as f:
+                from datetime import datetime
+                f.write(f"[{datetime.now().isoformat(timespec='seconds')}] {text}\n")
+        except Exception as e:
+            logger.warning(f"写入日志文件失败: {e}")
+
+    def _load_log_from_file(self) -> None:
+        """从文件加载历史日志"""
+        if not self._log_file_path.exists():
+            return
+        try:
+            with open(self._log_file_path, "r", encoding="utf-8") as f:
+                content = f.read()
+            if content.strip():
+                self.log.setPlainText(content.rstrip())
+                # 滚动到最底部
+                self.log.moveCursor(self.log.textCursor().End)
+        except Exception as e:
+            logger.warning(f"加载日志文件失败: {e}")
+
+    def _save_log_to_file(self) -> None:
+        """保存当前日志到文件"""
+        try:
+            content = self.log.toPlainText()
+            with open(self._log_file_path, "w", encoding="utf-8") as f:
+                f.write(content)
+        except Exception as e:
+            logger.warning(f"保存日志文件失败: {e}")
+
 
     def _on_ui_tick(self) -> None:
         self._sync_production_from_ctx()
@@ -426,6 +502,7 @@ class MainWindow(QWidget):
             "MAIN_FLOW": "正在执行主流程（单次）",
             "AUTO_RUNNING": "全自动循环运行中",
             "MANUAL_FLOW": "手动脚本执行中",
+            "HOME_FLOW": "正在回原点…",
             "RUNNING": "循环作业中",
         }
         frame_base = "border-radius: 4px;"
@@ -436,7 +513,7 @@ class MainWindow(QWidget):
             self.flow_banner.setStyleSheet(frame_base + "background-color: #c62828;")
             self.flow_banner_label.setStyleSheet("color: #ffffff; font-weight: bold;")
             self.flow_banner_label.setText(line)
-        elif rs in ("MAIN_FLOW", "AUTO_RUNNING", "MANUAL_FLOW", "RUNNING"):
+        elif rs in ("MAIN_FLOW", "AUTO_RUNNING", "MANUAL_FLOW", "HOME_FLOW", "RUNNING"):
             self.flow_banner.setStyleSheet(frame_base + "background-color: #2e7d32;")
             self.flow_banner_label.setStyleSheet("color: #ffffff; font-weight: bold;")
             self.flow_banner_label.setText(titles.get(rs, "运行中"))
@@ -452,6 +529,29 @@ class MainWindow(QWidget):
             "enable": self.chk_enable.isChecked(),
         }
         self.req_connect.emit(bundle)
+
+    def _set_gripper_motion_enabled(self, enabled: bool) -> None:
+        self.btn_gripper_open.setEnabled(enabled)
+        self.btn_gripper_close.setEnabled(enabled)
+
+    def _on_gripper_connect_clicked(self) -> None:
+        self.req_gripper_connect.emit(self.ed_gripper_port.text().strip())
+
+    def _on_gripper_connect_result(self, ok: bool, msg: str) -> None:
+        if ok and msg == "ok":
+            self.lbl_gripper_status.setText("已连接")
+            self.lbl_gripper_status.setStyleSheet("color: #2e7d32; font-weight: bold;")
+            self._set_gripper_motion_enabled(True)
+            return
+        if not ok and msg == "disconnected":
+            self.lbl_gripper_status.setText("未连接")
+            self.lbl_gripper_status.setStyleSheet("color: #616161;")
+            self._set_gripper_motion_enabled(False)
+            return
+        self.lbl_gripper_status.setText("连接失败：" + msg)
+        self.lbl_gripper_status.setStyleSheet("color: #c62828; font-weight: bold;")
+        self._set_gripper_motion_enabled(False)
+        QMessageBox.warning(self, "夹爪", msg)
 
     def _on_connect_result(self, ok: bool, msg: str) -> None:
         if ok and msg == "ok":
@@ -534,6 +634,20 @@ class MainWindow(QWidget):
         if path:
             self.ed_manual_flow.setText(path)
 
+    def _on_run_home_flow(self) -> None:
+        if (
+            QMessageBox.question(
+                self,
+                "回原点",
+                "确定执行回原点流程？",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No,
+            )
+            != QMessageBox.Yes
+        ):
+            return
+        self.req_run_home_flow.emit()
+
     def _on_run_flow(self) -> None:
         if (
             QMessageBox.question(
@@ -571,6 +685,7 @@ class MainWindow(QWidget):
     def closeEvent(self, event) -> None:  # type: ignore[override]
         self._timer.stop()
         self.req_disconnect.emit()
+        self.req_gripper_disconnect.emit()
         self._worker_thread.quit()
         self._worker_thread.wait(3000)
         event.accept()

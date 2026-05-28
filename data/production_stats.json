@@ -1,12 +1,12 @@
 {
-  "cycle_total": 1,
-  "cycle_ok": 1,
-  "cycle_ng": 0,
-  "last_cycle_s": 57.515,
-  "avg_cycle_s": 57.515,
-  "best_cycle_s": 57.515,
-  "yield_rate": 100.0,
+  "cycle_total": 197,
+  "cycle_ok": 173,
+  "cycle_ng": 24,
+  "last_cycle_s": 35.978,
+  "avg_cycle_s": 34.886,
+  "best_cycle_s": 15.855,
+  "yield_rate": 87.82,
   "fail_reason": "",
   "last_error": "",
-  "last_update": "2026-05-08T10:11:00"
+  "last_update": "2026-05-25T10:49:19"
 }

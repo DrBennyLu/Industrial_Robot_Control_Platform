@@ -1,1 +1,197 @@
 {"ts": "2026-05-08T10:11:00", "ok": true, "elapsed_s": 57.515, "error": null}
+{"ts": "2026-05-11T14:22:19", "ok": true, "elapsed_s": 68.036, "error": null}
+{"ts": "2026-05-11T14:34:08", "ok": false, "elapsed_s": 49.939, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-11T14:38:21", "ok": false, "elapsed_s": 54.792, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-11T14:42:06", "ok": false, "elapsed_s": 55.114, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-11T14:44:47", "ok": false, "elapsed_s": 48.106, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-11T14:56:59", "ok": false, "elapsed_s": 49.4, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-11T15:03:44", "ok": true, "elapsed_s": 72.352, "error": null}
+{"ts": "2026-05-11T15:06:44", "ok": true, "elapsed_s": 64.068, "error": null}
+{"ts": "2026-05-11T15:07:14", "ok": false, "elapsed_s": 21.097, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-11T15:34:07", "ok": true, "elapsed_s": 75.107, "error": null}
+{"ts": "2026-05-11T15:34:30", "ok": false, "elapsed_s": 19.864, "error": "作业运行中断: 碰撞/保护停止触发"}
+{"ts": "2026-05-11T15:36:37", "ok": true, "elapsed_s": 75.569, "error": null}
+{"ts": "2026-05-11T15:37:08", "ok": false, "elapsed_s": 22.761, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-11T15:42:38", "ok": true, "elapsed_s": 71.459, "error": null}
+{"ts": "2026-05-11T15:45:30", "ok": true, "elapsed_s": 73.259, "error": null}
+{"ts": "2026-05-11T15:49:31", "ok": true, "elapsed_s": 73.133, "error": null}
+{"ts": "2026-05-13T10:15:51", "ok": true, "elapsed_s": 64.106, "error": null}
+{"ts": "2026-05-13T14:45:15", "ok": true, "elapsed_s": 74.366, "error": null}
+{"ts": "2026-05-13T15:12:24", "ok": true, "elapsed_s": 63.992, "error": null}
+{"ts": "2026-05-18T09:22:32", "ok": false, "elapsed_s": 0.173, "error": "夹爪串口连接失败: COM7"}
+{"ts": "2026-05-18T09:23:22", "ok": true, "elapsed_s": 21.257, "error": null}
+{"ts": "2026-05-18T09:24:03", "ok": true, "elapsed_s": 26.432, "error": null}
+{"ts": "2026-05-18T09:39:07", "ok": true, "elapsed_s": 26.959, "error": null}
+{"ts": "2026-05-18T09:39:39", "ok": true, "elapsed_s": 24.896, "error": null}
+{"ts": "2026-05-18T09:40:26", "ok": true, "elapsed_s": 26.972, "error": null}
+{"ts": "2026-05-18T09:40:51", "ok": true, "elapsed_s": 25.017, "error": null}
+{"ts": "2026-05-18T09:41:16", "ok": true, "elapsed_s": 24.325, "error": null}
+{"ts": "2026-05-18T09:41:40", "ok": true, "elapsed_s": 24.89, "error": null}
+{"ts": "2026-05-18T09:42:01", "ok": true, "elapsed_s": 20.477, "error": null}
+{"ts": "2026-05-18T09:42:21", "ok": true, "elapsed_s": 20.393, "error": null}
+{"ts": "2026-05-18T09:42:42", "ok": true, "elapsed_s": 20.507, "error": null}
+{"ts": "2026-05-18T09:50:58", "ok": true, "elapsed_s": 58.839, "error": null}
+{"ts": "2026-05-18T09:51:57", "ok": true, "elapsed_s": 58.631, "error": null}
+{"ts": "2026-05-18T09:52:40", "ok": true, "elapsed_s": 42.692, "error": null}
+{"ts": "2026-05-18T10:02:48", "ok": true, "elapsed_s": 22.279, "error": null}
+{"ts": "2026-05-18T10:08:40", "ok": true, "elapsed_s": 22.323, "error": null}
+{"ts": "2026-05-18T10:09:05", "ok": true, "elapsed_s": 24.817, "error": null}
+{"ts": "2026-05-18T10:09:48", "ok": true, "elapsed_s": 43.001, "error": null}
+{"ts": "2026-05-18T10:10:30", "ok": true, "elapsed_s": 42.378, "error": null}
+{"ts": "2026-05-18T10:10:55", "ok": true, "elapsed_s": 24.873, "error": null}
+{"ts": "2026-05-18T10:11:37", "ok": true, "elapsed_s": 42.497, "error": null}
+{"ts": "2026-05-18T10:12:03", "ok": true, "elapsed_s": 25.04, "error": null}
+{"ts": "2026-05-18T10:12:45", "ok": true, "elapsed_s": 42.262, "error": null}
+{"ts": "2026-05-18T10:13:10", "ok": true, "elapsed_s": 24.933, "error": null}
+{"ts": "2026-05-18T10:13:52", "ok": true, "elapsed_s": 42.459, "error": null}
+{"ts": "2026-05-18T10:14:18", "ok": true, "elapsed_s": 25.494, "error": null}
+{"ts": "2026-05-18T10:15:15", "ok": true, "elapsed_s": 57.549, "error": null}
+{"ts": "2026-05-18T10:15:51", "ok": true, "elapsed_s": 22.126, "error": null}
+{"ts": "2026-05-18T10:16:23", "ok": true, "elapsed_s": 32.011, "error": null}
+{"ts": "2026-05-18T10:16:45", "ok": true, "elapsed_s": 22.284, "error": null}
+{"ts": "2026-05-18T10:20:46", "ok": true, "elapsed_s": 17.62, "error": null}
+{"ts": "2026-05-18T10:21:06", "ok": true, "elapsed_s": 20.582, "error": null}
+{"ts": "2026-05-18T10:21:34", "ok": true, "elapsed_s": 27.684, "error": null}
+{"ts": "2026-05-18T10:21:54", "ok": true, "elapsed_s": 20.448, "error": null}
+{"ts": "2026-05-18T10:22:30", "ok": true, "elapsed_s": 35.725, "error": null}
+{"ts": "2026-05-18T10:22:51", "ok": true, "elapsed_s": 20.532, "error": null}
+{"ts": "2026-05-18T10:23:19", "ok": true, "elapsed_s": 27.898, "error": null}
+{"ts": "2026-05-18T10:23:39", "ok": true, "elapsed_s": 20.658, "error": null}
+{"ts": "2026-05-18T10:24:15", "ok": true, "elapsed_s": 35.431, "error": null}
+{"ts": "2026-05-18T10:24:35", "ok": true, "elapsed_s": 20.466, "error": null}
+{"ts": "2026-05-18T14:44:24", "ok": false, "elapsed_s": 0.178, "error": "夹爪串口连接失败: COM7"}
+{"ts": "2026-05-18T14:44:55", "ok": true, "elapsed_s": 17.165, "error": null}
+{"ts": "2026-05-18T14:45:12", "ok": true, "elapsed_s": 17.064, "error": null}
+{"ts": "2026-05-18T14:48:57", "ok": true, "elapsed_s": 17.511, "error": null}
+{"ts": "2026-05-18T14:49:15", "ok": true, "elapsed_s": 17.873, "error": null}
+{"ts": "2026-05-18T14:49:32", "ok": true, "elapsed_s": 17.739, "error": null}
+{"ts": "2026-05-18T14:52:25", "ok": true, "elapsed_s": 15.855, "error": null}
+{"ts": "2026-05-18T14:52:43", "ok": true, "elapsed_s": 17.876, "error": null}
+{"ts": "2026-05-18T14:53:01", "ok": true, "elapsed_s": 17.881, "error": null}
+{"ts": "2026-05-18T14:53:19", "ok": true, "elapsed_s": 17.968, "error": null}
+{"ts": "2026-05-18T14:59:43", "ok": true, "elapsed_s": 17.611, "error": null}
+{"ts": "2026-05-18T15:00:04", "ok": true, "elapsed_s": 20.278, "error": null}
+{"ts": "2026-05-18T15:00:55", "ok": true, "elapsed_s": 51.094, "error": null}
+{"ts": "2026-05-18T15:17:07", "ok": false, "elapsed_s": 15.837, "error": "list assignment index out of range"}
+{"ts": "2026-05-18T15:19:00", "ok": true, "elapsed_s": 39.667, "error": null}
+{"ts": "2026-05-18T15:19:25", "ok": true, "elapsed_s": 25.044, "error": null}
+{"ts": "2026-05-18T15:20:21", "ok": true, "elapsed_s": 55.495, "error": null}
+{"ts": "2026-05-18T15:21:08", "ok": true, "elapsed_s": 47.199, "error": null}
+{"ts": "2026-05-18T15:22:40", "ok": true, "elapsed_s": 25.565, "error": null}
+{"ts": "2026-05-18T15:23:02", "ok": true, "elapsed_s": 21.475, "error": null}
+{"ts": "2026-05-18T15:24:17", "ok": true, "elapsed_s": 75.189, "error": null}
+{"ts": "2026-05-18T15:30:52", "ok": true, "elapsed_s": 46.415, "error": null}
+{"ts": "2026-05-18T15:31:33", "ok": true, "elapsed_s": 40.98, "error": null}
+{"ts": "2026-05-18T15:31:53", "ok": true, "elapsed_s": 20.326, "error": null}
+{"ts": "2026-05-18T15:37:06", "ok": false, "elapsed_s": 0.167, "error": "夹爪串口连接失败: COM7"}
+{"ts": "2026-05-18T15:37:52", "ok": true, "elapsed_s": 40.194, "error": null}
+{"ts": "2026-05-18T15:38:17", "ok": true, "elapsed_s": 24.591, "error": null}
+{"ts": "2026-05-18T15:47:21", "ok": true, "elapsed_s": 24.731, "error": null}
+{"ts": "2026-05-18T15:47:48", "ok": true, "elapsed_s": 27.42, "error": null}
+{"ts": "2026-05-18T15:48:16", "ok": true, "elapsed_s": 27.819, "error": null}
+{"ts": "2026-05-18T15:48:58", "ok": true, "elapsed_s": 41.915, "error": null}
+{"ts": "2026-05-18T15:49:21", "ok": true, "elapsed_s": 22.554, "error": null}
+{"ts": "2026-05-18T15:50:27", "ok": true, "elapsed_s": 66.721, "error": null}
+{"ts": "2026-05-18T15:50:50", "ok": true, "elapsed_s": 23.176, "error": null}
+{"ts": "2026-05-18T15:51:16", "ok": true, "elapsed_s": 25.689, "error": null}
+{"ts": "2026-05-18T15:51:57", "ok": true, "elapsed_s": 40.639, "error": null}
+{"ts": "2026-05-18T15:52:29", "ok": true, "elapsed_s": 32.372, "error": null}
+{"ts": "2026-05-18T15:53:09", "ok": true, "elapsed_s": 40.071, "error": null}
+{"ts": "2026-05-18T15:53:30", "ok": true, "elapsed_s": 20.598, "error": null}
+{"ts": "2026-05-18T15:53:51", "ok": true, "elapsed_s": 21.562, "error": null}
+{"ts": "2026-05-18T15:54:44", "ok": true, "elapsed_s": 52.636, "error": null}
+{"ts": "2026-05-18T15:55:43", "ok": true, "elapsed_s": 58.921, "error": null}
+{"ts": "2026-05-18T15:56:19", "ok": true, "elapsed_s": 36.287, "error": null}
+{"ts": "2026-05-18T15:56:45", "ok": true, "elapsed_s": 25.87, "error": null}
+{"ts": "2026-05-18T15:57:37", "ok": true, "elapsed_s": 51.74, "error": null}
+{"ts": "2026-05-18T15:58:00", "ok": true, "elapsed_s": 23.002, "error": null}
+{"ts": "2026-05-18T15:58:23", "ok": true, "elapsed_s": 22.896, "error": null}
+{"ts": "2026-05-18T15:58:51", "ok": true, "elapsed_s": 27.759, "error": null}
+{"ts": "2026-05-18T15:59:16", "ok": true, "elapsed_s": 25.153, "error": null}
+{"ts": "2026-05-18T15:59:39", "ok": true, "elapsed_s": 23.679, "error": null}
+{"ts": "2026-05-18T16:00:03", "ok": true, "elapsed_s": 23.379, "error": null}
+{"ts": "2026-05-18T16:00:27", "ok": true, "elapsed_s": 23.811, "error": null}
+{"ts": "2026-05-18T16:00:50", "ok": true, "elapsed_s": 22.994, "error": null}
+{"ts": "2026-05-18T16:01:11", "ok": true, "elapsed_s": 21.584, "error": null}
+{"ts": "2026-05-18T16:01:40", "ok": true, "elapsed_s": 28.767, "error": null}
+{"ts": "2026-05-18T16:02:00", "ok": true, "elapsed_s": 20.507, "error": null}
+{"ts": "2026-05-18T16:02:25", "ok": true, "elapsed_s": 24.65, "error": null}
+{"ts": "2026-05-18T16:02:59", "ok": true, "elapsed_s": 33.82, "error": null}
+{"ts": "2026-05-18T16:03:23", "ok": true, "elapsed_s": 23.56, "error": null}
+{"ts": "2026-05-18T16:03:47", "ok": true, "elapsed_s": 24.43, "error": null}
+{"ts": "2026-05-18T16:04:09", "ok": true, "elapsed_s": 22.52, "error": null}
+{"ts": "2026-05-18T16:04:45", "ok": true, "elapsed_s": 35.9, "error": null}
+{"ts": "2026-05-18T16:05:10", "ok": true, "elapsed_s": 25.029, "error": null}
+{"ts": "2026-05-18T16:05:33", "ok": true, "elapsed_s": 22.534, "error": null}
+{"ts": "2026-05-18T16:06:03", "ok": true, "elapsed_s": 30.305, "error": null}
+{"ts": "2026-05-18T16:06:26", "ok": true, "elapsed_s": 22.976, "error": null}
+{"ts": "2026-05-18T16:06:49", "ok": true, "elapsed_s": 22.82, "error": null}
+{"ts": "2026-05-18T16:07:11", "ok": true, "elapsed_s": 22.38, "error": null}
+{"ts": "2026-05-18T16:07:37", "ok": true, "elapsed_s": 25.371, "error": null}
+{"ts": "2026-05-18T16:07:59", "ok": true, "elapsed_s": 22.432, "error": null}
+{"ts": "2026-05-18T16:08:21", "ok": true, "elapsed_s": 21.84, "error": null}
+{"ts": "2026-05-18T16:08:43", "ok": true, "elapsed_s": 22.017, "error": null}
+{"ts": "2026-05-18T16:09:03", "ok": true, "elapsed_s": 19.794, "error": null}
+{"ts": "2026-05-18T16:09:24", "ok": true, "elapsed_s": 21.583, "error": null}
+{"ts": "2026-05-18T17:21:18", "ok": true, "elapsed_s": 23.452, "error": null}
+{"ts": "2026-05-18T17:21:41", "ok": true, "elapsed_s": 23.741, "error": null}
+{"ts": "2026-05-18T17:22:22", "ok": true, "elapsed_s": 40.236, "error": null}
+{"ts": "2026-05-20T10:46:00", "ok": false, "elapsed_s": 7.029, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-20T10:51:01", "ok": false, "elapsed_s": 5.382, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-20T11:07:37", "ok": false, "elapsed_s": 6.96, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-20T11:20:14", "ok": false, "elapsed_s": 0.167, "error": "夹爪串口连接失败: COM7"}
+{"ts": "2026-05-20T11:20:18", "ok": false, "elapsed_s": 0.164, "error": "夹爪串口连接失败: COM7"}
+{"ts": "2026-05-20T11:21:00", "ok": true, "elapsed_s": 34.641, "error": null}
+{"ts": "2026-05-20T11:25:28", "ok": true, "elapsed_s": 268.269, "error": null}
+{"ts": "2026-05-20T14:07:02", "ok": false, "elapsed_s": 7.129, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-20T14:09:40", "ok": false, "elapsed_s": 7.229, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-20T14:11:00", "ok": false, "elapsed_s": 7.016, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-20T14:28:41", "ok": true, "elapsed_s": 18.822, "error": null}
+{"ts": "2026-05-20T14:28:59", "ok": false, "elapsed_s": 17.765, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-20T14:33:47", "ok": true, "elapsed_s": 18.478, "error": null}
+{"ts": "2026-05-20T14:34:06", "ok": true, "elapsed_s": 18.547, "error": null}
+{"ts": "2026-05-20T14:34:43", "ok": true, "elapsed_s": 36.683, "error": null}
+{"ts": "2026-05-20T14:35:01", "ok": true, "elapsed_s": 18.471, "error": null}
+{"ts": "2026-05-20T14:35:29", "ok": true, "elapsed_s": 28.172, "error": null}
+{"ts": "2026-05-20T14:35:48", "ok": true, "elapsed_s": 18.688, "error": null}
+{"ts": "2026-05-20T14:36:16", "ok": true, "elapsed_s": 28.542, "error": null}
+{"ts": "2026-05-20T14:36:35", "ok": true, "elapsed_s": 18.691, "error": null}
+{"ts": "2026-05-20T14:37:03", "ok": true, "elapsed_s": 28.198, "error": null}
+{"ts": "2026-05-20T14:37:22", "ok": true, "elapsed_s": 18.521, "error": null}
+{"ts": "2026-05-20T14:38:15", "ok": false, "elapsed_s": 7.131, "error": "作业运行中断: 机器人报错 errcode=983043"}
+{"ts": "2026-05-20T14:38:54", "ok": true, "elapsed_s": 31.037, "error": null}
+{"ts": "2026-05-20T14:39:18", "ok": true, "elapsed_s": 23.429, "error": null}
+{"ts": "2026-05-20T14:39:54", "ok": true, "elapsed_s": 36.469, "error": null}
+{"ts": "2026-05-20T14:40:16", "ok": true, "elapsed_s": 22.072, "error": null}
+{"ts": "2026-05-21T10:25:01", "ok": true, "elapsed_s": 20.745, "error": null}
+{"ts": "2026-05-21T10:25:21", "ok": true, "elapsed_s": 19.825, "error": null}
+{"ts": "2026-05-21T10:25:50", "ok": true, "elapsed_s": 29.168, "error": null}
+{"ts": "2026-05-21T10:26:09", "ok": true, "elapsed_s": 19.541, "error": null}
+{"ts": "2026-05-21T10:26:41", "ok": true, "elapsed_s": 32.062, "error": null}
+{"ts": "2026-05-21T10:28:03", "ok": true, "elapsed_s": 81.967, "error": null}
+{"ts": "2026-05-21T10:28:29", "ok": true, "elapsed_s": 25.291, "error": null}
+{"ts": "2026-05-21T10:29:21", "ok": true, "elapsed_s": 51.908, "error": null}
+{"ts": "2026-05-21T10:29:41", "ok": true, "elapsed_s": 20.496, "error": null}
+{"ts": "2026-05-21T10:30:35", "ok": true, "elapsed_s": 53.934, "error": null}
+{"ts": "2026-05-21T10:30:58", "ok": true, "elapsed_s": 22.735, "error": null}
+{"ts": "2026-05-21T10:31:49", "ok": true, "elapsed_s": 51.204, "error": null}
+{"ts": "2026-05-21T10:32:10", "ok": true, "elapsed_s": 20.867, "error": null}
+{"ts": "2026-05-21T10:33:02", "ok": true, "elapsed_s": 51.748, "error": null}
+{"ts": "2026-05-21T10:33:22", "ok": true, "elapsed_s": 20.887, "error": null}
+{"ts": "2026-05-21T10:34:54", "ok": true, "elapsed_s": 91.556, "error": null}
+{"ts": "2026-05-21T10:35:18", "ok": true, "elapsed_s": 23.523, "error": null}
+{"ts": "2026-05-21T10:36:22", "ok": true, "elapsed_s": 64.949, "error": null}
+{"ts": "2026-05-21T10:36:51", "ok": true, "elapsed_s": 28.866, "error": null}
+{"ts": "2026-05-21T10:51:00", "ok": true, "elapsed_s": 24.104, "error": null}
+{"ts": "2026-05-21T10:51:21", "ok": true, "elapsed_s": 20.973, "error": null}
+{"ts": "2026-05-21T10:52:42", "ok": true, "elapsed_s": 81.436, "error": null}
+{"ts": "2026-05-21T10:53:04", "ok": true, "elapsed_s": 21.847, "error": null}
+{"ts": "2026-05-22T09:47:43", "ok": true, "elapsed_s": 23.59, "error": null}
+{"ts": "2026-05-22T09:48:13", "ok": true, "elapsed_s": 29.808, "error": null}
+{"ts": "2026-05-22T09:50:30", "ok": false, "elapsed_s": 15.281, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-22T10:03:12", "ok": false, "elapsed_s": 17.673, "error": "作业运行中断: 急停已触发"}
+{"ts": "2026-05-22T10:04:41", "ok": true, "elapsed_s": 24.227, "error": null}
+{"ts": "2026-05-22T10:07:36", "ok": true, "elapsed_s": 174.503, "error": null}
+{"ts": "2026-05-25T10:48:24", "ok": true, "elapsed_s": 19.046, "error": null}
+{"ts": "2026-05-25T10:48:43", "ok": true, "elapsed_s": 18.614, "error": null}
+{"ts": "2026-05-25T10:49:19", "ok": true, "elapsed_s": 35.978, "error": null}

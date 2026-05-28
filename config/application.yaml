@@ -4,7 +4,10 @@ robot:
 
 gripper:
   port: "COM7"
-  
+
+# 料槽 IO 假读：1=有料，0=可放置（后续接传感器）
+slot_io: [0, 1]
+
 paths:
   teach_points: "data/teach_points.json"
   default_main_flow: "flows/main_flow.py"

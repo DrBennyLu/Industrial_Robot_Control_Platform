@@ -6,7 +6,10 @@ import threading
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from DHGripper.DHController import GripperController
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +36,7 @@ class ApplicationContext:
 
     config: dict[str, Any]
     robot: JakaRobotController | None = None
+    gripper: GripperController | None = None
     teach: TeachPointStore = field(default_factory=TeachPointStore)
     io: IODeviceFacade = field(default_factory=NoOpIODeviceFacade)
     line: LineEquipmentFacade = field(default_factory=NoOpLineEquipmentFacade)

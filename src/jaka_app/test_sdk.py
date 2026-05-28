@@ -7,7 +7,32 @@ from DHController import GripperController
 
 robot = jkrc.RC("169.254.5.10")
 
+def find_value_by_key(data_tuple: tuple, target_key: str):
+    """
+    从嵌套元组中查找指定标识对应的数值
+    :param data_tuple: 原始的大元组（你提供的result数据）
+    :param target_key: 要查找的【第三个元素】字符串（如'SYS_NO_PARTS'）
+    :return: 匹配到的【第二个元素】数值，未找到返回None
+    """
+    # 跳过元组第一个元素（0），遍历所有子元组
+    for item in data_tuple[1:]:
+        # 安全校验：确保是三元组，避免报错
+        if isinstance(item, tuple) and len(item) == 3:
+            # 解包子元组：(编号, 数值, 标识)
+            id, value, key = item
+            # 匹配目标标识
+            if key == target_key:
+                return value
+    # 未找到匹配项返回None
+    return None
+
 robot.login()
+
+ret = robot.get_user_var()
+print("get_user_var result is: ", ret)
+value = find_value_by_key(ret, "SYS_NO_PARTS")
+print(value)
+
 
 gripper = GripperController("COM7")
 gripper.connect()
