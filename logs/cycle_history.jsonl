@@ -195,3 +195,6 @@
 {"ts": "2026-05-25T10:48:24", "ok": true, "elapsed_s": 19.046, "error": null}
 {"ts": "2026-05-25T10:48:43", "ok": true, "elapsed_s": 18.614, "error": null}
 {"ts": "2026-05-25T10:49:19", "ok": true, "elapsed_s": 35.978, "error": null}
+{"ts": "2026-05-28T11:17:19", "ok": false, "elapsed_s": 21.315, "error": "流程被用户取消"}
+{"ts": "2026-05-28T11:20:07", "ok": true, "elapsed_s": 32.199, "error": null}
+{"ts": "2026-05-28T11:20:52", "ok": false, "elapsed_s": 44.473, "error": "作业运行中断: 急停已触发"}

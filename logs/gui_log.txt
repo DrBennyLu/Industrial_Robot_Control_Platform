@@ -1,0 +1,20 @@
+[2026-05-28T11:16:54] Gripper disconnected.
+[2026-05-28T11:16:56] Disconnected.
+[2026-05-28T11:16:58] auto loop started
+[2026-05-28T11:17:02] There is no parts in the basket, wait for 5s...
+[2026-05-28T11:17:10] There is no parts in the basket, wait for 5s...
+[2026-05-28T11:17:18] There is no parts in the basket, wait for 5s...
+[2026-05-28T11:17:19] auto stop requested
+[2026-05-28T11:17:19] flow finished ok=False 流程被用户取消
+[2026-05-28T11:17:19] auto loop stopped
+[2026-05-28T11:19:35] auto loop started
+[2026-05-28T11:19:45] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T11:20:07] Cycle time: 30.71738839149475 seconds
+[2026-05-28T11:20:07] flow finished ok=True auto cycle done
+[2026-05-28T11:20:23] There is no parts in the basket, wait for 5s...
+[2026-05-28T11:20:31] There is no parts in the basket, wait for 5s...
+[2026-05-28T11:20:45] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T11:20:52] flow finished ok=False 作业运行中断: 急停已触发
+[2026-05-28T11:20:52] auto loop stopped
+[2026-05-28T11:21:28] Disconnected.
+[2026-05-28T11:21:28] Gripper disconnected.
