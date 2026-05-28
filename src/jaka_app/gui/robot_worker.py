@@ -35,6 +35,7 @@ class RobotWorker(QObject):
         self._jog: JogStreamer | None = None
         self._auto_thread: threading.Thread | None = None
         self._auto_stop = threading.Event()
+        self._ctx.log_sink = self.log_line.emit
 
     @pyqtSlot()
     def slot_refresh_status(self) -> None:

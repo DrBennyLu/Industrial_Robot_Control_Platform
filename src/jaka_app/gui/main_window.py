@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import logging
 import sys
+from datetime import datetime
 from functools import partial
 from pathlib import Path
 
@@ -75,9 +76,9 @@ class MainWindow(QWidget):
         self._wire_worker()
         self._worker_thread.start()
         self._build_ui()
-        self._load_log_from_file()
         self._log_file_path = Path("logs/gui_log.txt")
         self._log_file_path.parent.mkdir(parents=True, exist_ok=True)
+        self._load_log_from_file()
         self._timer = QTimer(self)
         self._timer.timeout.connect(self._on_ui_tick)
         self._timer.start(500)
@@ -430,12 +431,12 @@ class MainWindow(QWidget):
         self.req_program_load.emit(self.ed_prog.text().strip())
 
     def _append_log(self, text: str) -> None:
-        self.log.appendPlainText(text)
+        line = f"[{datetime.now().isoformat(timespec='seconds')}] {text}"
+        self.log.appendPlainText(line)
         # 同时写入文件
         try:
             with open(self._log_file_path, "a", encoding="utf-8") as f:
-                from datetime import datetime
-                f.write(f"[{datetime.now().isoformat(timespec='seconds')}] {text}\n")
+                f.write(line + "\n")
         except Exception as e:
             logger.warning(f"写入日志文件失败: {e}")
 

@@ -2,6 +2,16 @@
 
 ## Author: Benny Lu
 
+## 0. 最近更新（2026-05）
+
+- 主流程日志接入统一输出函数 `add_log`（`src/jaka_app/utils/logging_utils.py`），支持按上下文输出到 GUI。
+- `ApplicationContext` 新增 `log_sink` 回调，主流程在 GUI 模式下可实时显示执行日志。
+- `RobotWorker` 已默认把 `log_line` 信号绑定到 `ctx.log_sink`，无需在流程脚本里手动处理 UI 日志。
+- GUI 日志写入逻辑优化：界面日志与文件日志统一为同一条带时间戳内容。
+- 日志文件默认路径：`logs/gui_log.txt`（启动 GUI 后自动创建目录）。
+
+---
+
 工业机器人控制平台（JAKA + PyQt5 HMI），支持：
 
 - 手动操作（连接、上电、使能、拖拽、点动、柜内程序）
@@ -94,6 +104,13 @@ python scripts/run_main_flow.py --flow flows/main_flow.py
 
 - `run_main_flow.py` 只负责加载并执行指定 Python 文件中的 `main()`。
 - 当前 `flows/main_flow.py` 内部参数（如机器人 IP、是否真实运动）由文件顶部常量控制。
+- 无头模式下，`add_log` 会自动回退到标准输出（控制台），同样带时间戳。
+
+### 3.3 GUI 日志使用方式（新增）
+
+- GUI 内“日志”页会实时显示主流程和操作日志。
+- 日志同时落盘到 `logs/gui_log.txt`，便于追溯和导出。
+- 重启 GUI 后会自动加载历史日志文件，方便查看上次运行记录。
 
 ---
 

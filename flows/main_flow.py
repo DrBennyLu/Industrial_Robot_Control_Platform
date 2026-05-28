@@ -13,6 +13,7 @@ for _p in (_FLOW_DIR, _PROJECT_SRC):
 
 from jaka_app.config_loader import load_application_config
 from jaka_app.robot_controller import JakaRobotController, find_value_by_key
+from jaka_app.utils.logging_utils import add_log
 from PLCControl.modbus_control import ModbusController
 
 import robot_flow
@@ -40,7 +41,7 @@ def load_from_config() -> tuple[str, str, dict]:
     return ip, port, cfg
 
 
-def run_place_phase(arm: JakaRobotController, cfg: dict, cancel_event=None) -> int | None:
+def run_place_phase(arm: JakaRobotController, cfg: dict, cancel_event=None, ctx=None) -> int | None:
     """
     放料阶段：有空位则 PROG_LIFT_n；料盘全满则仅 PROG_PICK 并等待。
 
@@ -58,17 +59,19 @@ def run_place_phase(arm: JakaRobotController, cfg: dict, cancel_event=None) -> i
         if not slot_flow.all_slots_full(occupancy):
             slot_index = slot_flow.find_first_empty_slot(occupancy)
             prog = robot_flow.lift_program_for_slot(slot_index)
-            print(
+            add_log(
                 "Place: slot_index=%s occupancy=%s program=%r"
-                % (slot_index, occupancy, prog)
+                % (slot_index, occupancy, prog),
+                ctx=ctx,
             )
             robot_flow.pre_action_check(arm)
             robot_flow.run_cabinet_program(arm, prog, cancel_event=cancel_event)
             return slot_index
 
-        print(
+        add_log(
             "All slots full (occupancy=%s): pick-only %r, no lift"
-            % (occupancy, robot_flow.PROG_PICK_ONLY)
+            % (occupancy, robot_flow.PROG_PICK_ONLY),
+            ctx=ctx,
         )
         if MOVE:
             robot_flow.pre_action_check(arm)
@@ -79,7 +82,7 @@ def run_place_phase(arm: JakaRobotController, cfg: dict, cancel_event=None) -> i
             return None
 
         # 分段 sleep，每秒检查一次取消信号
-        print("Waiting %.1fs for empty slot..." % PLACE_WAIT_INTERVAL_S)
+        add_log("Waiting %.1fs for empty slot..." % PLACE_WAIT_INTERVAL_S, ctx=ctx)
         for _ in range(int(PLACE_WAIT_INTERVAL_S)):
             if cancel_event and cancel_event.is_set():
                 raise RuntimeError("流程被用户取消")
@@ -133,7 +136,7 @@ def main(ctx=None) -> None:
 
             robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC, cancel_event=cancel_event) #机器人程序内部判定是否已经完成预拍照动作，系统变量PRE_CAP
             if robot_flow.get_sys_val(arm, "SYS_NO_PARTS") == 1:
-                print("There is no parts in the basket, wait for 5s...")
+                add_log("There is no parts in the basket, wait for 5s...", ctx=ctx)
                 # 分段 sleep，每秒检查取消信号
                 for _ in range(5):
                     if cancel_event and cancel_event.is_set():
@@ -145,7 +148,7 @@ def main(ctx=None) -> None:
         gripper.close()
 
         # 放置物料：有空位则 PROG_LIFT_n；全满则仅抓取并等待空位
-        run_place_phase(arm, cfg, cancel_event=cancel_event)
+        run_place_phase(arm, cfg, cancel_event=cancel_event, ctx=ctx)
 
 
         gripper.open()
@@ -158,7 +161,7 @@ def main(ctx=None) -> None:
 
 
         end_time = time.time()
-        print(f"Cycle time: {end_time - start_time} seconds")
+        add_log(f"Cycle time: {end_time - start_time} seconds", ctx=ctx)
     finally:
         if gripper is not None and gripper.is_connected:
             gripper.disconnect()

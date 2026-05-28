@@ -6,7 +6,7 @@ import threading
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Callable
 
 if TYPE_CHECKING:
     from DHGripper.DHController import GripperController
@@ -46,6 +46,7 @@ class ApplicationContext:
     precheck: PreJobGate | None = None
     current_step: str = ""
     cancel_event: threading.Event = field(default_factory=threading.Event)
+    log_sink: Callable[[str], None] | None = None
     teach_points_path: str = "data/teach_points.json"
     production_stats_path: str = "data/production_stats.json"
     cycle_history_path: str = "logs/cycle_history.jsonl"
