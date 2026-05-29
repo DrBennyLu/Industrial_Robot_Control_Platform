@@ -1,12 +1,12 @@
 {
-  "cycle_total": 200,
-  "cycle_ok": 174,
-  "cycle_ng": 26,
-  "last_cycle_s": 44.473,
-  "avg_cycle_s": 34.871,
+  "cycle_total": 244,
+  "cycle_ok": 202,
+  "cycle_ng": 42,
+  "last_cycle_s": 37.059,
+  "avg_cycle_s": 34.647,
   "best_cycle_s": 15.855,
-  "yield_rate": 87.0,
-  "fail_reason": "作业运行中断: 急停已触发",
-  "last_error": "作业运行中断: 急停已触发",
-  "last_update": "2026-05-28T11:20:52"
+  "yield_rate": 82.79,
+  "fail_reason": "",
+  "last_error": "",
+  "last_update": "2026-05-29T16:09:23"
 }

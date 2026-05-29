@@ -4,6 +4,7 @@ from jaka_app.robot_controller import JakaRobotController, find_value_by_key
 
 # 控制柜程序名（与 test_sdk 一致，现场可改）
 PROG_HOME = "demohome"
+# 对应1号钣金
 PROG_PICK = "demopick0430"
 PROG_LIFT = "demolift0506"
 PROG_LIFT_1 = "demolift_1_0507"
@@ -13,23 +14,40 @@ PROG_AFTER_PLACE = "demoafterplace0514"
 PROG_PICK_ONLY = "demopickonly0518"
 PROG_FIRST_PICK = "first_pick_0513"
 PROG_FIRST_PICK_PRC = "first_pick_0513prc"
+# 对应2号钣金
+PROG_FIRST_PICK_PRC2 = "first_pick_0528prc2"
+PROG_LIFT_21 = "demolift_21_0528"
+PROG_LIFT_22 = "demolift_22_0528"
+PROG_AFTER_PLACE2 = "demoafterplace2_0528"
+PROG_PICK_ONLY2 = "demopickonly2_0528"
 
 
 
-# 料槽下标 0..n-1 对应放置子程序
-LIFT_PROGRAM_BY_SLOT: list[str] = [
+# 1号钣金，料槽下标 0..n-1 对应放置子程序
+LIFT_SN1_PROGRAM_BY_SLOT: list[str] = [
     PROG_LIFT_1,
     PROG_LIFT_2,
     # PROG_LIFT_3,
 ]
 
+# 2号钣金，料槽下标 0..n-1 对应放置子程序
+LIFT_SN2_PROGRAM_BY_SLOT: list[str] = [
+    PROG_LIFT_21,
+    PROG_LIFT_22,
+    # PROG_LIFT_3,
+]
 
-def lift_program_for_slot(slot_index: int) -> str:
-    if slot_index < 0 or slot_index >= len(LIFT_PROGRAM_BY_SLOT):
+
+def lift_program_for_slot(slot_index: int, SN: int) -> str:
+    if slot_index < 0 or slot_index >= len(LIFT_SN1_PROGRAM_BY_SLOT) or slot_index >= len(LIFT_SN2_PROGRAM_BY_SLOT):
         raise IndexError(
-            f"slot_index {slot_index} out of range (0..{len(LIFT_PROGRAM_BY_SLOT) - 1})"
+            f"slot_index {slot_index} out of range"
         )
-    return LIFT_PROGRAM_BY_SLOT[slot_index]
+    if SN == 1:
+        return LIFT_SN1_PROGRAM_BY_SLOT[slot_index]
+    else:
+        return LIFT_SN2_PROGRAM_BY_SLOT[slot_index]
+    # return LIFT_PROGRAM_BY_SLOT[slot_index]
 
 
 

@@ -18,3 +18,282 @@
 [2026-05-28T11:20:52] auto loop stopped
 [2026-05-28T11:21:28] Disconnected.
 [2026-05-28T11:21:28] Gripper disconnected.
+[2026-05-28T11:26:33] Gripper connected on 'COM7'.
+[2026-05-28T11:26:35] Gripper open failed.
+[2026-05-28T11:26:37] Gripper open failed.
+[2026-05-28T11:26:54] Gripper connected on 'COM7'.
+[2026-05-28T13:38:50] auto loop started
+[2026-05-28T13:39:00] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T13:39:22] Cycle time: 30.467684268951416 seconds
+[2026-05-28T13:39:22] flow finished ok=True auto cycle done
+[2026-05-28T13:39:38] There is no parts in the basket, wait for 5s...
+[2026-05-28T14:28:43] Gripper connected on 'COM7'.
+[2026-05-28T14:28:44] Gripper close sent.
+[2026-05-28T14:28:47] Gripper close sent.
+[2026-05-28T14:28:50] Gripper open sent.
+[2026-05-28T14:28:51] Gripper close sent.
+[2026-05-28T14:32:08] Gripper open sent.
+[2026-05-28T14:52:41] auto loop started
+[2026-05-28T14:52:41] flow finished ok=False non-default argument follows default argument (flows/main_flow.py, line 45)
+[2026-05-28T14:52:41] auto loop stopped
+[2026-05-28T14:52:45] auto loop started
+[2026-05-28T14:52:45] flow finished ok=False non-default argument follows default argument (flows/main_flow.py, line 45)
+[2026-05-28T14:52:45] auto loop stopped
+[2026-05-28T14:54:09] auto loop started
+[2026-05-28T14:54:19] Place: slot_index=0 occupancy=[0, 0] program='demolift_21_0528'
+[2026-05-28T14:54:34] flow finished ok=False 作业运行中断: 碰撞/保护停止触发
+[2026-05-28T14:54:34] auto loop stopped
+[2026-05-28T14:54:41] auto stop requested
+[2026-05-28T14:54:47] Gripper connected on 'COM7'.
+[2026-05-28T14:54:48] Gripper open sent.
+[2026-05-28T15:17:38] Gripper close sent.
+[2026-05-28T15:21:46] Gripper open sent.
+[2026-05-28T15:22:54] Gripper close sent.
+[2026-05-28T15:24:11] Gripper open sent.
+[2026-05-28T15:25:15] Gripper close sent.
+[2026-05-28T15:27:24] Gripper open sent.
+[2026-05-28T15:28:42] Gripper close sent.
+[2026-05-28T15:30:36] Gripper open sent.
+[2026-05-28T15:31:35] Gripper close sent.
+[2026-05-28T15:32:09] Gripper open sent.
+[2026-05-28T15:34:21] Gripper close sent.
+[2026-05-28T15:59:59] Gripper open sent.
+[2026-05-28T16:04:10] Gripper close sent.
+[2026-05-28T16:06:18] Gripper open sent.
+[2026-05-28T16:09:09] Gripper close sent.
+[2026-05-28T16:10:09] Gripper open sent.
+[2026-05-28T16:13:42] Gripper close sent.
+[2026-05-28T16:13:45] Gripper close sent.
+[2026-05-28T16:14:23] Gripper open sent.
+[2026-05-28T16:15:33] Gripper close sent.
+[2026-05-28T16:16:02] Gripper open sent.
+[2026-05-28T16:17:01] Gripper close sent.
+[2026-05-28T16:19:28] Gripper open sent.
+[2026-05-28T16:20:19] Gripper close sent.
+[2026-05-28T16:20:50] Gripper open sent.
+[2026-05-28T16:23:37] Gripper close sent.
+[2026-05-28T16:25:18] Gripper open sent.
+[2026-05-28T16:28:57] Gripper disconnected.
+[2026-05-28T16:29:12] Disconnected.
+[2026-05-28T16:29:22] auto loop started
+[2026-05-28T16:29:27] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:29:35] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:29:43] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:29:51] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:29:57] auto stop requested
+[2026-05-28T16:29:58] flow finished ok=False Program wait cancelled by user.
+[2026-05-28T16:29:58] auto loop stopped
+[2026-05-28T16:30:15] auto loop started
+[2026-05-28T16:30:25] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:30:46] Cycle time: 30.217864990234375 seconds
+[2026-05-28T16:30:46] flow finished ok=True auto cycle done
+[2026-05-28T16:31:02] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:31:10] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:31:18] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:31:26] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:31:34] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:31:42] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:31:50] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:32:03] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:32:25] Cycle time: 86.31032085418701 seconds
+[2026-05-28T16:32:25] flow finished ok=True auto cycle done
+[2026-05-28T16:32:32] auto stop requested
+[2026-05-28T16:32:32] flow finished ok=False Program wait cancelled by user.
+[2026-05-28T16:32:32] auto loop stopped
+[2026-05-28T16:34:08] Gripper connected on 'COM7'.
+[2026-05-28T16:34:09] Gripper close sent.
+[2026-05-28T16:36:01] Gripper open sent.
+[2026-05-28T16:38:31] auto loop started
+[2026-05-28T16:38:32] flow finished ok=False 夹爪串口连接失败: COM7
+[2026-05-28T16:38:32] auto loop stopped
+[2026-05-28T16:38:38] Gripper close sent.
+[2026-05-28T16:39:06] Gripper open sent.
+[2026-05-28T16:40:28] auto loop started
+[2026-05-28T16:40:28] flow finished ok=False 夹爪串口连接失败: COM7
+[2026-05-28T16:40:28] auto loop stopped
+[2026-05-28T16:40:32] Gripper disconnected.
+[2026-05-28T16:40:34] auto loop started
+[2026-05-28T16:40:47] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:40:59] Cycle time: 17.97112774848938 seconds
+[2026-05-28T16:41:00] flow finished ok=True auto cycle done
+[2026-05-28T16:41:08] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:41:16] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:41:26] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:41:38] Cycle time: 33.51226186752319 seconds
+[2026-05-28T16:41:38] flow finished ok=True auto cycle done
+[2026-05-28T16:41:46] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:41:57] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:42:09] Cycle time: 25.757282733917236 seconds
+[2026-05-28T16:42:09] flow finished ok=True auto cycle done
+[2026-05-28T16:42:17] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:42:25] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:42:35] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:42:47] Cycle time: 33.63372230529785 seconds
+[2026-05-28T16:42:47] flow finished ok=True auto cycle done
+[2026-05-28T16:42:55] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:43:06] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:43:18] Cycle time: 25.706912517547607 seconds
+[2026-05-28T16:43:18] flow finished ok=True auto cycle done
+[2026-05-28T16:43:26] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:43:37] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:43:49] Cycle time: 25.808555841445923 seconds
+[2026-05-28T16:43:49] flow finished ok=True auto cycle done
+[2026-05-28T16:43:57] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:44:05] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:44:15] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:44:27] Cycle time: 33.70631647109985 seconds
+[2026-05-28T16:44:28] flow finished ok=True auto cycle done
+[2026-05-28T16:44:35] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:44:43] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:44:51] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:45:02] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:45:14] Cycle time: 41.778685331344604 seconds
+[2026-05-28T16:45:14] flow finished ok=True auto cycle done
+[2026-05-28T16:45:22] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:45:33] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:45:45] Cycle time: 25.76987075805664 seconds
+[2026-05-28T16:45:45] flow finished ok=True auto cycle done
+[2026-05-28T16:45:53] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:46:04] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:46:15] Cycle time: 25.618988752365112 seconds
+[2026-05-28T16:46:16] flow finished ok=True auto cycle done
+[2026-05-28T16:46:23] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:46:34] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:46:42] flow finished ok=False 作业运行中断: 碰撞/保护停止触发
+[2026-05-28T16:46:42] auto loop stopped
+[2026-05-28T16:46:53] auto stop requested
+[2026-05-28T16:46:57] Gripper connected on 'COM7'.
+[2026-05-28T16:46:57] Gripper open sent.
+[2026-05-28T16:46:59] Gripper open sent.
+[2026-05-28T16:47:47] Gripper disconnected.
+[2026-05-28T16:47:48] auto loop started
+[2026-05-28T16:47:59] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:48:11] Cycle time: 17.942814350128174 seconds
+[2026-05-28T16:48:11] flow finished ok=True auto cycle done
+[2026-05-28T16:48:19] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:48:30] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:48:42] Cycle time: 25.794533014297485 seconds
+[2026-05-28T16:48:42] flow finished ok=True auto cycle done
+[2026-05-28T16:48:50] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:49:01] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:49:13] Cycle time: 25.781822681427002 seconds
+[2026-05-28T16:49:13] flow finished ok=True auto cycle done
+[2026-05-28T16:49:24] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:49:35] Cycle time: 17.859184503555298 seconds
+[2026-05-28T16:49:36] flow finished ok=True auto cycle done
+[2026-05-28T16:49:46] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:49:58] Cycle time: 17.64871597290039 seconds
+[2026-05-28T16:49:58] flow finished ok=True auto cycle done
+[2026-05-28T16:50:06] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:50:14] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:50:25] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:50:37] Cycle time: 33.72807788848877 seconds
+[2026-05-28T16:50:37] flow finished ok=True auto cycle done
+[2026-05-28T16:50:45] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:50:53] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:51:04] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:51:16] Cycle time: 33.82305121421814 seconds
+[2026-05-28T16:51:16] flow finished ok=True auto cycle done
+[2026-05-28T16:51:24] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:51:34] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T16:51:46] Cycle time: 25.76133155822754 seconds
+[2026-05-28T16:51:47] flow finished ok=True auto cycle done
+[2026-05-28T16:51:54] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:52:02] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:52:11] There is no parts in the basket, wait for 5s...
+[2026-05-28T16:52:18] auto stop requested
+[2026-05-28T16:52:19] flow finished ok=False Program wait cancelled by user.
+[2026-05-28T16:52:19] auto loop stopped
+[2026-05-28T17:22:54] auto loop started
+[2026-05-28T17:23:01] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T17:23:13] Cycle time: 17.620171546936035 seconds
+[2026-05-28T17:23:13] flow finished ok=True auto cycle done
+[2026-05-28T17:23:19] There is no parts in the basket, wait for 5s...
+[2026-05-28T17:23:20] auto stop requested
+[2026-05-28T17:23:21] flow finished ok=False 流程被用户取消
+[2026-05-28T17:23:21] auto loop stopped
+[2026-05-28T17:25:31] auto loop started
+[2026-05-28T17:25:50] auto stop requested
+[2026-05-28T17:25:51] flow finished ok=False Program wait cancelled by user.
+[2026-05-28T17:25:51] auto loop stopped
+[2026-05-28T17:25:54] auto loop started
+[2026-05-28T17:26:01] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T17:26:13] Cycle time: 17.89767074584961 seconds
+[2026-05-28T17:26:13] flow finished ok=True auto cycle done
+[2026-05-28T17:26:19] There is no parts in the basket, wait for 5s...
+[2026-05-28T17:26:27] There is no parts in the basket, wait for 5s...
+[2026-05-28T17:26:38] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-28T17:26:49] Cycle time: 33.248363971710205 seconds
+[2026-05-28T17:26:49] flow finished ok=True auto cycle done
+[2026-05-28T17:26:55] There is no parts in the basket, wait for 5s...
+[2026-05-28T17:27:03] There is no parts in the basket, wait for 5s...
+[2026-05-28T17:27:09] auto stop requested
+[2026-05-28T17:27:10] flow finished ok=False Program wait cancelled by user.
+[2026-05-28T17:27:10] auto loop stopped
+[2026-05-29T11:29:26] Disconnected.
+[2026-05-29T11:29:26] Gripper disconnected.
+[2026-05-29T15:59:32] auto loop started
+[2026-05-29T15:59:40] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-29T15:59:47] flow finished ok=False 作业运行中断: 碰撞/保护停止触发
+[2026-05-29T15:59:47] auto loop stopped
+[2026-05-29T15:59:50] auto stop requested
+[2026-05-29T15:59:50] auto stop requested
+[2026-05-29T16:00:30] Gripper connected on 'COM7'.
+[2026-05-29T16:00:31] Gripper open failed.
+[2026-05-29T16:01:12] Gripper disconnected.
+[2026-05-29T16:01:19] auto loop started
+[2026-05-29T16:01:28] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-29T16:01:36] flow finished ok=False 作业运行中断: 碰撞/保护停止触发
+[2026-05-29T16:01:36] auto loop stopped
+[2026-05-29T16:01:42] auto stop requested
+[2026-05-29T16:01:43] auto stop requested
+[2026-05-29T16:01:46] Gripper connected on 'COM7'.
+[2026-05-29T16:01:47] Gripper open sent.
+[2026-05-29T16:01:49] Gripper disconnected.
+[2026-05-29T16:02:24] Gripper connected on 'COM7'.
+[2026-05-29T16:02:25] Gripper close sent.
+[2026-05-29T16:03:49] Gripper open sent.
+[2026-05-29T16:04:10] auto loop started
+[2026-05-29T16:04:10] flow finished ok=False 夹爪串口连接失败: COM7
+[2026-05-29T16:04:10] auto loop stopped
+[2026-05-29T16:04:14] Gripper disconnected.
+[2026-05-29T16:04:16] auto loop started
+[2026-05-29T16:04:25] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-29T16:04:32] flow finished ok=False 作业运行中断: 碰撞/保护停止触发
+[2026-05-29T16:04:32] auto loop stopped
+[2026-05-29T16:04:49] Gripper connected on 'COM7'.
+[2026-05-29T16:04:49] Gripper open sent.
+[2026-05-29T16:05:20] Gripper close sent.
+[2026-05-29T16:07:11] Gripper open sent.
+[2026-05-29T16:07:16] Gripper disconnected.
+[2026-05-29T16:07:29] auto loop started
+[2026-05-29T16:07:38] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-29T16:07:50] Cycle time: 17.28017783164978 seconds
+[2026-05-29T16:07:50] flow finished ok=True auto cycle done
+[2026-05-29T16:07:56] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:08:04] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:08:15] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-29T16:08:26] Cycle time: 33.07386374473572 seconds
+[2026-05-29T16:08:27] flow finished ok=True auto cycle done
+[2026-05-29T16:08:33] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-29T16:08:45] Cycle time: 15.231365203857422 seconds
+[2026-05-29T16:08:46] flow finished ok=True auto cycle done
+[2026-05-29T16:08:52] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:09:00] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:09:11] Place: slot_index=0 occupancy=[0, 0] program='demolift_1_0507'
+[2026-05-29T16:09:22] Cycle time: 33.4092800617218 seconds
+[2026-05-29T16:09:23] flow finished ok=True auto cycle done
+[2026-05-29T16:09:29] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:09:37] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:09:45] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:09:53] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:10:01] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:10:09] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:10:17] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:10:25] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:10:33] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:10:41] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:10:49] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:10:57] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:11:05] There is no parts in the basket, wait for 5s...
+[2026-05-29T16:11:13] There is no parts in the basket, wait for 5s...

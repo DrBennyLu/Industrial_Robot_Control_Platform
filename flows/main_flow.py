@@ -14,7 +14,7 @@ for _p in (_FLOW_DIR, _PROJECT_SRC):
 from jaka_app.config_loader import load_application_config
 from jaka_app.robot_controller import JakaRobotController, find_value_by_key
 from jaka_app.utils.logging_utils import add_log
-from PLCControl.modbus_control import ModbusController
+from PLCControl.modbus_control import loader_forward
 
 import robot_flow
 import slot_flow
@@ -22,6 +22,7 @@ import slot_flow
 _PROJECT_ROOT = _FLOW_DIR.parent
 _APPLICATION_YAML = _PROJECT_ROOT / "config" / "application.yaml"
 # FIRST_PICK = True
+SHEET_NUM = 1   # 对应两种不同钣金物料
 
 # 机器人 IP、夹爪串口见 application.yaml；柜内程序名见 robot_flow
 # 料盘全满时的放料等待（秒）；是否循环等待直到出现空位
@@ -41,7 +42,7 @@ def load_from_config() -> tuple[str, str, dict]:
     return ip, port, cfg
 
 
-def run_place_phase(arm: JakaRobotController, cfg: dict, cancel_event=None, ctx=None) -> int | None:
+def run_place_phase(arm: JakaRobotController, cfg: dict, SN: int, cancel_event=None, ctx=None) -> int | None:
     """
     放料阶段：有空位则 PROG_LIFT_n；料盘全满则仅 PROG_PICK 并等待。
 
@@ -58,7 +59,7 @@ def run_place_phase(arm: JakaRobotController, cfg: dict, cancel_event=None, ctx=
         occupancy = slot_flow.read_slot_io_fake(cfg)
         if not slot_flow.all_slots_full(occupancy):
             slot_index = slot_flow.find_first_empty_slot(occupancy)
-            prog = robot_flow.lift_program_for_slot(slot_index)
+            prog = robot_flow.lift_program_for_slot(slot_index, SN)
             add_log(
                 "Place: slot_index=%s occupancy=%s program=%r"
                 % (slot_index, occupancy, prog),
@@ -75,7 +76,10 @@ def run_place_phase(arm: JakaRobotController, cfg: dict, cancel_event=None, ctx=
         )
         if MOVE:
             robot_flow.pre_action_check(arm)
-            robot_flow.run_cabinet_program(arm, robot_flow.PROG_PICK_ONLY, cancel_event=cancel_event)
+            if SN == 1:
+                robot_flow.run_cabinet_program(arm, robot_flow.PROG_PICK_ONLY, cancel_event=cancel_event)
+            else:
+                robot_flow.run_cabinet_program(arm, robot_flow.PROG_PICK_ONLY2, cancel_event=cancel_event)
             MOVE = False
 
         if not PLACE_WAIT_UNTIL_EMPTY:
@@ -133,8 +137,13 @@ def main(ctx=None) -> None:
             # 检查取消信号
             if cancel_event and cancel_event.is_set():
                 raise RuntimeError("流程被用户取消")
-
-            robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC, cancel_event=cancel_event) #机器人程序内部判定是否已经完成预拍照动作，系统变量PRE_CAP
+            if SHEET_NUM == 1:
+                robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC, cancel_event=cancel_event) #机器人程序内部判定是否已经完成预拍照动作，系统变量PRE_CAP
+            elif SHEET_NUM == 2:
+                robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC2, cancel_event=cancel_event) # 对应2号物料
+            else:
+                add_log("物料错误", ctx=ctx)
+                break
             if robot_flow.get_sys_val(arm, "SYS_NO_PARTS") == 1:
                 add_log("There is no parts in the basket, wait for 5s...", ctx=ctx)
                 # 分段 sleep，每秒检查取消信号
@@ -148,20 +157,25 @@ def main(ctx=None) -> None:
         gripper.close()
 
         # 放置物料：有空位则 PROG_LIFT_n；全满则仅抓取并等待空位
-        run_place_phase(arm, cfg, cancel_event=cancel_event, ctx=ctx)
+        run_place_phase(arm, cfg, SN=SHEET_NUM, cancel_event=cancel_event, ctx=ctx)
 
 
         gripper.open()
 
         robot_flow.pre_action_check(arm)
-        robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE, cancel_event=cancel_event)
+        if SHEET_NUM == 1:
+            robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE, cancel_event=cancel_event)
+        else:
+            robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE2, cancel_event=cancel_event)
 
         robot_flow.pre_action_check(arm)
         # robot_flow.run_cabinet_program(arm, robot_flow.PROG_HOME)
 
-
         end_time = time.time()
         add_log(f"Cycle time: {end_time - start_time} seconds", ctx=ctx)
+        loader_forward()
+        add_log("loader forward one slot", ctx=ctx)
+
     finally:
         if gripper is not None and gripper.is_connected:
             gripper.disconnect()
