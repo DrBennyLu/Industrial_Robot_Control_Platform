@@ -56,7 +56,8 @@ def run_place_phase(arm: JakaRobotController, cfg: dict, SN: int, cancel_event=N
         if cancel_event and cancel_event.is_set():
             raise RuntimeError("流程被用户取消")
 
-        occupancy = slot_flow.read_slot_io_fake(cfg)
+        # occupancy = slot_flow.read_slot_io_fake(cfg)
+        occupancy = slot_flow.read_slot_io(cfg)
         if not slot_flow.all_slots_full(occupancy):
             slot_index = slot_flow.find_first_empty_slot(occupancy)
             prog = robot_flow.lift_program_for_slot(slot_index, SN)

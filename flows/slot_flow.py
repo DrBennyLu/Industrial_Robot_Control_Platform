@@ -1,10 +1,19 @@
 from __future__ import annotations
 
 from typing import Any, Sequence
+from PLCControl.modbus_control import find_empty_slot
+
 
 # 料槽占用：1=有料，0=空位可放置
 OCCUPIED = 1
 EMPTY = 0
+
+# 汇川easy521 寄存器 地址
+# X0-X1777: 0XF800-0XFBFF (63488-64511) 输入线圈
+# Y0-Y1777: 0XFC00-0XFFFF (64512-65535) 输出线圈
+
+INPUT_START_ADDR = 63497   #光电1： X11，0xF809, X16是到位信号,要排除
+INPUT_NUM = 7 # 输入点数
 
 
 def read_slot_io_fake(cfg: dict[str, Any]) -> list[int]:
@@ -16,6 +25,10 @@ def read_slot_io_fake(cfg: dict[str, Any]) -> list[int]:
     # raw[0] = input("Input slot IO 0: ")
     # raw[1] = input("Input slot IO 1: ")
     return _normalize_occupancy(raw)
+
+def read_slot_io(cfg: dict[str, Any]) -> list[int]:
+    # result= find_empty_slot()
+    return _normalize_occupancy(find_empty_slot())
 
 
 def _normalize_occupancy(raw: Any) -> list[int]:

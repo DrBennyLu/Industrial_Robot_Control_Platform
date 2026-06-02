@@ -1,12 +1,12 @@
 {
-  "cycle_total": 244,
-  "cycle_ok": 202,
-  "cycle_ng": 42,
-  "last_cycle_s": 37.059,
-  "avg_cycle_s": 34.647,
+  "cycle_total": 371,
+  "cycle_ok": 322,
+  "cycle_ng": 49,
+  "last_cycle_s": 28.385,
+  "avg_cycle_s": 30.568,
   "best_cycle_s": 15.855,
-  "yield_rate": 82.79,
-  "fail_reason": "",
-  "last_error": "",
-  "last_update": "2026-05-29T16:09:23"
+  "yield_rate": 86.79,
+  "fail_reason": "Program wait cancelled by user.",
+  "last_error": "Program wait cancelled by user.",
+  "last_update": "2026-06-02T09:53:30"
 }
