@@ -184,6 +184,7 @@ class RobotWorker(QObject):
         self._ctx.cancel_event.clear()
         self._ctx.set_run_state("MAIN_FLOW")
         try:
+            self._init_flow_session()
             self._run_flow_once_record_cycle(path, "main")
             self._ctx.set_run_state("IDLE")
             self.flow_finished.emit(True, "done")
@@ -191,6 +192,8 @@ class RobotWorker(QObject):
             logger.exception("flow")
             self._ctx.set_run_state("FAULT")
             self.flow_finished.emit(False, str(e))
+        finally:
+            self._teardown_flow_session()
 
     def _load_callable(self, path: str, func_name: str):
         spec = importlib.util.spec_from_file_location("user_main_flow", path)
@@ -234,23 +237,27 @@ class RobotWorker(QObject):
         self._auto_stop.clear()
 
         def loop() -> None:
-            # 无限循环：每次调用脚本的 main() 一次，间隔 interval_s，直到「停止全自动循环」
+            # 无限循环：init 一次后反复调用 main()，间隔 interval_s，直到停止
             self._ctx.set_run_state("AUTO_RUNNING")
             self.log_line.emit("auto loop started")
-            while not self._auto_stop.is_set():
-                try:
-                    self._run_flow_once_record_cycle(path, "main")
-                    self.flow_finished.emit(True, "auto cycle done")
-                except Exception as e:
-                    logger.exception("auto flow")
-                    self.flow_finished.emit(False, str(e))
-                    break
-                if self._auto_stop.is_set():
-                    break
-                if interval_s > 0:
-                    time.sleep(interval_s)
-            self._ctx.set_run_state("IDLE")
-            self.log_line.emit("auto loop stopped")
+            try:
+                self._init_flow_session()
+                while not self._auto_stop.is_set():
+                    try:
+                        self._run_flow_once_record_cycle(path, "main")
+                        self.flow_finished.emit(True, "auto cycle done")
+                    except Exception as e:
+                        logger.exception("auto flow")
+                        self.flow_finished.emit(False, str(e))
+                        break
+                    if self._auto_stop.is_set():
+                        break
+                    if interval_s > 0:
+                        time.sleep(interval_s)
+            finally:
+                self._teardown_flow_session()
+                self._ctx.set_run_state("IDLE")
+                self.log_line.emit("auto loop stopped")
 
         self._auto_thread = threading.Thread(target=loop, daemon=True)
         self._auto_thread.start()
@@ -326,6 +333,29 @@ class RobotWorker(QObject):
             if s not in sys.path:
                 sys.path.insert(0, s)
         return flows_dir
+
+    def _init_flow_session(self) -> None:
+        if self._ctx.flow_session_ready:
+            self._teardown_flow_session()
+        self._ensure_flows_import_path()
+        import init_flow
+
+        self.log_line.emit("Flow session init starting...")
+        init_flow.init_session(self._ctx, cancel_event=self._ctx.cancel_event)
+        self.log_line.emit("Flow session init done.")
+
+    def _teardown_flow_session(self) -> None:
+        if not (
+            self._ctx.flow_session_ready
+            or self._ctx.robot
+            or self._ctx.gripper
+            or self._ctx.force_sensor
+        ):
+            return
+        self._ensure_flows_import_path()
+        import init_flow
+
+        init_flow.teardown_session(self._ctx)
 
     @pyqtSlot(str)
     def slot_gripper_connect(self, port: str) -> None:

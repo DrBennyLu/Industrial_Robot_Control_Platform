@@ -109,80 +109,90 @@ def main(ctx=None) -> None:
         ctx: ApplicationContext 可选参数。如果提供，将支持取消操作。
              当用户点击停止按钮时，流程会响应取消信号并退出。
     """
-    # 提取取消事件（如果提供了 ctx）
     cancel_event = ctx.cancel_event if ctx else None
 
-    robot_ip, gripper_port, cfg = load_from_config()
-    arm = JakaRobotController(robot_ip)
-    gripper = None
-    try:
-        arm.connect()
+    if not ctx or not ctx.flow_session_ready or not ctx.robot or not ctx.gripper:
+        raise RuntimeError("请先执行 init 流程（由 GUI/Worker 自动调用 init_flow.init_session）")
+    arm = ctx.robot
+    gripper = ctx.gripper
+    _, _, cfg = load_from_config()
 
-        #
-
-        gripper = robot_flow.connect_gripper(gripper_port)
-
-        gripper.open()
-
-
-        #XXX:可以考虑把回零动作优化，前提是节拍明显不足
-        robot_flow.pre_action_check(arm)
-        robot_flow.run_cabinet_program(arm, robot_flow.PROG_HOME, cancel_event=cancel_event)
-
-        start_time = time.time()
-        # robot_flow.pre_action_check(arm)
-        # robot_flow.run_cabinet_program(arm, robot_flow.PROG_PICK)
-        # if FIRST_PICK == True:
-        robot_flow.pre_action_check(arm)
-        while True:
-            # 检查取消信号
-            if cancel_event and cancel_event.is_set():
-                raise RuntimeError("流程被用户取消")
-            if SHEET_NUM == 1:
-                robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC, cancel_event=cancel_event) #机器人程序内部判定是否已经完成预拍照动作，系统变量PRE_CAP
-            elif SHEET_NUM == 2:
-                robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC2, cancel_event=cancel_event) # 对应2号物料
-            else:
-                add_log("物料错误", ctx=ctx)
-                break
-            if robot_flow.get_sys_val(arm, "SYS_NO_PARTS") == 1:
-                add_log("There is no parts in the basket, wait for 5s...", ctx=ctx)
-                # 分段 sleep，每秒检查取消信号
-                for _ in range(5):
-                    if cancel_event and cancel_event.is_set():
-                        raise RuntimeError("流程被用户取消")
-                    time.sleep(1.0)
-            else:
-                break
-
-        gripper.close()
-
-        # 放置物料：有空位则 PROG_LIFT_n；全满则仅抓取并等待空位
-        run_place_phase(arm, cfg, SN=SHEET_NUM, cancel_event=cancel_event, ctx=ctx)
-
-
-        gripper.open()
-
-        robot_flow.pre_action_check(arm)
+    start_time = time.time()
+    # robot_flow.pre_action_check(arm)
+    # robot_flow.run_cabinet_program(arm, robot_flow.PROG_PICK)
+    # if FIRST_PICK == True:
+    robot_flow.pre_action_check(arm)
+    while True:
+        # 检查取消信号
+        if cancel_event and cancel_event.is_set():
+            raise RuntimeError("流程被用户取消")
         if SHEET_NUM == 1:
-            robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE, cancel_event=cancel_event)
+            add_log("抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC ", ctx=ctx)
+            robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC, cancel_event=cancel_event) #机器人程序内部判定是否已经完成预拍照动作，系统变量PRE_CAP
+        elif SHEET_NUM == 2:
+            add_log("抓取目标为2号钣金物料, 执行程序：PROG_FIRST_PICK_PRC2 ", ctx=ctx)
+            robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC2, cancel_event=cancel_event) # 对应2号物料
         else:
-            robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE2, cancel_event=cancel_event)
+            add_log("物料错误", ctx=ctx)
+            break
+        # 如果料框是空的，则等待10秒重新拍照。
+        # TODO： 后续，可以加入agv将料放好之后，开始取料的信号同时判断，开始流程。
+        if robot_flow.get_sys_val(arm, "SYS_NO_PARTS") == 1:
+            add_log("There is no parts in the basket, wait for 10s...", ctx=ctx)
+            # 分段 sleep，每秒检查取消信号
+            for _ in range(10):
+                if cancel_event and cancel_event.is_set():
+                    raise RuntimeError("流程被用户取消")
+                time.sleep(1.0)
+        else:
+            break
 
-        robot_flow.pre_action_check(arm)
-        # robot_flow.run_cabinet_program(arm, robot_flow.PROG_HOME)
+    gripper.close()
 
-        end_time = time.time()
-        add_log(f"Cycle time: {end_time - start_time} seconds", ctx=ctx)
-        loader_forward()
-        add_log("loader forward one slot", ctx=ctx)
+    # 放置物料：有空位则 PROG_LIFT_n；全满则仅抓取并等待空位
+    run_place_phase(arm, cfg, SN=SHEET_NUM, cancel_event=cancel_event, ctx=ctx)
 
-    finally:
-        if gripper is not None and gripper.is_connected:
-            gripper.disconnect()
-        arm.disconnect()
+    robot_flow.pre_action_check(arm)
+    # 阻塞：力控伺服结束（|Fx|>阈值）后才继续
+    robot_flow.force_servo_control(
+        arm,
+        cfg=cfg,
+        cancel_event=cancel_event,
+        ctx=ctx,
+        sensor=ctx.force_sensor,
+    )
+    add_log("Force servo done, opening gripper", ctx=ctx)
 
+    gripper.open()
+
+    robot_flow.pre_action_check(arm)
+    if SHEET_NUM == 1:
+        add_log("抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE ", ctx=ctx)
+        robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE, cancel_event=cancel_event)
+    else:
+        add_log("抓取目标为2号钣金物料, 执行程序：PROG_AFTER_PLACE2 ", ctx=ctx)
+        robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE2, cancel_event=cancel_event)
+
+    # robot_flow.pre_action_check(arm)
+    # robot_flow.run_cabinet_program(arm, robot_flow.PROG_HOME)
+
+    end_time = time.time()
+    add_log(f"Cycle time: {end_time - start_time} seconds", ctx=ctx)
+
+
+    # 向前推传送带
+    # loader_forward()
+    # add_log("loader forward one slot", ctx=ctx)
 
 
 if __name__ == "__main__":
-    main()
+    import init_flow
+    from jaka_app.context import build_application_context
+
+    cfg = load_application_config(_APPLICATION_YAML)
+    _ctx = build_application_context(cfg)
+    try:
+        init_flow.init_session(_ctx)
+        main(ctx=_ctx)
+    finally:
+        init_flow.teardown_session(_ctx)

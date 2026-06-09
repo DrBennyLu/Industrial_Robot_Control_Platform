@@ -99,6 +99,10 @@ class JakaRobotController:
     def ip(self) -> str:
         return self._ip
 
+    @property
+    def is_connected(self) -> bool:
+        return self._rc is not None
+
     def connect(self, power_on: bool = False, enable: bool = False) -> None:
         jk = _require_jkrc()
         with self.motion_lock:
@@ -230,6 +234,37 @@ class JakaRobotController:
     def linear_move_abs(self, tcp_pose: list[float], speed_mm_s: float, blocking: bool = True) -> None:
         with self.motion_lock:
             _check(self._ensure_rc().linear_move(tcp_pose, ABS, blocking, speed_mm_s), "linear_move")
+
+    def linear_move_incr(
+        self,
+        tcp_delta: list[float],
+        speed_mm_s: float,
+        blocking: bool = True,
+    ) -> None:
+        """相对直线运动（INCR），tcp_delta 为 [x,y,z,rx,ry,rz] 增量，单位 mm / rad。"""
+        is_block = 1 if blocking else 0
+        with self.motion_lock:
+            _check(
+                self._ensure_rc().linear_move(tcp_delta, INCR, is_block, speed_mm_s),
+                "linear_move",
+            )
+
+    def wait_in_position(
+        self,
+        timeout_s: float = 120.0,
+        poll_s: float = 0.05,
+        cancel_event: threading.Event | None = None,
+    ) -> None:
+        """阻塞直到机器人到位（inpos==1）或超时/取消。"""
+        deadline = time.time() + timeout_s
+        while time.time() < deadline:
+            if cancel_event and cancel_event.is_set():
+                raise RuntimeError("等待机器人到位被取消")
+            snap = self.snapshot_status()
+            if snap.inpos == 1:
+                return
+            time.sleep(poll_s)
+        raise TimeoutError(f"机器人未在 {timeout_s:.1f}s 内到位")
 
     def jog_once(
         self,

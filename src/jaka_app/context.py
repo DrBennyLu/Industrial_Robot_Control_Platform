@@ -10,6 +10,7 @@ from typing import TYPE_CHECKING, Any, Callable
 
 if TYPE_CHECKING:
     from DHGripper.DHController import GripperController
+    from ForceSensor.FS_reader import KunweiForceSensor
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +38,8 @@ class ApplicationContext:
     config: dict[str, Any]
     robot: JakaRobotController | None = None
     gripper: GripperController | None = None
+    force_sensor: KunweiForceSensor | None = None
+    flow_session_ready: bool = False
     teach: TeachPointStore = field(default_factory=TeachPointStore)
     io: IODeviceFacade = field(default_factory=NoOpIODeviceFacade)
     line: LineEquipmentFacade = field(default_factory=NoOpLineEquipmentFacade)
@@ -217,6 +220,36 @@ class ApplicationContext:
                 f.write(json.dumps(line, ensure_ascii=False) + "\n")
         except OSError as e:
             logger.warning("追加节拍历史失败 %s: %s", path, e)
+
+    def get_flow_device_snapshot(self) -> dict[str, Any]:
+        """机器人 / 夹爪 / 力传感器连接状态，供主流程页 UI 刷新。"""
+        robot_connected = self.robot is not None and self.robot.is_connected
+
+        gripper_state = "disconnected"
+        if self.gripper is not None:
+            if self.gripper.is_connected and self.gripper.is_initialized:
+                gripper_state = "connected"
+            elif self.gripper.is_connected:
+                gripper_state = "not_initialized"
+
+        force_state = "disconnected"
+        if self.force_sensor is not None:
+            status = getattr(self.force_sensor, "status", None)
+            if status is not None:
+                name = getattr(status, "value", str(status))
+                if name == "monitoring":
+                    force_state = "monitoring"
+                elif name == "connected":
+                    force_state = "connected"
+                elif name == "error":
+                    force_state = "error"
+
+        return {
+            "robot": "connected" if robot_connected else "disconnected",
+            "gripper": gripper_state,
+            "force_sensor": force_state,
+            "session_ready": self.flow_session_ready,
+        }
 
     def get_production_snapshot(self) -> dict[str, Any]:
         with self.stats_lock:

@@ -1,12 +1,12 @@
 {
-  "cycle_total": 371,
-  "cycle_ok": 322,
-  "cycle_ng": 49,
-  "last_cycle_s": 28.385,
-  "avg_cycle_s": 30.568,
+  "cycle_total": 1075,
+  "cycle_ok": 940,
+  "cycle_ng": 135,
+  "last_cycle_s": 6.41,
+  "avg_cycle_s": 27.124,
   "best_cycle_s": 15.855,
-  "yield_rate": 86.79,
-  "fail_reason": "Program wait cancelled by user.",
-  "last_error": "Program wait cancelled by user.",
-  "last_update": "2026-06-02T09:53:30"
+  "yield_rate": 87.44,
+  "fail_reason": "作业运行中断: 急停已触发",
+  "last_error": "作业运行中断: 急停已触发",
+  "last_update": "2026-06-09T10:15:48"
 }

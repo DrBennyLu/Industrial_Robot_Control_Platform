@@ -5,6 +5,20 @@ robot:
 gripper:
   port: "COM7"
 
+# 坤维 KWR75B 力传感器（力控伺服）
+force_sensor:
+  port: "COM8"
+  fx_threshold_n: 40
+  step_mm: 1
+  speed_mm_s: 15
+  filter_window_size: 5
+  send_start_command: false
+  max_steps: 500
+  sensor_ready_timeout_s: 10
+  settle_after_move_s: 0.01
+  motion_timeout_s: 60
+  over_threshold_confirm: 2
+
 # 料槽 IO 假读：1=有料，0=可放置（后续接传感器）
 slot_io: [0, 1]
 

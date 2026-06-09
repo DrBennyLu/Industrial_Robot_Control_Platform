@@ -384,6 +384,23 @@ class MainWindow(QWidget):
         row2.addWidget(QLabel("循环间隔(s)"))
         row2.addWidget(self.ed_auto_interval)
         v.addLayout(row2)
+
+        dev_box = QGroupBox("设备连接状态")
+        dev_grid = QGridLayout(dev_box)
+        self._auto_robot_dot, self.lbl_auto_robot_status = self._make_device_status_row("机器人")
+        self._auto_gripper_dot, self.lbl_auto_gripper_status = self._make_device_status_row("夹爪")
+        self._auto_force_dot, self.lbl_auto_force_status = self._make_device_status_row("力传感器")
+        dev_grid.addWidget(QLabel("机器人"), 0, 0)
+        dev_grid.addWidget(self._auto_robot_dot, 0, 1)
+        dev_grid.addWidget(self.lbl_auto_robot_status, 0, 2)
+        dev_grid.addWidget(QLabel("夹爪"), 1, 0)
+        dev_grid.addWidget(self._auto_gripper_dot, 1, 1)
+        dev_grid.addWidget(self.lbl_auto_gripper_status, 1, 2)
+        dev_grid.addWidget(QLabel("力传感器"), 2, 0)
+        dev_grid.addWidget(self._auto_force_dot, 2, 1)
+        dev_grid.addWidget(self.lbl_auto_force_status, 2, 2)
+        v.addWidget(dev_box)
+
         auto_box = QGroupBox("自动运行统计（CT/良率）")
         ag = QFormLayout(auto_box)
         self.lbl_auto_state = QLabel("-")
@@ -464,8 +481,64 @@ class MainWindow(QWidget):
             logger.warning(f"保存日志文件失败: {e}")
 
 
+    def _make_device_status_row(self, _name: str) -> tuple[QFrame, QLabel]:
+        dot = QFrame()
+        dot.setFixedSize(12, 12)
+        dot.setStyleSheet("background-color: #616161; border-radius: 6px;")
+        label = QLabel("未连接")
+        label.setStyleSheet("color: #616161;")
+        return dot, label
+
+    def _set_device_status_display(
+        self,
+        dot: QFrame,
+        label: QLabel,
+        text: str,
+        color: str,
+    ) -> None:
+        label.setText(text)
+        label.setStyleSheet("color: %s; font-weight: bold;" % color)
+        dot.setStyleSheet("background-color: %s; border-radius: 6px;" % color)
+
+    def _sync_device_status_from_ctx(self) -> None:
+        snap = self._ctx.get_flow_device_snapshot()
+
+        robot = snap.get("robot", "disconnected")
+        if robot == "connected":
+            self._set_device_status_display(
+                self._auto_robot_dot, self.lbl_auto_robot_status, "已连接", "#2e7d32"
+            )
+        else:
+            self._set_device_status_display(
+                self._auto_robot_dot, self.lbl_auto_robot_status, "未连接", "#616161"
+            )
+
+        gripper = snap.get("gripper", "disconnected")
+        if gripper == "connected":
+            self._set_device_status_display(
+                self._auto_gripper_dot, self.lbl_auto_gripper_status, "已连接", "#2e7d32"
+            )
+        elif gripper == "not_initialized":
+            self._set_device_status_display(
+                self._auto_gripper_dot, self.lbl_auto_gripper_status, "未初始化", "#ef6c00"
+            )
+        else:
+            self._set_device_status_display(
+                self._auto_gripper_dot, self.lbl_auto_gripper_status, "未连接", "#616161"
+            )
+
+        force = snap.get("force_sensor", "disconnected")
+        force_map = {
+            "monitoring": ("监测中", "#2e7d32"),
+            "connected": ("已连接", "#1565c0"),
+            "error": ("故障", "#c62828"),
+        }
+        text, color = force_map.get(force, ("未连接", "#616161"))
+        self._set_device_status_display(self._auto_force_dot, self.lbl_auto_force_status, text, color)
+
     def _on_ui_tick(self) -> None:
         self._sync_production_from_ctx()
+        self._sync_device_status_from_ctx()
         self.req_status.emit()
 
     def _sync_production_from_ctx(self) -> None:
