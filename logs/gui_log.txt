@@ -7139,3 +7139,1645 @@
 [2026-06-09T10:19:12] Gripper open sent.
 [2026-06-09T10:35:39] Disconnected.
 [2026-06-09T10:35:39] Gripper disconnected.
+[2026-06-09T10:40:22] flow finished ok=True home done
+[2026-06-09T10:40:40] Connected to robot.
+[2026-06-09T10:40:43] Recorded teach point 'HOME'
+[2026-06-09T10:40:54] Disconnected.
+[2026-06-09T10:40:57] flow finished ok=False 机器人未使能
+[2026-06-09T10:41:08] flow finished ok=True home done
+[2026-06-09T10:41:09] auto loop started
+[2026-06-09T10:41:09] Flow session init starting...
+[2026-06-09T10:41:09] Init: connecting robot 169.254.5.10
+[2026-06-09T10:41:09] Init: connecting gripper COM7
+[2026-06-09T10:41:10] Init: connecting force sensor
+[2026-06-09T10:41:10] Force sensor: connecting port=COM8
+[2026-06-09T10:41:10] Force sensor data ready
+[2026-06-09T10:41:10] Init: running PROG_VARREST 
+[2026-06-09T10:41:10] Init: running PROG_HOME
+[2026-06-09T10:41:16] Init: session ready
+[2026-06-09T10:41:16] Flow session init done.
+[2026-06-09T10:41:16] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:41:21] flow finished ok=False 作业运行中断: 急停已触发
+[2026-06-09T10:41:21] Flow session torn down, devices disconnected.
+[2026-06-09T10:41:21] auto loop stopped
+[2026-06-09T10:44:56] flow finished ok=True home done
+[2026-06-09T10:44:59] auto loop started
+[2026-06-09T10:44:59] Flow session init starting...
+[2026-06-09T10:45:00] Init: connecting robot 169.254.5.10
+[2026-06-09T10:45:00] Init: connecting gripper COM7
+[2026-06-09T10:45:00] Init: connecting force sensor
+[2026-06-09T10:45:00] Force sensor: connecting port=COM8
+[2026-06-09T10:45:00] Force sensor data ready
+[2026-06-09T10:45:01] Init: running PROG_VARREST 
+[2026-06-09T10:45:01] Init: running PROG_HOME
+[2026-06-09T10:45:06] Init: session ready
+[2026-06-09T10:45:06] Flow session init done.
+[2026-06-09T10:45:06] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:45:13] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T10:45:27] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:45:30] Force servo stop: |Fx|=55.88N > 40.00N after 9 steps
+[2026-06-09T10:45:30] Force servo finished
+[2026-06-09T10:45:30] Force servo done, opening gripper
+[2026-06-09T10:45:30] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:45:34] Cycle time: 27.554158687591553 seconds
+[2026-06-09T10:45:34] flow finished ok=True auto cycle done
+[2026-06-09T10:45:34] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:45:38] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T10:45:47] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:45:51] Force servo stop: |Fx|=62.66N > 40.00N after 12 steps
+[2026-06-09T10:45:51] Force servo finished
+[2026-06-09T10:45:51] Force servo done, opening gripper
+[2026-06-09T10:45:51] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:45:55] Cycle time: 21.000921964645386 seconds
+[2026-06-09T10:45:55] flow finished ok=True auto cycle done
+[2026-06-09T10:45:55] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:45:58] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T10:46:08] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:46:14] Force servo stop: |Fx|=54.38N > 40.00N after 19 steps
+[2026-06-09T10:46:14] Force servo finished
+[2026-06-09T10:46:14] Force servo done, opening gripper
+[2026-06-09T10:46:14] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:46:17] Cycle time: 22.216175317764282 seconds
+[2026-06-09T10:46:17] flow finished ok=True auto cycle done
+[2026-06-09T10:46:17] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:46:21] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T10:46:30] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:46:34] Force servo stop: |Fx|=46.97N > 40.00N after 14 steps
+[2026-06-09T10:46:34] Force servo finished
+[2026-06-09T10:46:34] Force servo done, opening gripper
+[2026-06-09T10:46:35] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:46:38] Cycle time: 20.740812063217163 seconds
+[2026-06-09T10:46:38] flow finished ok=True auto cycle done
+[2026-06-09T10:46:38] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:46:42] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T10:46:51] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:46:56] Force servo stop: |Fx|=58.96N > 40.00N after 14 steps
+[2026-06-09T10:46:56] Force servo finished
+[2026-06-09T10:46:56] Force servo done, opening gripper
+[2026-06-09T10:46:56] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:46:59] Cycle time: 21.477198600769043 seconds
+[2026-06-09T10:46:59] flow finished ok=True auto cycle done
+[2026-06-09T10:46:59] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:47:03] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T10:47:13] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:47:16] Force servo stop: |Fx|=54.13N > 40.00N after 11 steps
+[2026-06-09T10:47:16] Force servo finished
+[2026-06-09T10:47:16] Force servo done, opening gripper
+[2026-06-09T10:47:16] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:47:20] Cycle time: 20.468536615371704 seconds
+[2026-06-09T10:47:20] flow finished ok=True auto cycle done
+[2026-06-09T10:47:20] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:47:24] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:47:28] Waiting 5.0s for empty slot...
+[2026-06-09T10:47:33] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T10:47:41] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:47:44] Force servo stop: |Fx|=50.16N > 40.00N after 11 steps
+[2026-06-09T10:47:44] Force servo finished
+[2026-06-09T10:47:44] Force servo done, opening gripper
+[2026-06-09T10:47:44] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:47:48] Cycle time: 28.246092796325684 seconds
+[2026-06-09T10:47:48] flow finished ok=True auto cycle done
+[2026-06-09T10:47:48] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:47:52] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:47:57] Waiting 5.0s for empty slot...
+[2026-06-09T10:48:02] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:48:02] Waiting 5.0s for empty slot...
+[2026-06-09T10:48:07] Place: slot_index=0 occupancy=[0, 1, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T10:48:15] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:48:18] Force servo stop: |Fx|=64.39N > 40.00N after 9 steps
+[2026-06-09T10:48:18] Force servo finished
+[2026-06-09T10:48:18] Force servo done, opening gripper
+[2026-06-09T10:48:18] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:48:22] Cycle time: 33.63969349861145 seconds
+[2026-06-09T10:48:22] flow finished ok=True auto cycle done
+[2026-06-09T10:48:22] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:48:25] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T10:48:34] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:48:39] Force servo stop: |Fx|=64.17N > 40.00N after 16 steps
+[2026-06-09T10:48:39] Force servo finished
+[2026-06-09T10:48:39] Force servo done, opening gripper
+[2026-06-09T10:48:39] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:48:42] Cycle time: 20.561028242111206 seconds
+[2026-06-09T10:48:42] flow finished ok=True auto cycle done
+[2026-06-09T10:48:42] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:48:46] Place: slot_index=0 occupancy=[0, 1, 1, 1, 0, 0] program='demolift_6_0529'
+[2026-06-09T10:48:56] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:49:00] Force servo stop: |Fx|=57.49N > 40.00N after 10 steps
+[2026-06-09T10:49:00] Force servo finished
+[2026-06-09T10:49:00] Force servo done, opening gripper
+[2026-06-09T10:49:00] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:49:03] Cycle time: 21.14898443222046 seconds
+[2026-06-09T10:49:03] flow finished ok=True auto cycle done
+[2026-06-09T10:49:03] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:49:07] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T10:49:16] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:49:22] Force servo stop: |Fx|=62.86N > 40.00N after 19 steps
+[2026-06-09T10:49:22] Force servo finished
+[2026-06-09T10:49:22] Force servo done, opening gripper
+[2026-06-09T10:49:22] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:49:25] Cycle time: 21.71237874031067 seconds
+[2026-06-09T10:49:25] flow finished ok=True auto cycle done
+[2026-06-09T10:49:25] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:49:29] Place: slot_index=0 occupancy=[0, 1, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T10:49:39] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:49:42] Force servo stop: |Fx|=56.22N > 40.00N after 11 steps
+[2026-06-09T10:49:42] Force servo finished
+[2026-06-09T10:49:42] Force servo done, opening gripper
+[2026-06-09T10:49:42] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:49:46] Cycle time: 20.884223699569702 seconds
+[2026-06-09T10:49:46] flow finished ok=True auto cycle done
+[2026-06-09T10:49:46] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:49:50] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T10:50:00] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:50:06] Force servo stop: |Fx|=54.97N > 40.00N after 20 steps
+[2026-06-09T10:50:06] Force servo finished
+[2026-06-09T10:50:06] Force servo done, opening gripper
+[2026-06-09T10:50:06] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:50:09] Cycle time: 23.270811080932617 seconds
+[2026-06-09T10:50:09] flow finished ok=True auto cycle done
+[2026-06-09T10:50:09] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:50:13] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T10:50:23] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:50:27] Force servo stop: |Fx|=57.24N > 40.00N after 15 steps
+[2026-06-09T10:50:27] Force servo finished
+[2026-06-09T10:50:27] Force servo done, opening gripper
+[2026-06-09T10:50:27] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:50:31] Cycle time: 21.35607933998108 seconds
+[2026-06-09T10:50:31] flow finished ok=True auto cycle done
+[2026-06-09T10:50:31] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:50:35] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T10:50:44] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:50:48] Force servo stop: |Fx|=54.18N > 40.00N after 14 steps
+[2026-06-09T10:50:48] Force servo finished
+[2026-06-09T10:50:48] Force servo done, opening gripper
+[2026-06-09T10:50:48] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:50:52] Cycle time: 20.950825929641724 seconds
+[2026-06-09T10:50:52] flow finished ok=True auto cycle done
+[2026-06-09T10:50:52] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:50:56] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T10:51:05] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:51:09] Force servo stop: |Fx|=59.81N > 40.00N after 12 steps
+[2026-06-09T10:51:09] Force servo finished
+[2026-06-09T10:51:09] Force servo done, opening gripper
+[2026-06-09T10:51:09] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:51:12] Cycle time: 20.81462001800537 seconds
+[2026-06-09T10:51:12] flow finished ok=True auto cycle done
+[2026-06-09T10:51:13] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:51:17] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T10:51:26] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:51:29] Force servo stop: |Fx|=65.39N > 40.00N after 9 steps
+[2026-06-09T10:51:29] Force servo finished
+[2026-06-09T10:51:29] Force servo done, opening gripper
+[2026-06-09T10:51:29] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:51:33] Cycle time: 20.214404106140137 seconds
+[2026-06-09T10:51:33] flow finished ok=True auto cycle done
+[2026-06-09T10:51:33] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:51:38] Place: slot_index=0 occupancy=[0, 0, 0, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T10:51:49] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:51:52] Force servo stop: |Fx|=59.06N > 40.00N after 10 steps
+[2026-06-09T10:51:52] Force servo finished
+[2026-06-09T10:51:52] Force servo done, opening gripper
+[2026-06-09T10:51:52] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:51:55] Cycle time: 22.900519371032715 seconds
+[2026-06-09T10:51:55] flow finished ok=True auto cycle done
+[2026-06-09T10:51:56] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:52:01] Place: slot_index=1 occupancy=[1, 0, 0, 1, 1, 1] program='demolift_5_0529'
+[2026-06-09T10:52:12] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:52:16] Force servo stop: |Fx|=54.98N > 40.00N after 14 steps
+[2026-06-09T10:52:16] Force servo finished
+[2026-06-09T10:52:16] Force servo done, opening gripper
+[2026-06-09T10:52:16] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:52:19] Cycle time: 23.764715671539307 seconds
+[2026-06-09T10:52:19] flow finished ok=True auto cycle done
+[2026-06-09T10:52:19] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:52:26] Place: slot_index=2 occupancy=[1, 1, 0, 1, 1, 1] program='demolift_4_0529'
+[2026-06-09T10:52:37] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:52:41] Force servo stop: |Fx|=62.09N > 40.00N after 16 steps
+[2026-06-09T10:52:41] Force servo finished
+[2026-06-09T10:52:41] Force servo done, opening gripper
+[2026-06-09T10:52:42] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:52:45] Cycle time: 25.35318946838379 seconds
+[2026-06-09T10:52:45] flow finished ok=True auto cycle done
+[2026-06-09T10:52:45] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:52:50] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:52:53] Waiting 5.0s for empty slot...
+[2026-06-09T10:52:58] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:52:58] Waiting 5.0s for empty slot...
+[2026-06-09T10:53:03] Place: slot_index=0 occupancy=[0, 0, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T10:53:12] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:53:15] Force servo stop: |Fx|=58.82N > 40.00N after 11 steps
+[2026-06-09T10:53:15] Force servo finished
+[2026-06-09T10:53:15] Force servo done, opening gripper
+[2026-06-09T10:53:15] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:53:19] Cycle time: 34.17033863067627 seconds
+[2026-06-09T10:53:19] flow finished ok=True auto cycle done
+[2026-06-09T10:53:19] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:53:23] Place: slot_index=1 occupancy=[1, 0, 1, 1, 0, 0] program='demolift_5_0529'
+[2026-06-09T10:53:33] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:53:36] Force servo stop: |Fx|=46.86N > 40.00N after 11 steps
+[2026-06-09T10:53:36] Force servo finished
+[2026-06-09T10:53:36] Force servo done, opening gripper
+[2026-06-09T10:53:36] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:53:40] Cycle time: 20.828860998153687 seconds
+[2026-06-09T10:53:40] flow finished ok=True auto cycle done
+[2026-06-09T10:53:40] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:53:44] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T10:53:53] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:53:59] Force servo stop: |Fx|=56.47N > 40.00N after 18 steps
+[2026-06-09T10:53:59] Force servo finished
+[2026-06-09T10:53:59] Force servo done, opening gripper
+[2026-06-09T10:53:59] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:54:02] Cycle time: 22.250797748565674 seconds
+[2026-06-09T10:54:02] flow finished ok=True auto cycle done
+[2026-06-09T10:54:02] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:54:06] Place: slot_index=0 occupancy=[0, 0, 1, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T10:54:15] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:54:19] Force servo stop: |Fx|=54.36N > 40.00N after 12 steps
+[2026-06-09T10:54:19] Force servo finished
+[2026-06-09T10:54:19] Force servo done, opening gripper
+[2026-06-09T10:54:19] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:54:23] Cycle time: 20.76815366744995 seconds
+[2026-06-09T10:54:23] flow finished ok=True auto cycle done
+[2026-06-09T10:54:23] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:54:26] Place: slot_index=1 occupancy=[1, 0, 1, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T10:54:36] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:54:40] Force servo stop: |Fx|=61.27N > 40.00N after 13 steps
+[2026-06-09T10:54:40] Force servo finished
+[2026-06-09T10:54:40] Force servo done, opening gripper
+[2026-06-09T10:54:40] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:54:43] Cycle time: 20.577327728271484 seconds
+[2026-06-09T10:54:43] flow finished ok=True auto cycle done
+[2026-06-09T10:54:43] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:54:47] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T10:54:56] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:55:00] Force servo stop: |Fx|=59.41N > 40.00N after 13 steps
+[2026-06-09T10:55:00] Force servo finished
+[2026-06-09T10:55:00] Force servo done, opening gripper
+[2026-06-09T10:55:01] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:55:04] Cycle time: 20.498297929763794 seconds
+[2026-06-09T10:55:04] flow finished ok=True auto cycle done
+[2026-06-09T10:55:04] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:55:08] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T10:55:16] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:55:20] Force servo stop: |Fx|=54.67N > 40.00N after 12 steps
+[2026-06-09T10:55:20] Force servo finished
+[2026-06-09T10:55:20] Force servo done, opening gripper
+[2026-06-09T10:55:21] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:55:24] Cycle time: 20.006762504577637 seconds
+[2026-06-09T10:55:24] flow finished ok=True auto cycle done
+[2026-06-09T10:55:24] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:55:28] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T10:55:37] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:55:40] Force servo stop: |Fx|=53.72N > 40.00N after 10 steps
+[2026-06-09T10:55:40] Force servo finished
+[2026-06-09T10:55:40] Force servo done, opening gripper
+[2026-06-09T10:55:41] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:55:44] Cycle time: 20.301589012145996 seconds
+[2026-06-09T10:55:44] flow finished ok=True auto cycle done
+[2026-06-09T10:55:44] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:55:48] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T10:55:57] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:56:01] Force servo stop: |Fx|=53.97N > 40.00N after 11 steps
+[2026-06-09T10:56:01] Force servo finished
+[2026-06-09T10:56:01] Force servo done, opening gripper
+[2026-06-09T10:56:01] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:56:04] Cycle time: 20.11463689804077 seconds
+[2026-06-09T10:56:04] flow finished ok=True auto cycle done
+[2026-06-09T10:56:04] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:56:09] Place: slot_index=0 occupancy=[0, 0, 0, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T10:56:19] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:56:23] Force servo stop: |Fx|=67.39N > 40.00N after 12 steps
+[2026-06-09T10:56:23] Force servo finished
+[2026-06-09T10:56:23] Force servo done, opening gripper
+[2026-06-09T10:56:23] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:56:27] Cycle time: 22.424829959869385 seconds
+[2026-06-09T10:56:27] flow finished ok=True auto cycle done
+[2026-06-09T10:56:27] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:56:32] Place: slot_index=1 occupancy=[1, 0, 0, 1, 1, 1] program='demolift_5_0529'
+[2026-06-09T10:56:43] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:56:46] Force servo stop: |Fx|=64.83N > 40.00N after 11 steps
+[2026-06-09T10:56:46] Force servo finished
+[2026-06-09T10:56:46] Force servo done, opening gripper
+[2026-06-09T10:56:46] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:56:50] Cycle time: 22.921571016311646 seconds
+[2026-06-09T10:56:50] flow finished ok=True auto cycle done
+[2026-06-09T10:56:50] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:56:54] Place: slot_index=2 occupancy=[1, 1, 0, 1, 1, 1] program='demolift_4_0529'
+[2026-06-09T10:57:05] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:57:12] Force servo stop: |Fx|=55.76N > 40.00N after 22 steps
+[2026-06-09T10:57:12] Force servo finished
+[2026-06-09T10:57:12] Force servo done, opening gripper
+[2026-06-09T10:57:12] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:57:15] Cycle time: 25.27544379234314 seconds
+[2026-06-09T10:57:15] flow finished ok=True auto cycle done
+[2026-06-09T10:57:15] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:57:21] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:57:24] Waiting 5.0s for empty slot...
+[2026-06-09T10:57:29] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:57:29] Waiting 5.0s for empty slot...
+[2026-06-09T10:57:34] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:57:34] Waiting 5.0s for empty slot...
+[2026-06-09T10:57:39] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T10:57:39] Waiting 5.0s for empty slot...
+[2026-06-09T10:57:44] Place: slot_index=0 occupancy=[0, 0, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T10:57:52] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:57:55] Force servo stop: |Fx|=51.69N > 40.00N after 11 steps
+[2026-06-09T10:57:55] Force servo finished
+[2026-06-09T10:57:55] Force servo done, opening gripper
+[2026-06-09T10:57:56] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:57:59] Cycle time: 44.27186989784241 seconds
+[2026-06-09T10:57:59] flow finished ok=True auto cycle done
+[2026-06-09T10:57:59] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:58:03] Place: slot_index=1 occupancy=[1, 0, 1, 1, 0, 0] program='demolift_5_0529'
+[2026-06-09T10:58:12] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:58:16] Force servo stop: |Fx|=63.55N > 40.00N after 12 steps
+[2026-06-09T10:58:16] Force servo finished
+[2026-06-09T10:58:16] Force servo done, opening gripper
+[2026-06-09T10:58:16] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:58:19] Cycle time: 20.067296504974365 seconds
+[2026-06-09T10:58:19] flow finished ok=True auto cycle done
+[2026-06-09T10:58:19] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:58:23] Place: slot_index=0 occupancy=[0, 0, 1, 1, 0, 0] program='demolift_6_0529'
+[2026-06-09T10:58:33] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:58:37] Force servo stop: |Fx|=63.09N > 40.00N after 12 steps
+[2026-06-09T10:58:37] Force servo finished
+[2026-06-09T10:58:37] Force servo done, opening gripper
+[2026-06-09T10:58:37] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:58:41] Cycle time: 21.39266014099121 seconds
+[2026-06-09T10:58:41] flow finished ok=True auto cycle done
+[2026-06-09T10:58:41] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:58:44] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T10:58:54] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:58:58] Force servo stop: |Fx|=62.14N > 40.00N after 15 steps
+[2026-06-09T10:58:58] Force servo finished
+[2026-06-09T10:58:58] Force servo done, opening gripper
+[2026-06-09T10:58:59] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:59:02] Cycle time: 21.33005452156067 seconds
+[2026-06-09T10:59:02] flow finished ok=True auto cycle done
+[2026-06-09T10:59:02] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:59:06] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T10:59:15] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:59:20] Force servo stop: |Fx|=66.19N > 40.00N after 16 steps
+[2026-06-09T10:59:20] Force servo finished
+[2026-06-09T10:59:20] Force servo done, opening gripper
+[2026-06-09T10:59:20] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:59:24] Cycle time: 21.503378868103027 seconds
+[2026-06-09T10:59:24] flow finished ok=True auto cycle done
+[2026-06-09T10:59:24] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:59:27] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T10:59:36] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T10:59:41] Force servo stop: |Fx|=45.72N > 40.00N after 15 steps
+[2026-06-09T10:59:41] Force servo finished
+[2026-06-09T10:59:41] Force servo done, opening gripper
+[2026-06-09T10:59:41] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T10:59:44] Cycle time: 20.461326599121094 seconds
+[2026-06-09T10:59:44] flow finished ok=True auto cycle done
+[2026-06-09T10:59:44] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T10:59:48] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T10:59:57] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:00:02] Force servo stop: |Fx|=60.43N > 40.00N after 13 steps
+[2026-06-09T11:00:02] Force servo finished
+[2026-06-09T11:00:02] Force servo done, opening gripper
+[2026-06-09T11:00:02] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:00:05] Cycle time: 21.243871450424194 seconds
+[2026-06-09T11:00:05] flow finished ok=True auto cycle done
+[2026-06-09T11:00:05] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:00:09] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T11:00:18] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:00:22] Force servo stop: |Fx|=47.86N > 40.00N after 13 steps
+[2026-06-09T11:00:22] Force servo finished
+[2026-06-09T11:00:22] Force servo done, opening gripper
+[2026-06-09T11:00:22] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:00:26] Cycle time: 20.533810138702393 seconds
+[2026-06-09T11:00:26] flow finished ok=True auto cycle done
+[2026-06-09T11:00:26] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:00:30] Place: slot_index=0 occupancy=[0, 1, 1, 1, 1, 0] program='demolift_6_0529'
+[2026-06-09T11:00:41] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:00:44] Force servo stop: |Fx|=56.63N > 40.00N after 11 steps
+[2026-06-09T11:00:44] Force servo finished
+[2026-06-09T11:00:44] Force servo done, opening gripper
+[2026-06-09T11:00:44] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:00:48] Cycle time: 22.03170871734619 seconds
+[2026-06-09T11:00:48] flow finished ok=True auto cycle done
+[2026-06-09T11:00:48] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:00:52] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T11:01:02] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:01:06] Force servo stop: |Fx|=53.38N > 40.00N after 12 steps
+[2026-06-09T11:01:06] Force servo finished
+[2026-06-09T11:01:06] Force servo done, opening gripper
+[2026-06-09T11:01:06] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:01:09] Cycle time: 21.139495849609375 seconds
+[2026-06-09T11:01:09] flow finished ok=True auto cycle done
+[2026-06-09T11:01:09] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:01:14] Place: slot_index=1 occupancy=[1, 0, 0, 1, 0, 0] program='demolift_5_0529'
+[2026-06-09T11:01:25] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:01:29] Force servo stop: |Fx|=61.81N > 40.00N after 13 steps
+[2026-06-09T11:01:29] Force servo finished
+[2026-06-09T11:01:29] Force servo done, opening gripper
+[2026-06-09T11:01:29] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:01:32] Cycle time: 23.068851709365845 seconds
+[2026-06-09T11:01:32] flow finished ok=True auto cycle done
+[2026-06-09T11:01:32] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:01:37] Place: slot_index=2 occupancy=[1, 1, 0, 1, 0, 0] program='demolift_4_0529'
+[2026-06-09T11:01:48] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:01:53] Force servo stop: |Fx|=55.38N > 40.00N after 16 steps
+[2026-06-09T11:01:53] Force servo finished
+[2026-06-09T11:01:53] Force servo done, opening gripper
+[2026-06-09T11:01:53] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:01:56] Cycle time: 23.573744773864746 seconds
+[2026-06-09T11:01:56] flow finished ok=True auto cycle done
+[2026-06-09T11:01:56] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:02:00] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T11:02:10] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:02:14] Force servo stop: |Fx|=55.57N > 40.00N after 12 steps
+[2026-06-09T11:02:14] Force servo finished
+[2026-06-09T11:02:14] Force servo done, opening gripper
+[2026-06-09T11:02:14] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:02:17] Cycle time: 21.650856494903564 seconds
+[2026-06-09T11:02:17] flow finished ok=True auto cycle done
+[2026-06-09T11:02:17] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:02:23] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T11:02:33] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:02:37] Force servo stop: |Fx|=59.07N > 40.00N after 13 steps
+[2026-06-09T11:02:37] Force servo finished
+[2026-06-09T11:02:37] Force servo done, opening gripper
+[2026-06-09T11:02:37] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:02:40] Cycle time: 22.96841073036194 seconds
+[2026-06-09T11:02:40] flow finished ok=True auto cycle done
+[2026-06-09T11:02:40] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:02:44] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T11:02:53] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:02:57] Force servo stop: |Fx|=50.27N > 40.00N after 13 steps
+[2026-06-09T11:02:57] Force servo finished
+[2026-06-09T11:02:57] Force servo done, opening gripper
+[2026-06-09T11:02:57] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:03:01] Cycle time: 20.495538473129272 seconds
+[2026-06-09T11:03:01] flow finished ok=True auto cycle done
+[2026-06-09T11:03:01] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:03:04] Place: slot_index=0 occupancy=[0, 1, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T11:03:14] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:03:17] Force servo stop: |Fx|=64.57N > 40.00N after 11 steps
+[2026-06-09T11:03:17] Force servo finished
+[2026-06-09T11:03:17] Force servo done, opening gripper
+[2026-06-09T11:03:17] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:03:21] Cycle time: 19.882384777069092 seconds
+[2026-06-09T11:03:21] flow finished ok=True auto cycle done
+[2026-06-09T11:03:21] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:03:21] Recorded teach point 'MidPoint'
+[2026-06-09T11:03:24] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 1] program='demolift_2_0518'
+[2026-06-09T11:03:33] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:03:38] Force servo stop: |Fx|=58.79N > 40.00N after 15 steps
+[2026-06-09T11:03:38] Force servo finished
+[2026-06-09T11:03:38] Force servo done, opening gripper
+[2026-06-09T11:03:38] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:03:41] Cycle time: 20.52533268928528 seconds
+[2026-06-09T11:03:41] flow finished ok=True auto cycle done
+[2026-06-09T11:03:41] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:03:45] Place: slot_index=0 occupancy=[0, 1, 1, 0, 1, 0] program='demolift_6_0529'
+[2026-06-09T11:03:55] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:03:58] Force servo stop: |Fx|=64.80N > 40.00N after 11 steps
+[2026-06-09T11:03:58] Force servo finished
+[2026-06-09T11:03:58] Force servo done, opening gripper
+[2026-06-09T11:03:58] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:04:02] Cycle time: 20.736310720443726 seconds
+[2026-06-09T11:04:02] flow finished ok=True auto cycle done
+[2026-06-09T11:04:02] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:04:06] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T11:04:16] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:04:22] Force servo stop: |Fx|=63.88N > 40.00N after 19 steps
+[2026-06-09T11:04:22] Force servo finished
+[2026-06-09T11:04:22] Force servo done, opening gripper
+[2026-06-09T11:04:22] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:04:25] Cycle time: 22.91116213798523 seconds
+[2026-06-09T11:04:25] flow finished ok=True auto cycle done
+[2026-06-09T11:04:25] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:04:28] Place: slot_index=0 occupancy=[0, 0, 1, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T11:04:38] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:04:41] Force servo stop: |Fx|=58.53N > 40.00N after 11 steps
+[2026-06-09T11:04:41] Force servo finished
+[2026-06-09T11:04:41] Force servo done, opening gripper
+[2026-06-09T11:04:41] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:04:45] Cycle time: 20.018232345581055 seconds
+[2026-06-09T11:04:45] flow finished ok=True auto cycle done
+[2026-06-09T11:04:45] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:04:49] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T11:04:59] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:05:02] Force servo stop: |Fx|=60.11N > 40.00N after 9 steps
+[2026-06-09T11:05:02] Force servo finished
+[2026-06-09T11:05:02] Force servo done, opening gripper
+[2026-06-09T11:05:02] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:05:06] Cycle time: 20.63955783843994 seconds
+[2026-06-09T11:05:06] flow finished ok=True auto cycle done
+[2026-06-09T11:05:06] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:05:09] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T11:05:18] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:05:22] Force servo stop: |Fx|=57.49N > 40.00N after 12 steps
+[2026-06-09T11:05:22] Force servo finished
+[2026-06-09T11:05:22] Force servo done, opening gripper
+[2026-06-09T11:05:22] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:05:25] Cycle time: 19.87507390975952 seconds
+[2026-06-09T11:05:25] flow finished ok=True auto cycle done
+[2026-06-09T11:05:26] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:05:29] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T11:05:39] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:05:44] Force servo stop: |Fx|=52.53N > 40.00N after 17 steps
+[2026-06-09T11:05:44] Force servo finished
+[2026-06-09T11:05:44] Force servo done, opening gripper
+[2026-06-09T11:05:44] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:05:47] Cycle time: 21.58092737197876 seconds
+[2026-06-09T11:05:47] flow finished ok=True auto cycle done
+[2026-06-09T11:05:47] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:05:51] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T11:06:01] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:06:06] Force servo stop: |Fx|=44.41N > 40.00N after 17 steps
+[2026-06-09T11:06:06] Force servo finished
+[2026-06-09T11:06:06] Force servo done, opening gripper
+[2026-06-09T11:06:06] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:06:10] Cycle time: 22.606595516204834 seconds
+[2026-06-09T11:06:10] flow finished ok=True auto cycle done
+[2026-06-09T11:06:10] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:06:14] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T11:06:23] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:06:27] Force servo stop: |Fx|=50.72N > 40.00N after 14 steps
+[2026-06-09T11:06:27] Force servo finished
+[2026-06-09T11:06:27] Force servo done, opening gripper
+[2026-06-09T11:06:28] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:06:31] Cycle time: 21.130425453186035 seconds
+[2026-06-09T11:06:31] flow finished ok=True auto cycle done
+[2026-06-09T11:06:31] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:06:35] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T11:06:45] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:06:50] Force servo stop: |Fx|=55.32N > 40.00N after 16 steps
+[2026-06-09T11:06:50] Force servo finished
+[2026-06-09T11:06:50] Force servo done, opening gripper
+[2026-06-09T11:06:50] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:06:53] Cycle time: 22.45061469078064 seconds
+[2026-06-09T11:06:53] flow finished ok=True auto cycle done
+[2026-06-09T11:06:53] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:06:57] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T11:07:07] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:07:10] Force servo stop: |Fx|=55.60N > 40.00N after 11 steps
+[2026-06-09T11:07:10] Force servo finished
+[2026-06-09T11:07:10] Force servo done, opening gripper
+[2026-06-09T11:07:10] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:07:14] Cycle time: 20.464293479919434 seconds
+[2026-06-09T11:07:14] flow finished ok=True auto cycle done
+[2026-06-09T11:07:14] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:07:18] Place: slot_index=0 occupancy=[0, 0, 0, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T11:07:29] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:07:31] Force servo stop: |Fx|=42.37N > 40.00N after 8 steps
+[2026-06-09T11:07:31] Force servo finished
+[2026-06-09T11:07:31] Force servo done, opening gripper
+[2026-06-09T11:07:31] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:07:35] Cycle time: 20.997971773147583 seconds
+[2026-06-09T11:07:35] flow finished ok=True auto cycle done
+[2026-06-09T11:07:35] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:07:40] Place: slot_index=1 occupancy=[1, 0, 0, 1, 1, 0] program='demolift_5_0529'
+[2026-06-09T11:07:50] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:07:54] Force servo stop: |Fx|=51.43N > 40.00N after 12 steps
+[2026-06-09T11:07:54] Force servo finished
+[2026-06-09T11:07:54] Force servo done, opening gripper
+[2026-06-09T11:07:54] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:07:58] Cycle time: 22.854434967041016 seconds
+[2026-06-09T11:07:58] flow finished ok=True auto cycle done
+[2026-06-09T11:07:58] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:08:02] Place: slot_index=1 occupancy=[1, 0, 1, 1, 0, 0] program='demolift_5_0529'
+[2026-06-09T11:08:13] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:08:16] Force servo stop: |Fx|=53.32N > 40.00N after 11 steps
+[2026-06-09T11:08:16] Force servo finished
+[2026-06-09T11:08:16] Force servo done, opening gripper
+[2026-06-09T11:08:16] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:08:20] Cycle time: 21.934196949005127 seconds
+[2026-06-09T11:08:20] flow finished ok=True auto cycle done
+[2026-06-09T11:08:20] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:08:25] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T11:08:35] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:08:38] Force servo stop: |Fx|=54.80N > 40.00N after 9 steps
+[2026-06-09T11:08:38] Force servo finished
+[2026-06-09T11:08:38] Force servo done, opening gripper
+[2026-06-09T11:08:38] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:08:41] Cycle time: 21.865841388702393 seconds
+[2026-06-09T11:08:41] flow finished ok=True auto cycle done
+[2026-06-09T11:08:42] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:08:47] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T11:08:56] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:09:00] Force servo stop: |Fx|=56.62N > 40.00N after 14 steps
+[2026-06-09T11:09:00] Force servo finished
+[2026-06-09T11:09:00] Force servo done, opening gripper
+[2026-06-09T11:09:00] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:09:04] Cycle time: 22.47677445411682 seconds
+[2026-06-09T11:09:04] flow finished ok=True auto cycle done
+[2026-06-09T11:09:04] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:09:07] Place: slot_index=0 occupancy=[0, 1, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T11:09:17] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:09:20] Force servo stop: |Fx|=52.13N > 40.00N after 11 steps
+[2026-06-09T11:09:20] Force servo finished
+[2026-06-09T11:09:20] Force servo done, opening gripper
+[2026-06-09T11:09:20] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:09:24] Cycle time: 20.074493408203125 seconds
+[2026-06-09T11:09:24] flow finished ok=True auto cycle done
+[2026-06-09T11:09:24] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:09:28] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T11:09:38] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:09:43] Force servo stop: |Fx|=47.70N > 40.00N after 18 steps
+[2026-06-09T11:09:43] Force servo finished
+[2026-06-09T11:09:43] Force servo done, opening gripper
+[2026-06-09T11:09:43] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:09:46] Cycle time: 22.226230144500732 seconds
+[2026-06-09T11:09:46] flow finished ok=True auto cycle done
+[2026-06-09T11:09:46] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:09:50] Place: slot_index=0 occupancy=[0, 0, 1, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T11:09:59] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:10:04] Force servo stop: |Fx|=67.97N > 40.00N after 14 steps
+[2026-06-09T11:10:04] Force servo finished
+[2026-06-09T11:10:04] Force servo done, opening gripper
+[2026-06-09T11:10:04] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:10:07] Cycle time: 21.079248428344727 seconds
+[2026-06-09T11:10:07] flow finished ok=True auto cycle done
+[2026-06-09T11:10:07] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:10:11] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T11:10:20] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:10:24] Force servo stop: |Fx|=64.33N > 40.00N after 12 steps
+[2026-06-09T11:10:24] Force servo finished
+[2026-06-09T11:10:24] Force servo done, opening gripper
+[2026-06-09T11:10:24] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:10:28] Cycle time: 20.396151304244995 seconds
+[2026-06-09T11:10:28] flow finished ok=True auto cycle done
+[2026-06-09T11:10:28] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:10:32] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T11:10:41] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:10:46] Force servo stop: |Fx|=58.07N > 40.00N after 13 steps
+[2026-06-09T11:10:46] Force servo finished
+[2026-06-09T11:10:46] Force servo done, opening gripper
+[2026-06-09T11:10:46] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:10:49] Cycle time: 21.188143968582153 seconds
+[2026-06-09T11:10:49] flow finished ok=True auto cycle done
+[2026-06-09T11:10:49] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:10:53] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T11:11:02] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:11:07] Force servo stop: |Fx|=64.10N > 40.00N after 17 steps
+[2026-06-09T11:11:07] Force servo finished
+[2026-06-09T11:11:07] Force servo done, opening gripper
+[2026-06-09T11:11:07] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:11:10] Cycle time: 21.24013924598694 seconds
+[2026-06-09T11:11:10] flow finished ok=True auto cycle done
+[2026-06-09T11:11:10] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:11:15] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T11:11:24] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:11:29] Force servo stop: |Fx|=58.62N > 40.00N after 16 steps
+[2026-06-09T11:11:29] Force servo finished
+[2026-06-09T11:11:29] Force servo done, opening gripper
+[2026-06-09T11:11:30] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:11:33] Cycle time: 22.36552381515503 seconds
+[2026-06-09T11:11:33] flow finished ok=True auto cycle done
+[2026-06-09T11:11:33] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:11:37] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T11:11:46] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:11:50] Force servo stop: |Fx|=62.80N > 40.00N after 11 steps
+[2026-06-09T11:11:50] Force servo finished
+[2026-06-09T11:11:50] Force servo done, opening gripper
+[2026-06-09T11:11:50] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:11:53] Cycle time: 20.42994785308838 seconds
+[2026-06-09T11:11:53] flow finished ok=True auto cycle done
+[2026-06-09T11:11:53] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:11:58] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T11:12:07] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:12:12] Force servo stop: |Fx|=53.89N > 40.00N after 15 steps
+[2026-06-09T11:12:12] Force servo finished
+[2026-06-09T11:12:12] Force servo done, opening gripper
+[2026-06-09T11:12:12] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:12:16] Cycle time: 22.587130308151245 seconds
+[2026-06-09T11:12:16] flow finished ok=True auto cycle done
+[2026-06-09T11:12:16] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:12:20] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T11:12:24] Waiting 5.0s for empty slot...
+[2026-06-09T11:12:29] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T11:12:37] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:12:40] Force servo stop: |Fx|=52.47N > 40.00N after 8 steps
+[2026-06-09T11:12:40] Force servo finished
+[2026-06-09T11:12:40] Force servo done, opening gripper
+[2026-06-09T11:12:40] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:12:44] Cycle time: 27.89439034461975 seconds
+[2026-06-09T11:12:44] flow finished ok=True auto cycle done
+[2026-06-09T11:12:44] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:12:48] Place: slot_index=0 occupancy=[0, 0, 0, 0, 1, 1] program='demolift_6_0529'
+[2026-06-09T11:12:59] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:13:02] Force servo stop: |Fx|=40.94N > 40.00N after 10 steps
+[2026-06-09T11:13:02] Force servo finished
+[2026-06-09T11:13:02] Force servo done, opening gripper
+[2026-06-09T11:13:02] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:13:06] Cycle time: 22.162732362747192 seconds
+[2026-06-09T11:13:06] flow finished ok=True auto cycle done
+[2026-06-09T11:13:06] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:13:11] Place: slot_index=1 occupancy=[1, 0, 0, 0, 1, 1] program='demolift_5_0529'
+[2026-06-09T11:13:21] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:13:25] Force servo stop: |Fx|=56.43N > 40.00N after 10 steps
+[2026-06-09T11:13:25] Force servo finished
+[2026-06-09T11:13:25] Force servo done, opening gripper
+[2026-06-09T11:13:25] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:13:28] Cycle time: 22.318504810333252 seconds
+[2026-06-09T11:13:28] flow finished ok=True auto cycle done
+[2026-06-09T11:13:28] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:13:33] Place: slot_index=2 occupancy=[1, 1, 0, 0, 1, 1] program='demolift_4_0529'
+[2026-06-09T11:13:44] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T11:13:49] Force servo stop: |Fx|=47.93N > 40.00N after 18 steps
+[2026-06-09T11:13:49] Force servo finished
+[2026-06-09T11:13:49] Force servo done, opening gripper
+[2026-06-09T11:13:50] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T11:13:53] Cycle time: 24.63241744041443 seconds
+[2026-06-09T11:13:53] flow finished ok=True auto cycle done
+[2026-06-09T11:13:53] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T11:13:56] Place: slot_index=3 occupancy=[1, 1, 1, 0, 1, 1] program='demolift_3_0529'
+[2026-06-09T11:13:59] flow finished ok=False 作业运行中断: 急停已触发
+[2026-06-09T11:13:59] Flow session torn down, devices disconnected.
+[2026-06-09T11:13:59] auto loop stopped
+[2026-06-09T11:14:40] Gripper connected on 'COM7'.
+[2026-06-09T11:14:41] Gripper open failed.
+[2026-06-09T11:24:27] Gripper close sent.
+[2026-06-09T11:25:05] Gripper open sent.
+[2026-06-09T13:19:47] Disconnected.
+[2026-06-09T13:19:49] Connected to robot.
+[2026-06-09T13:19:53] Disconnected.
+[2026-06-09T13:19:54] Connected to robot.
+[2026-06-09T13:19:56] Connected to robot.
+[2026-06-09T13:22:55] auto loop started
+[2026-06-09T13:22:55] Flow session init starting...
+[2026-06-09T13:22:55] Init: reusing robot connection 169.254.5.10
+[2026-06-09T13:22:55] Init: connecting gripper COM7
+[2026-06-09T13:22:56] Init: connecting force sensor
+[2026-06-09T13:22:56] Force sensor: connecting port=COM8
+[2026-06-09T13:22:56] Force sensor data ready
+[2026-06-09T13:22:56] Init: running PROG_VARREST 
+[2026-06-09T13:22:56] Init: running PROG_HOME
+[2026-06-09T13:22:57] Init: session ready
+[2026-06-09T13:22:57] Flow session init done.
+[2026-06-09T13:22:57] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:23:02] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T13:23:16] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:23:18] Force servo stop: |Fx|=62.35N > 40.00N after 9 steps
+[2026-06-09T13:23:18] Force servo finished
+[2026-06-09T13:23:18] Force servo done, opening gripper
+[2026-06-09T13:23:18] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:23:21] Cycle time: 24.303952932357788 seconds
+[2026-06-09T13:23:21] flow finished ok=True auto cycle done
+[2026-06-09T13:23:21] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:23:25] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T13:23:34] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:23:37] Force servo stop: |Fx|=44.64N > 40.00N after 13 steps
+[2026-06-09T13:23:37] Force servo finished
+[2026-06-09T13:23:37] Force servo done, opening gripper
+[2026-06-09T13:23:37] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:23:40] Cycle time: 19.217697620391846 seconds
+[2026-06-09T13:23:40] flow finished ok=True auto cycle done
+[2026-06-09T13:23:41] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:23:44] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T13:23:53] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:23:58] Force servo stop: |Fx|=48.82N > 40.00N after 20 steps
+[2026-06-09T13:23:58] Force servo finished
+[2026-06-09T13:23:58] Force servo done, opening gripper
+[2026-06-09T13:23:58] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:24:01] Cycle time: 20.52203893661499 seconds
+[2026-06-09T13:24:01] flow finished ok=True auto cycle done
+[2026-06-09T13:24:01] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:24:05] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T13:24:14] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:24:17] Force servo stop: |Fx|=45.23N > 40.00N after 15 steps
+[2026-06-09T13:24:17] Force servo finished
+[2026-06-09T13:24:17] Force servo done, opening gripper
+[2026-06-09T13:24:18] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:24:21] Cycle time: 19.834522008895874 seconds
+[2026-06-09T13:24:21] flow finished ok=True auto cycle done
+[2026-06-09T13:24:21] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:24:25] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T13:24:34] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:24:38] Force servo stop: |Fx|=47.35N > 40.00N after 16 steps
+[2026-06-09T13:24:38] Force servo finished
+[2026-06-09T13:24:38] Force servo done, opening gripper
+[2026-06-09T13:24:38] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:24:41] Cycle time: 20.632619619369507 seconds
+[2026-06-09T13:24:42] flow finished ok=True auto cycle done
+[2026-06-09T13:24:42] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:24:46] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:24:55] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:24:58] Force servo stop: |Fx|=55.49N > 40.00N after 9 steps
+[2026-06-09T13:24:58] Force servo finished
+[2026-06-09T13:24:58] Force servo done, opening gripper
+[2026-06-09T13:24:58] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:25:01] Cycle time: 19.676186561584473 seconds
+[2026-06-09T13:25:01] flow finished ok=True auto cycle done
+[2026-06-09T13:25:01] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:25:06] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T13:25:10] Waiting 5.0s for empty slot...
+[2026-06-09T13:25:15] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:25:22] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:25:24] Force servo stop: |Fx|=54.77N > 40.00N after 10 steps
+[2026-06-09T13:25:24] Force servo finished
+[2026-06-09T13:25:24] Force servo done, opening gripper
+[2026-06-09T13:25:25] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:25:28] Cycle time: 26.855565309524536 seconds
+[2026-06-09T13:25:28] flow finished ok=True auto cycle done
+[2026-06-09T13:25:28] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:25:33] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T13:25:43] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:25:46] Force servo stop: |Fx|=50.27N > 40.00N after 14 steps
+[2026-06-09T13:25:46] Force servo finished
+[2026-06-09T13:25:46] Force servo done, opening gripper
+[2026-06-09T13:25:46] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:25:49] Cycle time: 21.41774296760559 seconds
+[2026-06-09T13:25:49] flow finished ok=True auto cycle done
+[2026-06-09T13:25:50] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:25:54] Place: slot_index=0 occupancy=[0, 1, 0, 1, 0, 0] program='demolift_6_0529'
+[2026-06-09T13:26:04] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:26:07] Force servo stop: |Fx|=57.33N > 40.00N after 9 steps
+[2026-06-09T13:26:07] Force servo finished
+[2026-06-09T13:26:07] Force servo done, opening gripper
+[2026-06-09T13:26:07] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:26:10] Cycle time: 20.516286611557007 seconds
+[2026-06-09T13:26:10] flow finished ok=True auto cycle done
+[2026-06-09T13:26:10] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:26:15] Place: slot_index=2 occupancy=[1, 1, 0, 1, 0, 0] program='demolift_4_0529'
+[2026-06-09T13:26:25] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:26:28] Force servo stop: |Fx|=47.45N > 40.00N after 12 steps
+[2026-06-09T13:26:28] Force servo finished
+[2026-06-09T13:26:28] Force servo done, opening gripper
+[2026-06-09T13:26:28] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:26:31] Cycle time: 21.1308856010437 seconds
+[2026-06-09T13:26:31] flow finished ok=True auto cycle done
+[2026-06-09T13:26:31] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:26:35] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T13:26:43] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:26:45] Force servo stop: |Fx|=68.53N > 40.00N after 10 steps
+[2026-06-09T13:26:45] Force servo finished
+[2026-06-09T13:26:45] Force servo done, opening gripper
+[2026-06-09T13:26:45] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:26:49] Cycle time: 17.670825719833374 seconds
+[2026-06-09T13:26:49] flow finished ok=True auto cycle done
+[2026-06-09T13:26:49] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:26:53] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T13:27:02] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:27:04] Force servo stop: |Fx|=64.56N > 40.00N after 10 steps
+[2026-06-09T13:27:04] Force servo finished
+[2026-06-09T13:27:04] Force servo done, opening gripper
+[2026-06-09T13:27:04] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:27:08] Cycle time: 18.800328493118286 seconds
+[2026-06-09T13:27:08] flow finished ok=True auto cycle done
+[2026-06-09T13:27:08] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:27:12] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:27:20] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:27:23] Force servo stop: |Fx|=56.44N > 40.00N after 13 steps
+[2026-06-09T13:27:23] Force servo finished
+[2026-06-09T13:27:23] Force servo done, opening gripper
+[2026-06-09T13:27:23] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:27:27] Cycle time: 19.064809799194336 seconds
+[2026-06-09T13:27:27] flow finished ok=True auto cycle done
+[2026-06-09T13:27:27] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:27:30] Place: slot_index=0 occupancy=[0, 0, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T13:27:39] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:27:42] Force servo stop: |Fx|=56.78N > 40.00N after 11 steps
+[2026-06-09T13:27:42] Force servo finished
+[2026-06-09T13:27:42] Force servo done, opening gripper
+[2026-06-09T13:27:42] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:27:45] Cycle time: 18.40344214439392 seconds
+[2026-06-09T13:27:45] flow finished ok=True auto cycle done
+[2026-06-09T13:27:45] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:27:49] Place: slot_index=1 occupancy=[1, 0, 1, 1, 0, 0] program='demolift_5_0529'
+[2026-06-09T13:27:58] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:28:01] Force servo stop: |Fx|=51.76N > 40.00N after 14 steps
+[2026-06-09T13:28:01] Force servo finished
+[2026-06-09T13:28:01] Force servo done, opening gripper
+[2026-06-09T13:28:01] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:28:05] Cycle time: 19.489384412765503 seconds
+[2026-06-09T13:28:05] flow finished ok=True auto cycle done
+[2026-06-09T13:28:05] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:28:09] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T13:28:18] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:28:22] Force servo stop: |Fx|=53.44N > 40.00N after 18 steps
+[2026-06-09T13:28:22] Force servo finished
+[2026-06-09T13:28:22] Force servo done, opening gripper
+[2026-06-09T13:28:22] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:28:25] Cycle time: 20.67306661605835 seconds
+[2026-06-09T13:28:25] flow finished ok=True auto cycle done
+[2026-06-09T13:28:25] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:28:29] Place: slot_index=0 occupancy=[0, 0, 1, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T13:28:39] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:28:41] Force servo stop: |Fx|=65.45N > 40.00N after 9 steps
+[2026-06-09T13:28:41] Force servo finished
+[2026-06-09T13:28:41] Force servo done, opening gripper
+[2026-06-09T13:28:41] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:28:45] Cycle time: 19.2317373752594 seconds
+[2026-06-09T13:28:45] flow finished ok=True auto cycle done
+[2026-06-09T13:28:45] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:28:48] Place: slot_index=1 occupancy=[1, 0, 1, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T13:28:57] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:29:00] Force servo stop: |Fx|=57.63N > 40.00N after 14 steps
+[2026-06-09T13:29:00] Force servo finished
+[2026-06-09T13:29:00] Force servo done, opening gripper
+[2026-06-09T13:29:00] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:29:03] Cycle time: 18.58851408958435 seconds
+[2026-06-09T13:29:03] flow finished ok=True auto cycle done
+[2026-06-09T13:29:03] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:29:07] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T13:29:16] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:29:20] Force servo stop: |Fx|=56.37N > 40.00N after 17 steps
+[2026-06-09T13:29:20] Force servo finished
+[2026-06-09T13:29:20] Force servo done, opening gripper
+[2026-06-09T13:29:20] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:29:23] Cycle time: 20.13609528541565 seconds
+[2026-06-09T13:29:23] flow finished ok=True auto cycle done
+[2026-06-09T13:29:23] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:29:28] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T13:29:37] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:29:40] Force servo stop: |Fx|=56.99N > 40.00N after 13 steps
+[2026-06-09T13:29:40] Force servo finished
+[2026-06-09T13:29:40] Force servo done, opening gripper
+[2026-06-09T13:29:40] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:29:43] Cycle time: 20.22030544281006 seconds
+[2026-06-09T13:29:43] flow finished ok=True auto cycle done
+[2026-06-09T13:29:44] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:29:48] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:29:57] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:29:59] Force servo stop: |Fx|=62.52N > 40.00N after 10 steps
+[2026-06-09T13:29:59] Force servo finished
+[2026-06-09T13:29:59] Force servo done, opening gripper
+[2026-06-09T13:29:59] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:30:03] Cycle time: 19.08941411972046 seconds
+[2026-06-09T13:30:03] flow finished ok=True auto cycle done
+[2026-06-09T13:30:03] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:30:07] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T13:30:11] Waiting 5.0s for empty slot...
+[2026-06-09T13:30:16] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T13:30:16] Waiting 5.0s for empty slot...
+[2026-06-09T13:30:21] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T13:30:21] Waiting 5.0s for empty slot...
+[2026-06-09T13:30:26] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T13:30:26] Waiting 5.0s for empty slot...
+[2026-06-09T13:30:31] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:30:38] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:30:41] Force servo stop: |Fx|=68.62N > 40.00N after 12 steps
+[2026-06-09T13:30:41] Force servo finished
+[2026-06-09T13:30:41] Force servo done, opening gripper
+[2026-06-09T13:30:42] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:30:45] Cycle time: 42.26447057723999 seconds
+[2026-06-09T13:30:45] flow finished ok=True auto cycle done
+[2026-06-09T13:30:45] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:30:50] Place: slot_index=0 occupancy=[0, 1, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T13:31:00] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:31:02] Force servo stop: |Fx|=57.71N > 40.00N after 10 steps
+[2026-06-09T13:31:02] Force servo finished
+[2026-06-09T13:31:02] Force servo done, opening gripper
+[2026-06-09T13:31:02] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:31:06] Cycle time: 20.71946358680725 seconds
+[2026-06-09T13:31:06] flow finished ok=True auto cycle done
+[2026-06-09T13:31:06] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:31:10] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T13:31:14] Waiting 5.0s for empty slot...
+[2026-06-09T13:31:19] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:31:26] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:31:29] Force servo stop: |Fx|=58.64N > 40.00N after 13 steps
+[2026-06-09T13:31:29] Force servo finished
+[2026-06-09T13:31:29] Force servo done, opening gripper
+[2026-06-09T13:31:30] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:31:33] Cycle time: 27.422024488449097 seconds
+[2026-06-09T13:31:33] flow finished ok=True auto cycle done
+[2026-06-09T13:31:33] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:31:38] Place: slot_index=0 occupancy=[0, 1, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T13:31:49] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:31:51] Force servo stop: |Fx|=63.36N > 40.00N after 10 steps
+[2026-06-09T13:31:51] Force servo finished
+[2026-06-09T13:31:51] Force servo done, opening gripper
+[2026-06-09T13:31:51] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:31:55] Cycle time: 21.40558671951294 seconds
+[2026-06-09T13:31:55] flow finished ok=True auto cycle done
+[2026-06-09T13:31:55] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:31:58] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:32:06] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:32:09] Force servo stop: |Fx|=41.34N > 40.00N after 13 steps
+[2026-06-09T13:32:09] Force servo finished
+[2026-06-09T13:32:09] Force servo done, opening gripper
+[2026-06-09T13:32:09] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:32:13] Cycle time: 18.311535596847534 seconds
+[2026-06-09T13:32:13] flow finished ok=True auto cycle done
+[2026-06-09T13:32:13] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:32:16] Place: slot_index=0 occupancy=[0, 0, 1, 1, 1, 1] program='demolift_6_0529'
+[2026-06-09T13:32:25] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:32:27] Force servo stop: |Fx|=57.72N > 40.00N after 10 steps
+[2026-06-09T13:32:27] Force servo finished
+[2026-06-09T13:32:27] Force servo done, opening gripper
+[2026-06-09T13:32:28] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:32:31] Cycle time: 17.973973274230957 seconds
+[2026-06-09T13:32:31] flow finished ok=True auto cycle done
+[2026-06-09T13:32:31] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:32:35] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T13:32:44] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:32:47] Force servo stop: |Fx|=62.74N > 40.00N after 11 steps
+[2026-06-09T13:32:47] Force servo finished
+[2026-06-09T13:32:47] Force servo done, opening gripper
+[2026-06-09T13:32:47] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:32:50] Cycle time: 18.954888582229614 seconds
+[2026-06-09T13:32:50] flow finished ok=True auto cycle done
+[2026-06-09T13:32:50] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:32:53] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T13:33:02] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:33:05] Force servo stop: |Fx|=63.61N > 40.00N after 11 steps
+[2026-06-09T13:33:05] Force servo finished
+[2026-06-09T13:33:05] Force servo done, opening gripper
+[2026-06-09T13:33:05] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:33:08] Cycle time: 18.310497999191284 seconds
+[2026-06-09T13:33:08] flow finished ok=True auto cycle done
+[2026-06-09T13:33:08] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:33:12] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T13:33:21] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:33:25] Force servo stop: |Fx|=69.59N > 40.00N after 16 steps
+[2026-06-09T13:33:25] Force servo finished
+[2026-06-09T13:33:25] Force servo done, opening gripper
+[2026-06-09T13:33:25] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:33:28] Cycle time: 20.13824152946472 seconds
+[2026-06-09T13:33:28] flow finished ok=True auto cycle done
+[2026-06-09T13:33:28] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:33:32] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T13:33:41] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:33:45] Force servo stop: |Fx|=67.64N > 40.00N after 21 steps
+[2026-06-09T13:33:45] Force servo finished
+[2026-06-09T13:33:45] Force servo done, opening gripper
+[2026-06-09T13:33:45] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:33:48] Cycle time: 20.019049882888794 seconds
+[2026-06-09T13:33:48] flow finished ok=True auto cycle done
+[2026-06-09T13:33:48] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:33:53] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T13:34:02] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:34:06] Force servo stop: |Fx|=54.25N > 40.00N after 16 steps
+[2026-06-09T13:34:06] Force servo finished
+[2026-06-09T13:34:06] Force servo done, opening gripper
+[2026-06-09T13:34:06] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:34:09] Cycle time: 20.557042598724365 seconds
+[2026-06-09T13:34:09] flow finished ok=True auto cycle done
+[2026-06-09T13:34:09] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:34:13] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T13:34:22] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:34:25] Force servo stop: |Fx|=55.65N > 40.00N after 14 steps
+[2026-06-09T13:34:25] Force servo finished
+[2026-06-09T13:34:25] Force servo done, opening gripper
+[2026-06-09T13:34:26] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:34:29] Cycle time: 20.135355234146118 seconds
+[2026-06-09T13:34:29] flow finished ok=True auto cycle done
+[2026-06-09T13:34:29] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:34:33] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:34:42] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:34:45] Force servo stop: |Fx|=55.60N > 40.00N after 11 steps
+[2026-06-09T13:34:45] Force servo finished
+[2026-06-09T13:34:45] Force servo done, opening gripper
+[2026-06-09T13:34:45] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:34:49] Cycle time: 19.526125192642212 seconds
+[2026-06-09T13:34:49] flow finished ok=True auto cycle done
+[2026-06-09T13:34:49] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:34:53] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:35:02] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:35:05] Force servo stop: |Fx|=50.88N > 40.00N after 15 steps
+[2026-06-09T13:35:05] Force servo finished
+[2026-06-09T13:35:05] Force servo done, opening gripper
+[2026-06-09T13:35:05] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:35:09] Cycle time: 20.289867401123047 seconds
+[2026-06-09T13:35:09] flow finished ok=True auto cycle done
+[2026-06-09T13:35:09] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:35:13] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 1] program='demolift_6_0529'
+[2026-06-09T13:35:23] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:35:26] Force servo stop: |Fx|=43.08N > 40.00N after 12 steps
+[2026-06-09T13:35:26] Force servo finished
+[2026-06-09T13:35:26] Force servo done, opening gripper
+[2026-06-09T13:35:26] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:35:30] Cycle time: 20.84645962715149 seconds
+[2026-06-09T13:35:30] flow finished ok=True auto cycle done
+[2026-06-09T13:35:30] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:35:34] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 1] program='demolift_5_0529'
+[2026-06-09T13:35:44] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:35:48] Force servo stop: |Fx|=52.37N > 40.00N after 15 steps
+[2026-06-09T13:35:48] Force servo finished
+[2026-06-09T13:35:48] Force servo done, opening gripper
+[2026-06-09T13:35:48] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:35:51] Cycle time: 21.11137342453003 seconds
+[2026-06-09T13:35:51] flow finished ok=True auto cycle done
+[2026-06-09T13:35:51] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:35:56] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 1] program='demolift_4_0529'
+[2026-06-09T13:36:06] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:36:09] Force servo stop: |Fx|=48.00N > 40.00N after 14 steps
+[2026-06-09T13:36:09] Force servo finished
+[2026-06-09T13:36:09] Force servo done, opening gripper
+[2026-06-09T13:36:10] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:36:12] Cycle time: 21.53839373588562 seconds
+[2026-06-09T13:36:12] flow finished ok=True auto cycle done
+[2026-06-09T13:36:13] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:36:18] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 1] program='demolift_3_0529'
+[2026-06-09T13:36:27] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:36:30] Force servo stop: |Fx|=62.65N > 40.00N after 14 steps
+[2026-06-09T13:36:30] Force servo finished
+[2026-06-09T13:36:30] Force servo done, opening gripper
+[2026-06-09T13:36:30] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:36:33] Cycle time: 20.65974521636963 seconds
+[2026-06-09T13:36:33] flow finished ok=True auto cycle done
+[2026-06-09T13:36:33] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:36:36] Place: slot_index=0 occupancy=[0, 0, 1, 1, 0, 1] program='demolift_6_0529'
+[2026-06-09T13:36:45] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:36:48] Force servo stop: |Fx|=61.17N > 40.00N after 12 steps
+[2026-06-09T13:36:48] Force servo finished
+[2026-06-09T13:36:48] Force servo done, opening gripper
+[2026-06-09T13:36:48] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:36:52] Cycle time: 18.59235692024231 seconds
+[2026-06-09T13:36:52] flow finished ok=True auto cycle done
+[2026-06-09T13:36:52] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:36:56] Place: slot_index=1 occupancy=[1, 0, 1, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T13:37:05] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:37:08] Force servo stop: |Fx|=57.77N > 40.00N after 12 steps
+[2026-06-09T13:37:08] Force servo finished
+[2026-06-09T13:37:08] Force servo done, opening gripper
+[2026-06-09T13:37:08] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:37:11] Cycle time: 19.379228353500366 seconds
+[2026-06-09T13:37:11] flow finished ok=True auto cycle done
+[2026-06-09T13:37:11] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:37:15] Place: slot_index=0 occupancy=[0, 1, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T13:37:24] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:37:26] Force servo stop: |Fx|=51.13N > 40.00N after 11 steps
+[2026-06-09T13:37:26] Force servo finished
+[2026-06-09T13:37:26] Force servo done, opening gripper
+[2026-06-09T13:37:27] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:37:30] Cycle time: 18.680856466293335 seconds
+[2026-06-09T13:37:30] flow finished ok=True auto cycle done
+[2026-06-09T13:37:30] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:37:34] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T13:37:43] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:37:47] Force servo stop: |Fx|=54.91N > 40.00N after 18 steps
+[2026-06-09T13:37:47] Force servo finished
+[2026-06-09T13:37:47] Force servo done, opening gripper
+[2026-06-09T13:37:47] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:37:50] Cycle time: 20.51270866394043 seconds
+[2026-06-09T13:37:50] flow finished ok=True auto cycle done
+[2026-06-09T13:37:51] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:37:54] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T13:38:03] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:38:06] Force servo stop: |Fx|=54.02N > 40.00N after 14 steps
+[2026-06-09T13:38:06] Force servo finished
+[2026-06-09T13:38:06] Force servo done, opening gripper
+[2026-06-09T13:38:06] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:38:10] Cycle time: 19.284551858901978 seconds
+[2026-06-09T13:38:10] flow finished ok=True auto cycle done
+[2026-06-09T13:38:10] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:38:14] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T13:38:23] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:38:26] Force servo stop: |Fx|=45.46N > 40.00N after 13 steps
+[2026-06-09T13:38:26] Force servo finished
+[2026-06-09T13:38:26] Force servo done, opening gripper
+[2026-06-09T13:38:26] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:38:29] Cycle time: 19.63264012336731 seconds
+[2026-06-09T13:38:29] flow finished ok=True auto cycle done
+[2026-06-09T13:38:29] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:38:33] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:38:42] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:38:45] Force servo stop: |Fx|=65.07N > 40.00N after 13 steps
+[2026-06-09T13:38:45] Force servo finished
+[2026-06-09T13:38:45] Force servo done, opening gripper
+[2026-06-09T13:38:45] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:38:49] Cycle time: 19.518195390701294 seconds
+[2026-06-09T13:38:49] flow finished ok=True auto cycle done
+[2026-06-09T13:38:49] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:38:53] All slots full (occupancy=[1, 1, 1, 1, 1, 1]): pick-only 'demopickonly0518', no lift
+[2026-06-09T13:38:57] Waiting 5.0s for empty slot...
+[2026-06-09T13:39:02] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:39:09] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:39:12] Force servo stop: |Fx|=54.76N > 40.00N after 11 steps
+[2026-06-09T13:39:12] Force servo finished
+[2026-06-09T13:39:12] Force servo done, opening gripper
+[2026-06-09T13:39:12] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:39:15] Cycle time: 26.411232948303223 seconds
+[2026-06-09T13:39:15] flow finished ok=True auto cycle done
+[2026-06-09T13:39:15] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:39:20] Place: slot_index=0 occupancy=[0, 0, 0, 0, 1, 1] program='demolift_6_0529'
+[2026-06-09T13:39:31] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:39:32] Force servo stop: |Fx|=53.32N > 40.00N after 8 steps
+[2026-06-09T13:39:32] Force servo finished
+[2026-06-09T13:39:32] Force servo done, opening gripper
+[2026-06-09T13:39:33] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:39:36] Cycle time: 20.727900981903076 seconds
+[2026-06-09T13:39:36] flow finished ok=True auto cycle done
+[2026-06-09T13:39:36] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:39:41] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 1] program='demolift_5_0529'
+[2026-06-09T13:39:51] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:39:53] Force servo stop: |Fx|=51.35N > 40.00N after 10 steps
+[2026-06-09T13:39:53] Force servo finished
+[2026-06-09T13:39:53] Force servo done, opening gripper
+[2026-06-09T13:39:53] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:39:56] Cycle time: 20.134850025177002 seconds
+[2026-06-09T13:39:56] flow finished ok=True auto cycle done
+[2026-06-09T13:39:56] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:40:01] Place: slot_index=1 occupancy=[1, 0, 0, 0, 1, 0] program='demolift_5_0529'
+[2026-06-09T13:40:12] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:40:14] Force servo stop: |Fx|=71.59N > 40.00N after 12 steps
+[2026-06-09T13:40:14] Force servo finished
+[2026-06-09T13:40:14] Force servo done, opening gripper
+[2026-06-09T13:40:14] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:40:17] Cycle time: 21.312167644500732 seconds
+[2026-06-09T13:40:17] flow finished ok=True auto cycle done
+[2026-06-09T13:40:17] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:40:23] Place: slot_index=2 occupancy=[1, 1, 0, 0, 1, 0] program='demolift_4_0529'
+[2026-06-09T13:40:32] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:40:36] Force servo stop: |Fx|=56.13N > 40.00N after 19 steps
+[2026-06-09T13:40:36] Force servo finished
+[2026-06-09T13:40:36] Force servo done, opening gripper
+[2026-06-09T13:40:36] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:40:39] Cycle time: 21.811328172683716 seconds
+[2026-06-09T13:40:39] flow finished ok=True auto cycle done
+[2026-06-09T13:40:39] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:40:43] Place: slot_index=3 occupancy=[1, 1, 1, 0, 1, 0] program='demolift_3_0529'
+[2026-06-09T13:40:52] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:40:57] Force servo stop: |Fx|=52.22N > 40.00N after 19 steps
+[2026-06-09T13:40:57] Force servo finished
+[2026-06-09T13:40:57] Force servo done, opening gripper
+[2026-06-09T13:40:57] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:41:00] Cycle time: 20.580771446228027 seconds
+[2026-06-09T13:41:00] flow finished ok=True auto cycle done
+[2026-06-09T13:41:00] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:41:04] Place: slot_index=0 occupancy=[0, 1, 1, 1, 1, 0] program='demolift_6_0529'
+[2026-06-09T13:41:13] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:41:16] Force servo stop: |Fx|=58.33N > 40.00N after 12 steps
+[2026-06-09T13:41:16] Force servo finished
+[2026-06-09T13:41:16] Force servo done, opening gripper
+[2026-06-09T13:41:16] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:41:19] Cycle time: 19.41196632385254 seconds
+[2026-06-09T13:41:19] flow finished ok=True auto cycle done
+[2026-06-09T13:41:19] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:41:23] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T13:41:31] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:41:35] Force servo stop: |Fx|=64.62N > 40.00N after 19 steps
+[2026-06-09T13:41:35] Force servo finished
+[2026-06-09T13:41:35] Force servo done, opening gripper
+[2026-06-09T13:41:35] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:41:39] Cycle time: 19.46673011779785 seconds
+[2026-06-09T13:41:39] flow finished ok=True auto cycle done
+[2026-06-09T13:41:39] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:41:43] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T13:41:52] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:41:55] Force servo stop: |Fx|=54.42N > 40.00N after 11 steps
+[2026-06-09T13:41:55] Force servo finished
+[2026-06-09T13:41:55] Force servo done, opening gripper
+[2026-06-09T13:41:55] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:41:58] Cycle time: 19.261876344680786 seconds
+[2026-06-09T13:41:58] flow finished ok=True auto cycle done
+[2026-06-09T13:41:58] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:42:02] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T13:42:11] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:42:14] Force servo stop: |Fx|=62.27N > 40.00N after 14 steps
+[2026-06-09T13:42:14] Force servo finished
+[2026-06-09T13:42:14] Force servo done, opening gripper
+[2026-06-09T13:42:15] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:42:18] Cycle time: 19.608099460601807 seconds
+[2026-06-09T13:42:18] flow finished ok=True auto cycle done
+[2026-06-09T13:42:18] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:42:21] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T13:42:30] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:42:35] Force servo stop: |Fx|=59.54N > 40.00N after 20 steps
+[2026-06-09T13:42:35] Force servo finished
+[2026-06-09T13:42:35] Force servo done, opening gripper
+[2026-06-09T13:42:35] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:42:38] Cycle time: 20.305622816085815 seconds
+[2026-06-09T13:42:38] flow finished ok=True auto cycle done
+[2026-06-09T13:42:38] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:42:42] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T13:42:50] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:42:55] Force servo stop: |Fx|=54.54N > 40.00N after 19 steps
+[2026-06-09T13:42:55] Force servo finished
+[2026-06-09T13:42:55] Force servo done, opening gripper
+[2026-06-09T13:42:55] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:42:58] Cycle time: 20.254404544830322 seconds
+[2026-06-09T13:42:58] flow finished ok=True auto cycle done
+[2026-06-09T13:42:58] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:43:02] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T13:43:11] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:43:14] Force servo stop: |Fx|=68.13N > 40.00N after 13 steps
+[2026-06-09T13:43:14] Force servo finished
+[2026-06-09T13:43:14] Force servo done, opening gripper
+[2026-06-09T13:43:15] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:43:18] Cycle time: 19.79338836669922 seconds
+[2026-06-09T13:43:18] flow finished ok=True auto cycle done
+[2026-06-09T13:43:18] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:43:22] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:43:31] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:43:33] Force servo stop: |Fx|=49.47N > 40.00N after 8 steps
+[2026-06-09T13:43:33] Force servo finished
+[2026-06-09T13:43:33] Force servo done, opening gripper
+[2026-06-09T13:43:33] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:43:37] Cycle time: 18.90401268005371 seconds
+[2026-06-09T13:43:37] flow finished ok=True auto cycle done
+[2026-06-09T13:43:37] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:43:42] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-09T13:43:51] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:43:53] Force servo stop: |Fx|=49.71N > 40.00N after 11 steps
+[2026-06-09T13:43:53] Force servo finished
+[2026-06-09T13:43:53] Force servo done, opening gripper
+[2026-06-09T13:43:54] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:43:57] Cycle time: 20.32198166847229 seconds
+[2026-06-09T13:43:57] flow finished ok=True auto cycle done
+[2026-06-09T13:43:57] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:44:02] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 1] program='demolift_6_0529'
+[2026-06-09T13:44:12] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:44:14] Force servo stop: |Fx|=55.13N > 40.00N after 9 steps
+[2026-06-09T13:44:14] Force servo finished
+[2026-06-09T13:44:14] Force servo done, opening gripper
+[2026-06-09T13:44:14] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:44:18] Cycle time: 20.313695192337036 seconds
+[2026-06-09T13:44:18] flow finished ok=True auto cycle done
+[2026-06-09T13:44:18] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:44:22] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 1] program='demolift_5_0529'
+[2026-06-09T13:44:33] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:44:35] Force servo stop: |Fx|=61.81N > 40.00N after 11 steps
+[2026-06-09T13:44:35] Force servo finished
+[2026-06-09T13:44:35] Force servo done, opening gripper
+[2026-06-09T13:44:35] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:44:38] Cycle time: 20.87650775909424 seconds
+[2026-06-09T13:44:38] flow finished ok=True auto cycle done
+[2026-06-09T13:44:39] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:44:44] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 1] program='demolift_5_0529'
+[2026-06-09T13:44:54] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:44:56] Force servo stop: |Fx|=48.60N > 40.00N after 10 steps
+[2026-06-09T13:44:56] Force servo finished
+[2026-06-09T13:44:56] Force servo done, opening gripper
+[2026-06-09T13:44:56] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:44:59] Cycle time: 20.9677095413208 seconds
+[2026-06-09T13:44:59] flow finished ok=True auto cycle done
+[2026-06-09T13:45:00] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:45:05] Place: slot_index=0 occupancy=[0, 1, 0, 0, 0, 1] program='demolift_6_0529'
+[2026-06-09T13:45:14] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:45:16] Force servo stop: |Fx|=63.03N > 40.00N after 9 steps
+[2026-06-09T13:45:16] Force servo finished
+[2026-06-09T13:45:16] Force servo done, opening gripper
+[2026-06-09T13:45:16] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:45:20] Cycle time: 20.22758388519287 seconds
+[2026-06-09T13:45:20] flow finished ok=True auto cycle done
+[2026-06-09T13:45:20] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:45:24] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 1] program='demolift_4_0529'
+[2026-06-09T13:45:33] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:45:38] Force servo stop: |Fx|=56.91N > 40.00N after 21 steps
+[2026-06-09T13:45:38] Force servo finished
+[2026-06-09T13:45:38] Force servo done, opening gripper
+[2026-06-09T13:45:38] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:45:41] Cycle time: 21.03180980682373 seconds
+[2026-06-09T13:45:41] flow finished ok=True auto cycle done
+[2026-06-09T13:45:41] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:45:45] Place: slot_index=0 occupancy=[0, 0, 1, 0, 0, 1] program='demolift_6_0529'
+[2026-06-09T13:45:54] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:45:57] Force servo stop: |Fx|=64.86N > 40.00N after 13 steps
+[2026-06-09T13:45:57] Force servo finished
+[2026-06-09T13:45:57] Force servo done, opening gripper
+[2026-06-09T13:45:57] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:46:01] Cycle time: 19.829756021499634 seconds
+[2026-06-09T13:46:01] flow finished ok=True auto cycle done
+[2026-06-09T13:46:01] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:46:04] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T13:46:14] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:46:17] Force servo stop: |Fx|=58.78N > 40.00N after 15 steps
+[2026-06-09T13:46:17] Force servo finished
+[2026-06-09T13:46:17] Force servo done, opening gripper
+[2026-06-09T13:46:17] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:46:20] Cycle time: 19.892441511154175 seconds
+[2026-06-09T13:46:20] flow finished ok=True auto cycle done
+[2026-06-09T13:46:20] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:46:24] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T13:46:34] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T13:46:38] Force servo stop: |Fx|=47.27N > 40.00N after 20 steps
+[2026-06-09T13:46:38] Force servo finished
+[2026-06-09T13:46:38] Force servo done, opening gripper
+[2026-06-09T13:46:38] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T13:46:41] Cycle time: 21.045357942581177 seconds
+[2026-06-09T13:46:42] flow finished ok=True auto cycle done
+[2026-06-09T13:46:42] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T13:46:42] flow finished ok=False 作业运行中断: 急停已触发
+[2026-06-09T13:46:43] Flow session torn down, devices disconnected.
+[2026-06-09T13:46:43] auto loop stopped
+[2026-06-09T13:47:53] flow finished ok=False 机器人未使能
+[2026-06-09T13:48:18] flow finished ok=True home done
+[2026-06-09T14:15:52] flow finished ok=True home done
+[2026-06-09T14:15:55] auto loop started
+[2026-06-09T14:15:55] Flow session init starting...
+[2026-06-09T14:15:55] Init: connecting robot 169.254.5.10
+[2026-06-09T14:15:55] Init: connecting gripper COM7
+[2026-06-09T14:15:56] Init: connecting force sensor
+[2026-06-09T14:15:56] Force sensor: connecting port=COM8
+[2026-06-09T14:15:56] Force sensor data ready
+[2026-06-09T14:15:56] Init: running PROG_VARREST 
+[2026-06-09T14:15:56] Init: running PROG_HOME
+[2026-06-09T14:16:02] Init: session ready
+[2026-06-09T14:16:02] Flow session init done.
+[2026-06-09T14:16:02] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T14:16:07] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-09T14:16:16] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T14:16:19] Force servo stop: |Fx|=52.28N > 40.00N after 10 steps
+[2026-06-09T14:16:19] Force servo finished
+[2026-06-09T14:16:19] Force servo done, opening gripper
+[2026-06-09T14:16:19] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T14:16:22] Cycle time: 20.51348853111267 seconds
+[2026-06-09T14:16:22] flow finished ok=True auto cycle done
+[2026-06-09T14:16:22] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T14:16:26] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-09T14:16:35] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T14:16:39] Force servo stop: |Fx|=56.77N > 40.00N after 14 steps
+[2026-06-09T14:16:39] Force servo finished
+[2026-06-09T14:16:39] Force servo done, opening gripper
+[2026-06-09T14:16:39] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T14:16:42] Cycle time: 20.12344789505005 seconds
+[2026-06-09T14:16:42] flow finished ok=True auto cycle done
+[2026-06-09T14:16:42] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T14:16:46] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-09T14:16:55] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T14:17:00] Force servo stop: |Fx|=54.73N > 40.00N after 22 steps
+[2026-06-09T14:17:00] Force servo finished
+[2026-06-09T14:17:00] Force servo done, opening gripper
+[2026-06-09T14:17:01] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T14:17:04] Cycle time: 21.12684917449951 seconds
+[2026-06-09T14:17:04] flow finished ok=True auto cycle done
+[2026-06-09T14:17:04] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T14:17:07] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-09T14:17:16] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-09T14:17:20] Force servo stop: |Fx|=52.19N > 40.00N after 16 steps
+[2026-06-09T14:17:20] Force servo finished
+[2026-06-09T14:17:20] Force servo done, opening gripper
+[2026-06-09T14:17:20] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-09T14:17:23] Cycle time: 19.908958911895752 seconds
+[2026-06-09T14:17:23] flow finished ok=True auto cycle done
+[2026-06-09T14:17:24] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-09T14:17:27] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-09T14:17:33] flow finished ok=False 作业运行中断: 急停已触发
+[2026-06-09T14:17:33] Flow session torn down, devices disconnected.
+[2026-06-09T14:17:33] auto loop stopped
+[2026-06-09T14:17:42] auto stop requested
+[2026-06-09T14:17:42] auto stop requested
+[2026-06-09T14:17:42] auto stop requested
+[2026-06-09T14:19:29] Gripper connected on 'COM7'.
+[2026-06-09T14:19:30] Gripper open failed.
+[2026-06-09T14:19:30] Gripper open sent.
+[2026-06-09T14:19:30] Gripper open sent.
+[2026-06-09T15:29:38] Disconnected.
+[2026-06-09T15:29:38] Gripper disconnected.
+[2026-06-09T15:37:29] Gripper connected on 'COM7'.
+[2026-06-09T15:37:29] Gripper close sent.
+[2026-06-09T15:38:28] Gripper open sent.
+[2026-06-09T15:41:38] Gripper close sent.
+[2026-06-09T15:41:40] Gripper open sent.
+[2026-06-09T15:41:59] Gripper close sent.
+[2026-06-10T09:19:28] Gripper connected on 'COM7'.
+[2026-06-10T10:42:11] Gripper connected on 'COM7'.
+[2026-06-10T10:42:11] Gripper close sent.
+[2026-06-10T10:51:45] Gripper open sent.
+[2026-06-10T10:52:46] Gripper close sent.
+[2026-06-10T10:53:23] Gripper open sent.
+[2026-06-10T10:53:58] Gripper close sent.
+[2026-06-10T10:54:34] Gripper open sent.
+[2026-06-10T10:55:09] Gripper close sent.
+[2026-06-10T10:55:40] Gripper open sent.
+[2026-06-10T10:56:56] Gripper close sent.
+[2026-06-10T10:57:33] Gripper open sent.
+[2026-06-10T11:00:37] Gripper close sent.
+[2026-06-10T11:01:09] Gripper open sent.
+[2026-06-10T11:01:45] Gripper close sent.
+[2026-06-10T11:02:20] Gripper open sent.
+[2026-06-10T11:16:34] flow finished ok=True home done
+[2026-06-10T11:16:35] auto loop started
+[2026-06-10T11:16:35] Flow session init starting...
+[2026-06-10T11:16:35] Init: connecting robot 169.254.5.10
+[2026-06-10T11:16:35] Init: reusing gripper connection
+[2026-06-10T11:16:35] Init: connecting force sensor
+[2026-06-10T11:16:35] Force sensor: connecting port=COM8
+[2026-06-10T11:16:36] Flow session torn down, devices disconnected.
+[2026-06-10T11:16:36] auto loop stopped
+[2026-06-10T11:16:49] auto loop started
+[2026-06-10T11:16:49] Flow session init starting...
+[2026-06-10T11:16:49] Init: connecting robot 169.254.5.10
+[2026-06-10T11:16:49] Init: connecting gripper COM7
+[2026-06-10T11:16:50] Init: connecting force sensor
+[2026-06-10T11:16:50] Force sensor: connecting port=COM8
+[2026-06-10T11:16:50] Flow session torn down, devices disconnected.
+[2026-06-10T11:16:50] auto loop stopped
+[2026-06-10T11:17:55] flow finished ok=True home done
+[2026-06-10T11:17:56] auto loop started
+[2026-06-10T11:17:56] Flow session init starting...
+[2026-06-10T11:17:56] Init: connecting robot 169.254.5.10
+[2026-06-10T11:17:56] Init: connecting gripper COM7
+[2026-06-10T11:17:57] Init: connecting force sensor
+[2026-06-10T11:17:57] Force sensor: connecting port=COM8
+[2026-06-10T11:18:07] Flow session torn down, devices disconnected.
+[2026-06-10T11:18:07] auto loop stopped
+[2026-06-10T11:18:51] auto loop started
+[2026-06-10T11:18:51] Flow session init starting...
+[2026-06-10T11:18:51] Init: connecting robot 169.254.5.10
+[2026-06-10T11:18:51] Init: connecting gripper COM7
+[2026-06-10T11:18:52] Init: connecting force sensor
+[2026-06-10T11:18:52] Force sensor: connecting port=COM8
+[2026-06-10T11:19:02] Flow session torn down, devices disconnected.
+[2026-06-10T11:19:02] auto loop stopped
+[2026-06-10T11:20:54] auto loop started
+[2026-06-10T11:20:54] Flow session init starting...
+[2026-06-10T11:20:54] Init: connecting robot 169.254.5.10
+[2026-06-10T11:20:54] Init: connecting gripper COM7
+[2026-06-10T11:20:55] Init: connecting force sensor
+[2026-06-10T11:20:55] Force sensor: connecting port=COM8
+[2026-06-10T11:20:55] Force sensor data ready
+[2026-06-10T11:20:55] Init: running PROG_VARREST 
+[2026-06-10T11:20:56] Init: running PROG_HOME
+[2026-06-10T11:21:01] Init: session ready
+[2026-06-10T11:21:01] Flow session init done.
+[2026-06-10T11:21:01] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:21:08] Place: slot_index=0 occupancy=[0, 0, 0, 0, 0, 0] program='demolift_6_0529'
+[2026-06-10T11:21:20] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:21:21] Force servo stop: |Fx|=69.63N > 40.00N after 6 steps
+[2026-06-10T11:21:21] Force servo finished
+[2026-06-10T11:21:21] Force servo done, opening gripper
+[2026-06-10T11:21:21] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:21:26] Cycle time: 24.937984228134155 seconds
+[2026-06-10T11:21:26] flow finished ok=True auto cycle done
+[2026-06-10T11:21:26] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:21:31] Place: slot_index=1 occupancy=[1, 0, 0, 0, 0, 0] program='demolift_5_0529'
+[2026-06-10T11:21:43] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:21:46] Force servo stop: |Fx|=57.17N > 40.00N after 14 steps
+[2026-06-10T11:21:46] Force servo finished
+[2026-06-10T11:21:46] Force servo done, opening gripper
+[2026-06-10T11:21:46] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:21:51] Cycle time: 24.85635280609131 seconds
+[2026-06-10T11:21:51] flow finished ok=True auto cycle done
+[2026-06-10T11:21:51] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:21:56] Place: slot_index=2 occupancy=[1, 1, 0, 0, 0, 0] program='demolift_4_0529'
+[2026-06-10T11:22:07] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:22:11] Force servo stop: |Fx|=52.79N > 40.00N after 13 steps
+[2026-06-10T11:22:11] Force servo finished
+[2026-06-10T11:22:11] Force servo done, opening gripper
+[2026-06-10T11:22:11] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:22:15] Cycle time: 24.108062744140625 seconds
+[2026-06-10T11:22:15] flow finished ok=True auto cycle done
+[2026-06-10T11:22:15] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:22:20] Place: slot_index=3 occupancy=[1, 1, 1, 0, 0, 0] program='demolift_3_0529'
+[2026-06-10T11:22:32] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:22:36] Force servo stop: |Fx|=60.00N > 40.00N after 16 steps
+[2026-06-10T11:22:36] Force servo finished
+[2026-06-10T11:22:36] Force servo done, opening gripper
+[2026-06-10T11:22:36] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:22:41] Cycle time: 25.950695753097534 seconds
+[2026-06-10T11:22:41] flow finished ok=True auto cycle done
+[2026-06-10T11:22:41] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:22:46] Place: slot_index=4 occupancy=[1, 1, 1, 1, 0, 0] program='demolift_2_0518'
+[2026-06-10T11:22:58] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:23:02] Force servo stop: |Fx|=49.23N > 40.00N after 13 steps
+[2026-06-10T11:23:02] Force servo finished
+[2026-06-10T11:23:02] Force servo done, opening gripper
+[2026-06-10T11:23:02] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:23:06] Cycle time: 25.44111704826355 seconds
+[2026-06-10T11:23:06] flow finished ok=True auto cycle done
+[2026-06-10T11:23:07] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:23:12] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-10T11:23:25] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:23:28] Force servo stop: |Fx|=51.36N > 40.00N after 14 steps
+[2026-06-10T11:23:28] Force servo finished
+[2026-06-10T11:23:28] Force servo done, opening gripper
+[2026-06-10T11:23:29] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:23:34] Cycle time: 27.185317993164062 seconds
+[2026-06-10T11:23:34] flow finished ok=True auto cycle done
+[2026-06-10T11:23:34] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:23:39] Place: slot_index=5 occupancy=[1, 1, 1, 1, 1, 0] program='demolift_1_0507'
+[2026-06-10T11:23:51] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:23:55] Force servo stop: |Fx|=58.65N > 40.00N after 14 steps
+[2026-06-10T11:23:55] Force servo finished
+[2026-06-10T11:23:55] Force servo done, opening gripper
+[2026-06-10T11:23:55] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:24:00] Cycle time: 26.77359414100647 seconds
+[2026-06-10T11:24:00] flow finished ok=True auto cycle done
+[2026-06-10T11:24:00] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:24:06] Place: slot_index=0 occupancy=[0, 0, 0, 1, 1, 1] program='demolift_6_0529'
+[2026-06-10T11:24:20] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:24:24] Force servo stop: |Fx|=57.79N > 40.00N after 14 steps
+[2026-06-10T11:24:24] Force servo finished
+[2026-06-10T11:24:24] Force servo done, opening gripper
+[2026-06-10T11:24:24] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:24:28] Cycle time: 27.93748927116394 seconds
+[2026-06-10T11:24:28] flow finished ok=True auto cycle done
+[2026-06-10T11:24:28] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:24:35] Place: slot_index=1 occupancy=[1, 0, 0, 1, 1, 1] program='demolift_5_0529'
+[2026-06-10T11:24:49] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:24:53] Force servo stop: |Fx|=59.29N > 40.00N after 16 steps
+[2026-06-10T11:24:53] Force servo finished
+[2026-06-10T11:24:53] Force servo done, opening gripper
+[2026-06-10T11:24:53] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:24:57] Cycle time: 29.171928882598877 seconds
+[2026-06-10T11:24:57] flow finished ok=True auto cycle done
+[2026-06-10T11:24:58] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:25:04] Place: slot_index=2 occupancy=[1, 1, 0, 1, 1, 1] program='demolift_4_0529'
+[2026-06-10T11:25:18] Force servo (session sensor): threshold=40.0N step=1.0mm speed=15.0mm/s
+[2026-06-10T11:25:21] Force servo stop: |Fx|=78.58N > 40.00N after 9 steps
+[2026-06-10T11:25:21] Force servo finished
+[2026-06-10T11:25:21] Force servo done, opening gripper
+[2026-06-10T11:25:21] 抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE 
+[2026-06-10T11:25:25] Cycle time: 27.6061794757843 seconds
+[2026-06-10T11:25:25] flow finished ok=True auto cycle done
+[2026-06-10T11:25:25] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:25:29] There is no parts in the basket, wait for 10s...
+[2026-06-10T11:25:39] 抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC 
+[2026-06-10T11:25:43] There is no parts in the basket, wait for 10s...
+[2026-06-10T11:25:48] auto stop requested
+[2026-06-10T11:25:48] flow finished ok=False 流程被用户取消
+[2026-06-10T11:25:49] Flow session torn down, devices disconnected.
+[2026-06-10T11:25:49] auto loop stopped
+[2026-06-10T11:25:49] auto stop requested
+[2026-06-10T11:25:49] auto stop requested

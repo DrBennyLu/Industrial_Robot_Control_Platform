@@ -43,6 +43,7 @@ class GripperController:
         self.client: Optional[ModbusSerialClient] = None
         self._is_connected = False
         self._is_initialized = False
+        self._commanded_open: bool | None = None
         
     def connect(self) -> bool:
         """
@@ -197,7 +198,10 @@ class GripperController:
         """
         if position is None:
             position = self.POS_MAX
-        return self.set_position(position)
+        ok = self.set_position(position)
+        if ok:
+            self._commanded_open = True
+        return ok
     
     def close(self, position: Optional[int] = None) -> bool:
         """
@@ -211,7 +215,10 @@ class GripperController:
         """
         if position is None:
             position = self.POS_MIN
-        return self.set_position(position)
+        ok = self.set_position(position)
+        if ok:
+            self._commanded_open = False
+        return ok
     
     def configure(self, force: int = 50, speed: int = 50) -> bool:
         """
@@ -237,6 +244,11 @@ class GripperController:
     def is_initialized(self) -> bool:
         """检查是否已初始化"""
         return self._is_initialized
+
+    @property
+    def commanded_is_open(self) -> bool | None:
+        """最近一次 open/close 指令对应的开合状态；None 表示尚未下发指令。"""
+        return self._commanded_open
     
     def __enter__(self):
         """支持上下文管理器"""

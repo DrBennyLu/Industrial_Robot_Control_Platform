@@ -1,12 +1,12 @@
 {
-  "cycle_total": 1075,
-  "cycle_ok": 940,
-  "cycle_ng": 135,
-  "last_cycle_s": 6.41,
-  "avg_cycle_s": 27.124,
+  "cycle_total": 1240,
+  "cycle_ok": 1100,
+  "cycle_ng": 140,
+  "last_cycle_s": 23.199,
+  "avg_cycle_s": 26.357,
   "best_cycle_s": 15.855,
-  "yield_rate": 87.44,
-  "fail_reason": "作业运行中断: 急停已触发",
-  "last_error": "作业运行中断: 急停已触发",
-  "last_update": "2026-06-09T10:15:48"
+  "yield_rate": 88.71,
+  "fail_reason": "流程被用户取消",
+  "last_error": "流程被用户取消",
+  "last_update": "2026-06-10T11:25:48"
 }

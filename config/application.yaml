@@ -34,3 +34,25 @@ paths:
 
 logging:
   level: "INFO"
+
+data_collection:
+  enabled: true
+  sample_hz: 15
+  output_dir: "data/episodes"
+  sync_max_delta_ms: 50
+  metadata:
+    run_type: "auto_run"
+    control_type: "joint"
+  cameras:
+    capture_fps: 30
+    pipeline_width: 640
+    pipeline_height: 480
+    width: 224
+    height: 224
+    channels: 3
+    box_image:
+      enabled: true
+      serial_number: ""
+    wrist_image:
+      enabled: true
+      serial_number: ""

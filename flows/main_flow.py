@@ -12,6 +12,7 @@ for _p in (_FLOW_DIR, _PROJECT_SRC):
         sys.path.insert(0, str(_p))
 
 from jaka_app.config_loader import load_application_config
+from jaka_app.data_collection import EpisodeRecorder
 from jaka_app.robot_controller import JakaRobotController, find_value_by_key
 from jaka_app.utils.logging_utils import add_log
 from PLCControl.modbus_control import loader_forward
@@ -118,63 +119,69 @@ def main(ctx=None) -> None:
     _, _, cfg = load_from_config()
 
     start_time = time.time()
-    # robot_flow.pre_action_check(arm)
-    # robot_flow.run_cabinet_program(arm, robot_flow.PROG_PICK)
-    # if FIRST_PICK == True:
-    robot_flow.pre_action_check(arm)
-    while True:
-        # 检查取消信号
-        if cancel_event and cancel_event.is_set():
-            raise RuntimeError("流程被用户取消")
+    recorder = EpisodeRecorder(arm, gripper, cfg, cancel_event=cancel_event, ctx=ctx)
+    recorder.task = "Pick up the sheet metal parts and then place it in the slot"
+    recorder.subtask = "pick up the sheet metal in the first layer"
+    recorder.start()
+    save_episode = False
+    try:
+        robot_flow.pre_action_check(arm)
+        while True:
+            # 检查取消信号
+            if cancel_event and cancel_event.is_set():
+                raise RuntimeError("流程被用户取消")
+            if SHEET_NUM == 1:
+                add_log("抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC ", ctx=ctx)
+                robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC, cancel_event=cancel_event) #机器人程序内部判定是否已经完成预拍照动作，系统变量PRE_CAP
+            elif SHEET_NUM == 2:
+                add_log("抓取目标为2号钣金物料, 执行程序：PROG_FIRST_PICK_PRC2 ", ctx=ctx)
+                robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC2, cancel_event=cancel_event) # 对应2号物料
+            else:
+                add_log("物料错误", ctx=ctx)
+                break
+            # 如果料框是空的，则等待10秒重新拍照。
+            # TODO： 后续，可以加入agv将料放好之后，开始取料的信号同时判断，开始流程。
+            if robot_flow.get_sys_val(arm, "SYS_NO_PARTS") == 1:
+                add_log("There is no parts in the basket, wait for 10s...", ctx=ctx)
+                # 分段 sleep，每秒检查取消信号
+                for _ in range(10):
+                    if cancel_event and cancel_event.is_set():
+                        raise RuntimeError("流程被用户取消")
+                    time.sleep(1.0)
+            else:
+                break
+
+        gripper.close()
+
+        recorder.subtask = "place the sheet metal in the slot"
+
+        # 放置物料：有空位则 PROG_LIFT_n；全满则仅抓取并等待空位
+        run_place_phase(arm, cfg, SN=SHEET_NUM, cancel_event=cancel_event, ctx=ctx)
+
+        robot_flow.pre_action_check(arm)
+        # 阻塞：力控伺服结束（|Fx|>阈值）后才继续
+        robot_flow.force_servo_control(
+            arm,
+            cfg=cfg,
+            cancel_event=cancel_event,
+            ctx=ctx,
+            sensor=ctx.force_sensor,
+        )
+        add_log("Force servo done, opening gripper", ctx=ctx)
+
+        gripper.open()
+
+        robot_flow.pre_action_check(arm)
         if SHEET_NUM == 1:
-            add_log("抓取目标为1号钣金物料, 执行程序：PROG_FIRST_PICK_PRC ", ctx=ctx)
-            robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC, cancel_event=cancel_event) #机器人程序内部判定是否已经完成预拍照动作，系统变量PRE_CAP
-        elif SHEET_NUM == 2:
-            add_log("抓取目标为2号钣金物料, 执行程序：PROG_FIRST_PICK_PRC2 ", ctx=ctx)
-            robot_flow.run_cabinet_program(arm, robot_flow.PROG_FIRST_PICK_PRC2, cancel_event=cancel_event) # 对应2号物料
+            add_log("抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE ", ctx=ctx)
+            robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE, cancel_event=cancel_event)
         else:
-            add_log("物料错误", ctx=ctx)
-            break
-        # 如果料框是空的，则等待10秒重新拍照。
-        # TODO： 后续，可以加入agv将料放好之后，开始取料的信号同时判断，开始流程。
-        if robot_flow.get_sys_val(arm, "SYS_NO_PARTS") == 1:
-            add_log("There is no parts in the basket, wait for 10s...", ctx=ctx)
-            # 分段 sleep，每秒检查取消信号
-            for _ in range(10):
-                if cancel_event and cancel_event.is_set():
-                    raise RuntimeError("流程被用户取消")
-                time.sleep(1.0)
-        else:
-            break
+            add_log("抓取目标为2号钣金物料, 执行程序：PROG_AFTER_PLACE2 ", ctx=ctx)
+            robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE2, cancel_event=cancel_event)
 
-    gripper.close()
-
-    # 放置物料：有空位则 PROG_LIFT_n；全满则仅抓取并等待空位
-    run_place_phase(arm, cfg, SN=SHEET_NUM, cancel_event=cancel_event, ctx=ctx)
-
-    robot_flow.pre_action_check(arm)
-    # 阻塞：力控伺服结束（|Fx|>阈值）后才继续
-    robot_flow.force_servo_control(
-        arm,
-        cfg=cfg,
-        cancel_event=cancel_event,
-        ctx=ctx,
-        sensor=ctx.force_sensor,
-    )
-    add_log("Force servo done, opening gripper", ctx=ctx)
-
-    gripper.open()
-
-    robot_flow.pre_action_check(arm)
-    if SHEET_NUM == 1:
-        add_log("抓取目标为1号钣金物料, 执行程序：PROG_AFTER_PLACE ", ctx=ctx)
-        robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE, cancel_event=cancel_event)
-    else:
-        add_log("抓取目标为2号钣金物料, 执行程序：PROG_AFTER_PLACE2 ", ctx=ctx)
-        robot_flow.run_cabinet_program(arm, robot_flow.PROG_AFTER_PLACE2, cancel_event=cancel_event)
-
-    # robot_flow.pre_action_check(arm)
-    # robot_flow.run_cabinet_program(arm, robot_flow.PROG_HOME)
+        save_episode = True
+    finally:
+        recorder.stop(save=save_episode)
 
     end_time = time.time()
     add_log(f"Cycle time: {end_time - start_time} seconds", ctx=ctx)
